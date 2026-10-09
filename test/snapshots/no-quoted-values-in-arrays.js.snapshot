@@ -1,0 +1,410 @@
+exports[`invalid(1): ports: [80, 443, '8080'] 1`] = `
+
+  1 | ports: [80, 443, '8080']
+
+`;
+
+exports[`invalid(1): ports: [80, 443, '8080'] 2`] = `
+
+Message:
+> 1 | ports: [80, 443, '8080']
+    |                  ^^^^^^ \`'8080'\` is a string, but this array holds ints.
+
+Suggestion 1/1: Write it as \`8080\`.:
+  1 | ports: [80, 443, 8080]
+
+`;
+
+exports[`invalid(10): times: [2026-01-01T00:00:00Z, '2026-02-01T00:00:00Z'] 1`] = `
+
+  1 | times: [2026-01-01T00:00:00Z, '2026-02-01T00:00:00Z']
+
+`;
+
+exports[`invalid(10): times: [2026-01-01T00:00:00Z, '2026-02-01T00:00:00Z'] 2`] = `
+
+Message:
+> 1 | times: [2026-01-01T00:00:00Z, '2026-02-01T00:00:00Z']
+    |                               ^^^^^^^^^^^^^^^^^^^^^^ \`'2026-02-01T00:00:00Z'\` is a string, but this array holds instants.
+
+Suggestion 1/1: Write it as \`2026-02-01T00:00:00Z\`.:
+  1 | times: [2026-01-01T00:00:00Z, 2026-02-01T00:00:00Z]
+
+`;
+
+exports[`invalid(11): times: [2026-01-01T00:00:00+01:00, '2026-01-01T00:00:00.5Z'] 1`] = `
+
+  1 | times: [2026-01-01T00:00:00+01:00, '2026-01-01T00:00:00.5Z']
+
+`;
+
+exports[`invalid(11): times: [2026-01-01T00:00:00+01:00, '2026-01-01T00:00:00.5Z'] 2`] = `
+
+Message:
+> 1 | times: [2026-01-01T00:00:00+01:00, '2026-01-01T00:00:00.5Z']
+    |                                    ^^^^^^^^^^^^^^^^^^^^^^^^ \`'2026-01-01T00:00:00.5Z'\` is a string, but this array holds instants.
+
+Suggestion 1/1: Write it as \`2026-01-01T00:00:00.5Z\`.:
+  1 | times: [2026-01-01T00:00:00+01:00, 2026-01-01T00:00:00.5Z]
+
+`;
+
+exports[`invalid(12): a: [1, null, '3'] 1`] = `
+
+  1 | a: [1, null, '3']
+
+`;
+
+exports[`invalid(12): a: [1, null, '3'] 2`] = `
+
+Message:
+> 1 | a: [1, null, '3']
+    |              ^^^ \`'3'\` is a string, but this array holds ints.
+
+Suggestion 1/1: Write it as \`3\`.:
+  1 | a: [1, null, 3]
+
+`;
+
+exports[`invalid(13): a: ['1', null, 2, 3, '4'] 1`] = `
+
+  1 | a: ['1', null, 2, 3, '4']
+
+`;
+
+exports[`invalid(13): a: ['1', null, 2, 3, '4'] 2`] = `
+
+Message:
+> 1 | a: ['1', null, 2, 3, '4']
+    |     ^^^ \`'1'\` is a string, but this array holds ints.
+
+Suggestion 1/1: Write it as \`1\`.:
+  1 | a: [1, null, 2, 3, '4']
+
+`;
+
+exports[`invalid(13): a: ['1', null, 2, 3, '4'] 3`] = `
+
+Message:
+> 1 | a: ['1', null, 2, 3, '4']
+    |                      ^^^ \`'4'\` is a string, but this array holds ints.
+
+Suggestion 1/1: Write it as \`4\`.:
+  1 | a: ['1', null, 2, 3, 4]
+
+`;
+
+exports[`invalid(14): a: [0xFF, '0x10'] 1`] = `
+
+  1 | a: [0xFF, '0x10']
+
+`;
+
+exports[`invalid(14): a: [0xFF, '0x10'] 2`] = `
+
+Message:
+> 1 | a: [0xFF, '0x10']
+    |           ^^^^^^ \`'0x10'\` is a string, but this array holds ints.
+
+Suggestion 1/1: Write it as \`0x10\`.:
+  1 | a: [0xFF, 0x10]
+
+`;
+
+exports[`invalid(15): a: [0o644, '0o755'] 1`] = `
+
+  1 | a: [0o644, '0o755']
+
+`;
+
+exports[`invalid(15): a: [0o644, '0o755'] 2`] = `
+
+Message:
+> 1 | a: [0o644, '0o755']
+    |            ^^^^^^^ \`'0o755'\` is a string, but this array holds ints.
+
+Suggestion 1/1: Write it as \`0o755\`.:
+  1 | a: [0o644, 0o755]
+
+`;
+
+exports[`invalid(16): a: [0b1, '0b10'] 1`] = `
+
+  1 | a: [0b1, '0b10']
+
+`;
+
+exports[`invalid(16): a: [0b1, '0b10'] 2`] = `
+
+Message:
+> 1 | a: [0b1, '0b10']
+    |          ^^^^^^ \`'0b10'\` is a string, but this array holds ints.
+
+Suggestion 1/1: Write it as \`0b10\`.:
+  1 | a: [0b1, 0b10]
+
+`;
+
+exports[`invalid(17): a: [1_000, '2_000'] 1`] = `
+
+  1 | a: [1_000, '2_000']
+
+`;
+
+exports[`invalid(17): a: [1_000, '2_000'] 2`] = `
+
+Message:
+> 1 | a: [1_000, '2_000']
+    |            ^^^^^^^ \`'2_000'\` is a string, but this array holds ints.
+
+Suggestion 1/1: Write it as \`2_000\`.:
+  1 | a: [1_000, 2_000]
+
+`;
+
+exports[`invalid(18): a: [-1, '-2'] 1`] = `
+
+  1 | a: [-1, '-2']
+
+`;
+
+exports[`invalid(18): a: [-1, '-2'] 2`] = `
+
+Message:
+> 1 | a: [-1, '-2']
+    |         ^^^^ \`'-2'\` is a string, but this array holds ints.
+
+Suggestion 1/1: Write it as \`-2\`.:
+  1 | a: [-1, -2]
+
+`;
+
+exports[`invalid(19): a: {ports: [80, '443']} 1`] = `
+
+  1 | a: {ports: [80, '443']}
+
+`;
+
+exports[`invalid(19): a: {ports: [80, '443']} 2`] = `
+
+Message:
+> 1 | a: {ports: [80, '443']}
+    |                 ^^^^^ \`'443'\` is a string, but this array holds ints.
+
+Suggestion 1/1: Write it as \`443\`.:
+  1 | a: {ports: [80, 443]}
+
+`;
+
+exports[`invalid(2): ports: ['80', 443] 1`] = `
+
+  1 | ports: ['80', 443]
+
+`;
+
+exports[`invalid(2): ports: ['80', 443] 2`] = `
+
+Message:
+> 1 | ports: ['80', 443]
+    |         ^^^^ \`'80'\` is a string, but this array holds ints.
+
+Suggestion 1/1: Write it as \`80\`.:
+  1 | ports: [80, 443]
+
+`;
+
+exports[`invalid(20): [80, '443'] 1`] = `
+
+  1 | [80, '443']
+
+`;
+
+exports[`invalid(20): [80, '443'] 2`] = `
+
+Message:
+> 1 | [80, '443']
+    |      ^^^^^ \`'443'\` is a string, but this array holds ints.
+
+Suggestion 1/1: Write it as \`443\`.:
+  1 | [80, 443]
+
+`;
+
+exports[`invalid(21): a: [[1, '2'], ['a', 'b']] 1`] = `
+
+  1 | a: [[1, '2'], ['a', 'b']]
+
+`;
+
+exports[`invalid(21): a: [[1, '2'], ['a', 'b']] 2`] = `
+
+Message:
+> 1 | a: [[1, '2'], ['a', 'b']]
+    |         ^^^ \`'2'\` is a string, but this array holds ints.
+
+Suggestion 1/1: Write it as \`2\`.:
+  1 | a: [[1, 2], ['a', 'b']]
+
+`;
+
+exports[`invalid(22): [1, '2', [3, '4']] 1`] = `
+
+  1 | [1, '2', [3, '4']]
+
+`;
+
+exports[`invalid(22): [1, '2', [3, '4']] 2`] = `
+
+Message:
+> 1 | [1, '2', [3, '4']]
+    |              ^^^ \`'4'\` is a string, but this array holds ints.
+
+Suggestion 1/1: Write it as \`4\`.:
+  1 | [1, '2', [3, 4]]
+
+`;
+
+exports[`invalid(23): ports: [\n\t80 # http\n\t'443' # https\n] 1`] = `
+
+  1 | ports: [
+  2 | 	80 # http
+  3 | 	'443' # https
+  4 | ]
+
+`;
+
+exports[`invalid(23): ports: [\n\t80 # http\n\t'443' # https\n] 2`] = `
+
+Message:
+  1 | ports: [
+  2 | 	80 # http
+> 3 | 	'443' # https
+    | 	^^^^^ \`'443'\` is a string, but this array holds ints.
+  4 | ]
+
+Suggestion 1/1: Write it as \`443\`.:
+  1 | ports: [
+  2 | 	80 # http
+  3 | 	443 # https
+  4 | ]
+
+`;
+
+exports[`invalid(3): ports: [80, \"443\"] 1`] = `
+
+  1 | ports: [80, "443"]
+
+`;
+
+exports[`invalid(3): ports: [80, \"443\"] 2`] = `
+
+Message:
+> 1 | ports: [80, "443"]
+    |             ^^^^^ \`"443"\` is a string, but this array holds ints.
+
+Suggestion 1/1: Write it as \`443\`.:
+  1 | ports: [80, 443]
+
+`;
+
+exports[`invalid(4): ports: [80, \"4\\u{34}3\"] 1`] = `
+
+  1 | ports: [80, "4\\u{34}3"]
+
+`;
+
+exports[`invalid(4): ports: [80, \"4\\u{34}3\"] 2`] = `
+
+Message:
+> 1 | ports: [80, "4\\u{34}3"]
+    |             ^^^^^^^^^^ \`"4\\u{34}3"\` is a string, but this array holds ints.
+
+Suggestion 1/1: Write it as \`443\`.:
+  1 | ports: [80, 443]
+
+`;
+
+exports[`invalid(5): ports: [80, /* https */ '443'] 1`] = `
+
+  1 | ports: [80, /* https */ '443']
+
+`;
+
+exports[`invalid(5): ports: [80, /* https */ '443'] 2`] = `
+
+Message:
+> 1 | ports: [80, /* https */ '443']
+    |                         ^^^^^ \`'443'\` is a string, but this array holds ints.
+
+Suggestion 1/1: Write it as \`443\`.:
+  1 | ports: [80, /* https */ 443]
+
+`;
+
+exports[`invalid(6): delays: [1s, '2s', 5s] 1`] = `
+
+  1 | delays: [1s, '2s', 5s]
+
+`;
+
+exports[`invalid(6): delays: [1s, '2s', 5s] 2`] = `
+
+Message:
+> 1 | delays: [1s, '2s', 5s]
+    |              ^^^^ \`'2s'\` is a string, but this array holds durations.
+
+Suggestion 1/1: Write it as \`2s\`.:
+  1 | delays: [1s, 2s, 5s]
+
+`;
+
+exports[`invalid(7): a: [1h30m, '90m'] 1`] = `
+
+  1 | a: [1h30m, '90m']
+
+`;
+
+exports[`invalid(7): a: [1h30m, '90m'] 2`] = `
+
+Message:
+> 1 | a: [1h30m, '90m']
+    |            ^^^^^ \`'90m'\` is a string, but this array holds durations.
+
+Suggestion 1/1: Write it as \`90m\`.:
+  1 | a: [1h30m, 90m]
+
+`;
+
+exports[`invalid(8): a: [1.5s, '2.5s'] 1`] = `
+
+  1 | a: [1.5s, '2.5s']
+
+`;
+
+exports[`invalid(8): a: [1.5s, '2.5s'] 2`] = `
+
+Message:
+> 1 | a: [1.5s, '2.5s']
+    |           ^^^^^^ \`'2.5s'\` is a string, but this array holds durations.
+
+Suggestion 1/1: Write it as \`2.5s\`.:
+  1 | a: [1.5s, 2.5s]
+
+`;
+
+exports[`invalid(9): a: [-1s, '-2s'] 1`] = `
+
+  1 | a: [-1s, '-2s']
+
+`;
+
+exports[`invalid(9): a: [-1s, '-2s'] 2`] = `
+
+Message:
+> 1 | a: [-1s, '-2s']
+    |          ^^^^^ \`'-2s'\` is a string, but this array holds durations.
+
+Suggestion 1/1: Write it as \`-2s\`.:
+  1 | a: [-1s, -2s]
+
+`;

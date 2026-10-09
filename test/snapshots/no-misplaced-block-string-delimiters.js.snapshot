@@ -1,0 +1,541 @@
+exports[`invalid(1): motd: '''\nWelcome!'''\nport: 8080\nbanner: '''\nBye\n''' 1`] = `
+
+  1 | motd: '''
+  2 | Welcome!'''
+  3 | port: 8080
+  4 | banner: '''
+  5 | Bye
+  6 | '''
+
+`;
+
+exports[`invalid(1): motd: '''\nWelcome!'''\nport: 8080\nbanner: '''\nBye\n''' 2`] = `
+
+Message:
+  1 | motd: '''
+> 2 | Welcome!'''
+    |         ^^^ This \`'''\` is content, because a block string only ends at a line that starts with its closing delimiter. Put the closing delimiter on its own line.
+  3 | port: 8080
+  4 | banner: '''
+  5 | Bye
+  6 | '''
+
+`;
+
+exports[`invalid(10): motd: '''\nWelcome!\\'''\nport: 8080\nbanner: '''\nBye\n''' 1`] = `
+
+  1 | motd: '''
+  2 | Welcome!\\'''
+  3 | port: 8080
+  4 | banner: '''
+  5 | Bye
+  6 | '''
+
+`;
+
+exports[`invalid(10): motd: '''\nWelcome!\\'''\nport: 8080\nbanner: '''\nBye\n''' 2`] = `
+
+Message:
+  1 | motd: '''
+> 2 | Welcome!\\'''
+    |          ^^^ This \`'''\` is content, because a block string only ends at a line that starts with its closing delimiter. Put the closing delimiter on its own line.
+  3 | port: 8080
+  4 | banner: '''
+  5 | Bye
+  6 | '''
+
+`;
+
+exports[`invalid(11): motd: '''\nWelcome!''' \t\nport: 8080\nbanner: '''\nBye\n''' 1`] = `
+
+  1 | motd: '''
+  2 | Welcome!''' 	
+  3 | port: 8080
+  4 | banner: '''
+  5 | Bye
+  6 | '''
+
+`;
+
+exports[`invalid(11): motd: '''\nWelcome!''' \t\nport: 8080\nbanner: '''\nBye\n''' 2`] = `
+
+Message:
+  1 | motd: '''
+> 2 | Welcome!''' 	
+    |         ^^^ This \`'''\` is content, because a block string only ends at a line that starts with its closing delimiter. Put the closing delimiter on its own line.
+  3 | port: 8080
+  4 | banner: '''
+  5 | Bye
+  6 | '''
+
+`;
+
+exports[`invalid(12): code: ''''\nx = ''''\ny\n'''' 1`] = `
+
+  1 | code: ''''
+  2 | x = ''''
+  3 | y
+  4 | ''''
+
+`;
+
+exports[`invalid(12): code: ''''\nx = ''''\ny\n'''' 2`] = `
+
+Message:
+  1 | code: ''''
+> 2 | x = ''''
+    |     ^^^^ This \`''''\` is content, because a block string only ends at a line that starts with its closing delimiter. Put the closing delimiter on its own line.
+  3 | y
+  4 | ''''
+
+`;
+
+exports[`invalid(13): motd: \"\"\"\nHe said \"hi\\\"\"\"\"\nport: 8080\nbanner: \"\"\"\nBye\n\"\"\" 1`] = `
+
+  1 | motd: """
+  2 | He said "hi\\""""
+  3 | port: 8080
+  4 | banner: """
+  5 | Bye
+  6 | """
+
+`;
+
+exports[`invalid(13): motd: \"\"\"\nHe said \"hi\\\"\"\"\"\nport: 8080\nbanner: \"\"\"\nBye\n\"\"\" 2`] = `
+
+Message:
+  1 | motd: """
+> 2 | He said "hi\\""""
+    |              ^^^ This \`"""\` is content, because a block string only ends at a line that starts with its closing delimiter. Put the closing delimiter on its own line.
+  3 | port: 8080
+  4 | banner: """
+  5 | Bye
+  6 | """
+
+`;
+
+exports[`invalid(14): motd: \"\"\"\"\nx\\\"\"\"\"\",\nport: 8080\n\"\"\"\" 1`] = `
+
+  1 | motd: """"
+  2 | x\\""""",
+  3 | port: 8080
+  4 | """"
+
+`;
+
+exports[`invalid(14): motd: \"\"\"\"\nx\\\"\"\"\"\",\nport: 8080\n\"\"\"\" 2`] = `
+
+Message:
+  1 | motd: """"
+> 2 | x\\""""",
+    |    ^^^^ This \`""""\` is content, because a block string only ends at a line that starts with its closing delimiter. Put the closing delimiter on its own line.
+  3 | port: 8080
+  4 | """"
+
+`;
+
+exports[`invalid(15): motd: \"\"\"\nx\\\\\\\"\"\"\"\nport: 8080\n\"\"\" 1`] = `
+
+  1 | motd: """
+  2 | x\\\\\\""""
+  3 | port: 8080
+  4 | """
+
+`;
+
+exports[`invalid(15): motd: \"\"\"\nx\\\\\\\"\"\"\"\nport: 8080\n\"\"\" 2`] = `
+
+Message:
+  1 | motd: """
+> 2 | x\\\\\\""""
+    |      ^^^ This \`"""\` is content, because a block string only ends at a line that starts with its closing delimiter. Put the closing delimiter on its own line.
+  3 | port: 8080
+  4 | """
+
+`;
+
+exports[`invalid(16): motd: '''\nWelcome!''' # greeting\nport: 8080\nbanner: '''\nBye\n''' 1`] = `
+
+  1 | motd: '''
+  2 | Welcome!''' # greeting
+  3 | port: 8080
+  4 | banner: '''
+  5 | Bye
+  6 | '''
+
+`;
+
+exports[`invalid(16): motd: '''\nWelcome!''' # greeting\nport: 8080\nbanner: '''\nBye\n''' 2`] = `
+
+Message:
+  1 | motd: '''
+> 2 | Welcome!''' # greeting
+    |         ^^^ This \`'''\` is content, because a block string only ends at a line that starts with its closing delimiter. Put the closing delimiter on its own line.
+  3 | port: 8080
+  4 | banner: '''
+  5 | Bye
+  6 | '''
+
+`;
+
+exports[`invalid(17): a: {m: '''\nHi'''}\nb: {n: '''\nx\n'''} 1`] = `
+
+  1 | a: {m: '''
+  2 | Hi'''}
+  3 | b: {n: '''
+  4 | x
+  5 | '''}
+
+`;
+
+exports[`invalid(17): a: {m: '''\nHi'''}\nb: {n: '''\nx\n'''} 2`] = `
+
+Message:
+  1 | a: {m: '''
+> 2 | Hi'''}
+    |   ^^^ This \`'''\` is content, because a block string only ends at a line that starts with its closing delimiter. Put the closing delimiter on its own line.
+  3 | b: {n: '''
+  4 | x
+  5 | '''}
+
+`;
+
+exports[`invalid(18): a: [\"\"\"\nx\"\"\"]\nb: [\"\"\"\ny\n\"\"\"] 1`] = `
+
+  1 | a: ["""
+  2 | x"""]
+  3 | b: ["""
+  4 | y
+  5 | """]
+
+`;
+
+exports[`invalid(18): a: [\"\"\"\nx\"\"\"]\nb: [\"\"\"\ny\n\"\"\"] 2`] = `
+
+Message:
+  1 | a: ["""
+> 2 | x"""]
+    |  ^^^ This \`"""\` is content, because a block string only ends at a line that starts with its closing delimiter. Put the closing delimiter on its own line.
+  3 | b: ["""
+  4 | y
+  5 | """]
+
+`;
+
+exports[`invalid(19): motd: [\n\t'''\n\tWelcome!''', # c\n\tport\n\t'''\n] 1`] = `
+
+  1 | motd: [
+  2 | 	'''
+  3 | 	Welcome!''', # c
+  4 | 	port
+  5 | 	'''
+  6 | ]
+
+`;
+
+exports[`invalid(19): motd: [\n\t'''\n\tWelcome!''', # c\n\tport\n\t'''\n] 2`] = `
+
+Message:
+  1 | motd: [
+  2 | 	'''
+> 3 | 	Welcome!''', # c
+    | 	        ^^^ This \`'''\` is content, because a block string only ends at a line that starts with its closing delimiter. Put the closing delimiter on its own line.
+  4 | 	port
+  5 | 	'''
+  6 | ]
+
+`;
+
+exports[`invalid(2): motd: \"\"\"\nWelcome!\"\"\"\nport: 8080\nbanner: \"\"\"\nBye\n\"\"\" 1`] = `
+
+  1 | motd: """
+  2 | Welcome!"""
+  3 | port: 8080
+  4 | banner: """
+  5 | Bye
+  6 | """
+
+`;
+
+exports[`invalid(2): motd: \"\"\"\nWelcome!\"\"\"\nport: 8080\nbanner: \"\"\"\nBye\n\"\"\" 2`] = `
+
+Message:
+  1 | motd: """
+> 2 | Welcome!"""
+    |         ^^^ This \`"""\` is content, because a block string only ends at a line that starts with its closing delimiter. Put the closing delimiter on its own line.
+  3 | port: 8080
+  4 | banner: """
+  5 | Bye
+  6 | """
+
+`;
+
+exports[`invalid(20): motd: '''\nWelcome!''' /* c */\nport: 8080\n''' 1`] = `
+
+  1 | motd: '''
+  2 | Welcome!''' /* c */
+  3 | port: 8080
+  4 | '''
+
+`;
+
+exports[`invalid(20): motd: '''\nWelcome!''' /* c */\nport: 8080\n''' 2`] = `
+
+Message:
+  1 | motd: '''
+> 2 | Welcome!''' /* c */
+    |         ^^^ This \`'''\` is content, because a block string only ends at a line that starts with its closing delimiter. Put the closing delimiter on its own line.
+  3 | port: 8080
+  4 | '''
+
+`;
+
+exports[`invalid(21): motd: '''\nWelcome!\nto the server\nBye!'''\nport: 8080\nbanner: '''\nx\n''' 1`] = `
+
+  1 | motd: '''
+  2 | Welcome!
+  3 | to the server
+  4 | Bye!'''
+  5 | port: 8080
+  6 | banner: '''
+  7 | x
+  8 | '''
+
+`;
+
+exports[`invalid(21): motd: '''\nWelcome!\nto the server\nBye!'''\nport: 8080\nbanner: '''\nx\n''' 2`] = `
+
+Message:
+  1 | motd: '''
+  2 | Welcome!
+  3 | to the server
+> 4 | Bye!'''
+    |     ^^^ This \`'''\` is content, because a block string only ends at a line that starts with its closing delimiter. Put the closing delimiter on its own line.
+  5 | port: 8080
+  6 | banner: '''
+  7 | x
+  8 | '''
+
+`;
+
+exports[`invalid(22): text: \"\"\"\nHe said \\\"\"\" and \"\"\"\n\"\"\" 1`] = `
+
+  1 | text: """
+  2 | He said \\""" and """
+  3 | """
+
+`;
+
+exports[`invalid(22): text: \"\"\"\nHe said \\\"\"\" and \"\"\"\n\"\"\" 2`] = `
+
+Message:
+  1 | text: """
+> 2 | He said \\""" and """
+    |                  ^^^ This \`"""\` is content, because a block string only ends at a line that starts with its closing delimiter. Put the closing delimiter on its own line.
+  3 | """
+
+`;
+
+exports[`invalid(23): text: \"\"\"\nHe said \\\"\"\" and \"\"\",\n\"\"\" 1`] = `
+
+  1 | text: """
+  2 | He said \\""" and """,
+  3 | """
+
+`;
+
+exports[`invalid(23): text: \"\"\"\nHe said \\\"\"\" and \"\"\",\n\"\"\" 2`] = `
+
+Message:
+  1 | text: """
+> 2 | He said \\""" and """,
+    |                  ^^^ This \`"""\` is content, because a block string only ends at a line that starts with its closing delimiter. Put the closing delimiter on its own line.
+  3 | """
+
+`;
+
+exports[`invalid(24): text: \"\"\"\nSay \\\"\"\"\" and \"\"\" and \"\"\"\n\"\"\" 1`] = `
+
+  1 | text: """
+  2 | Say \\"""" and """ and """
+  3 | """
+
+`;
+
+exports[`invalid(24): text: \"\"\"\nSay \\\"\"\"\" and \"\"\" and \"\"\"\n\"\"\" 2`] = `
+
+Message:
+  1 | text: """
+> 2 | Say \\"""" and """ and """
+    |                       ^^^ This \`"""\` is content, because a block string only ends at a line that starts with its closing delimiter. Put the closing delimiter on its own line.
+  3 | """
+
+`;
+
+exports[`invalid(3): server: {\n\tmotd: '''\n\tWelcome!'''\n\tport: 8080\n\tbanner: '''\n\tBye\n\t'''\n} 1`] = `
+
+  1 | server: {
+  2 | 	motd: '''
+  3 | 	Welcome!'''
+  4 | 	port: 8080
+  5 | 	banner: '''
+  6 | 	Bye
+  7 | 	'''
+  8 | }
+
+`;
+
+exports[`invalid(3): server: {\n\tmotd: '''\n\tWelcome!'''\n\tport: 8080\n\tbanner: '''\n\tBye\n\t'''\n} 2`] = `
+
+Message:
+  1 | server: {
+  2 | 	motd: '''
+> 3 | 	Welcome!'''
+    | 	        ^^^ This \`'''\` is content, because a block string only ends at a line that starts with its closing delimiter. Put the closing delimiter on its own line.
+  4 | 	port: 8080
+  5 | 	banner: '''
+  6 | 	Bye
+  7 | 	'''
+  8 | }
+
+`;
+
+exports[`invalid(4): items: [\n\t'''\n\tone''',\n\t'''\n] 1`] = `
+
+  1 | items: [
+  2 | 	'''
+  3 | 	one''',
+  4 | 	'''
+  5 | ]
+
+`;
+
+exports[`invalid(4): items: [\n\t'''\n\tone''',\n\t'''\n] 2`] = `
+
+Message:
+  1 | items: [
+  2 | 	'''
+> 3 | 	one''',
+    | 	   ^^^ This \`'''\` is content, because a block string only ends at a line that starts with its closing delimiter. Put the closing delimiter on its own line.
+  4 | 	'''
+  5 | ]
+
+`;
+
+exports[`invalid(5): [\n\t'''\n\tone'''\n\t'''\n] 1`] = `
+
+  1 | [
+  2 | 	'''
+  3 | 	one'''
+  4 | 	'''
+  5 | ]
+
+`;
+
+exports[`invalid(5): [\n\t'''\n\tone'''\n\t'''\n] 2`] = `
+
+Message:
+  1 | [
+  2 | 	'''
+> 3 | 	one'''
+    | 	   ^^^ This \`'''\` is content, because a block string only ends at a line that starts with its closing delimiter. Put the closing delimiter on its own line.
+  4 | 	'''
+  5 | ]
+
+`;
+
+exports[`invalid(6): text: '''\nSay '''hi''' then'''\nport: 8080\nbanner: '''\nBye\n''' 1`] = `
+
+  1 | text: '''
+  2 | Say '''hi''' then'''
+  3 | port: 8080
+  4 | banner: '''
+  5 | Bye
+  6 | '''
+
+`;
+
+exports[`invalid(6): text: '''\nSay '''hi''' then'''\nport: 8080\nbanner: '''\nBye\n''' 2`] = `
+
+Message:
+  1 | text: '''
+> 2 | Say '''hi''' then'''
+    |                  ^^^ This \`'''\` is content, because a block string only ends at a line that starts with its closing delimiter. Put the closing delimiter on its own line.
+  3 | port: 8080
+  4 | banner: '''
+  5 | Bye
+  6 | '''
+
+`;
+
+exports[`invalid(7): text: '''\nx'''' y'''\nport: 8080\nbanner: '''\nBye\n''' 1`] = `
+
+  1 | text: '''
+  2 | x'''' y'''
+  3 | port: 8080
+  4 | banner: '''
+  5 | Bye
+  6 | '''
+
+`;
+
+exports[`invalid(7): text: '''\nx'''' y'''\nport: 8080\nbanner: '''\nBye\n''' 2`] = `
+
+Message:
+  1 | text: '''
+> 2 | x'''' y'''
+    |        ^^^ This \`'''\` is content, because a block string only ends at a line that starts with its closing delimiter. Put the closing delimiter on its own line.
+  3 | port: 8080
+  4 | banner: '''
+  5 | Bye
+  6 | '''
+
+`;
+
+exports[`invalid(8): motd: \"\"\"\nC:\\\\\"\"\"\nport: 8080\nbanner: \"\"\"\nBye\n\"\"\" 1`] = `
+
+  1 | motd: """
+  2 | C:\\\\"""
+  3 | port: 8080
+  4 | banner: """
+  5 | Bye
+  6 | """
+
+`;
+
+exports[`invalid(8): motd: \"\"\"\nC:\\\\\"\"\"\nport: 8080\nbanner: \"\"\"\nBye\n\"\"\" 2`] = `
+
+Message:
+  1 | motd: """
+> 2 | C:\\\\"""
+    |     ^^^ This \`"""\` is content, because a block string only ends at a line that starts with its closing delimiter. Put the closing delimiter on its own line.
+  3 | port: 8080
+  4 | banner: """
+  5 | Bye
+  6 | """
+
+`;
+
+exports[`invalid(9): motd: \"\"\"\nx\\\\\\\\\"\"\"\nport: 8080\nbanner: \"\"\"\nBye\n\"\"\" 1`] = `
+
+  1 | motd: """
+  2 | x\\\\\\\\"""
+  3 | port: 8080
+  4 | banner: """
+  5 | Bye
+  6 | """
+
+`;
+
+exports[`invalid(9): motd: \"\"\"\nx\\\\\\\\\"\"\"\nport: 8080\nbanner: \"\"\"\nBye\n\"\"\" 2`] = `
+
+Message:
+  1 | motd: """
+> 2 | x\\\\\\\\"""
+    |      ^^^ This \`"""\` is content, because a block string only ends at a line that starts with its closing delimiter. Put the closing delimiter on its own line.
+  3 | port: 8080
+  4 | banner: """
+  5 | Bye
+  6 | """
+
+`;

@@ -1,0 +1,186 @@
+exports[`invalid(1): releaseDate: 1 1`] = `
+
+  1 | releaseDate: 1
+
+`;
+
+exports[`invalid(1): releaseDate: 1 2`] = `
+
+Message:
+> 1 | releaseDate: 1
+    | ^^^^^^^^^^^ The key \`releaseDate\` is not in kebab-case.
+
+`;
+
+exports[`invalid(10): release__date: 1 1`] = `
+
+Options:
+- case: 'snake_case'
+
+Code:
+  1 | release__date: 1
+
+`;
+
+exports[`invalid(10): release__date: 1 2`] = `
+
+Message:
+> 1 | release__date: 1
+    | ^^^^^^^^^^^^^ The key \`release__date\` is not in snake_case.
+
+`;
+
+exports[`invalid(11): _private: 1\nfooBar: 2 1`] = `
+
+Options:
+- ignore:
+    - '^_'
+
+Code:
+  1 | _private: 1
+  2 | fooBar: 2
+
+`;
+
+exports[`invalid(11): _private: 1\nfooBar: 2 2`] = `
+
+Message:
+  1 | _private: 1
+> 2 | fooBar: 2
+    | ^^^^^^ The key \`fooBar\` is not in kebab-case.
+
+`;
+
+exports[`invalid(12): [{fooBar: 1}] 1`] = `
+
+  1 | [{fooBar: 1}]
+
+`;
+
+exports[`invalid(12): [{fooBar: 1}] 2`] = `
+
+Message:
+> 1 | [{fooBar: 1}]
+    |   ^^^^^^ The key \`fooBar\` is not in kebab-case.
+
+`;
+
+exports[`invalid(2): release_date: 1 1`] = `
+
+  1 | release_date: 1
+
+`;
+
+exports[`invalid(2): release_date: 1 2`] = `
+
+Message:
+> 1 | release_date: 1
+    | ^^^^^^^^^^^^ The key \`release_date\` is not in kebab-case.
+
+`;
+
+exports[`invalid(3): _private: 1 1`] = `
+
+  1 | _private: 1
+
+`;
+
+exports[`invalid(3): _private: 1 2`] = `
+
+Message:
+> 1 | _private: 1
+    | ^^^^^^^^ The key \`_private\` is not in kebab-case.
+
+`;
+
+exports[`invalid(4): -foo: 1 1`] = `
+
+  1 | -foo: 1
+
+`;
+
+exports[`invalid(4): -foo: 1 2`] = `
+
+Message:
+> 1 | -foo: 1
+    | ^^^^ The key \`-foo\` is not in kebab-case.
+
+`;
+
+exports[`invalid(5): a--b: 1 1`] = `
+
+  1 | a--b: 1
+
+`;
+
+exports[`invalid(5): a--b: 1 2`] = `
+
+Message:
+> 1 | a--b: 1
+    | ^^^^ The key \`a--b\` is not in kebab-case.
+
+`;
+
+exports[`invalid(6): logging: {fileSink: 1} 1`] = `
+
+  1 | logging: {fileSink: 1}
+
+`;
+
+exports[`invalid(6): logging: {fileSink: 1} 2`] = `
+
+Message:
+> 1 | logging: {fileSink: 1}
+    |           ^^^^^^^^ The key \`fileSink\` is not in kebab-case.
+
+`;
+
+exports[`invalid(7): a: {B: 1} 1`] = `
+
+  1 | a: {B: 1}
+
+`;
+
+exports[`invalid(7): a: {B: 1} 2`] = `
+
+Message:
+> 1 | a: {B: 1}
+    |     ^ The key \`B\` is not in kebab-case.
+
+`;
+
+exports[`invalid(8): release-date: 1 1`] = `
+
+Options:
+- case: 'camelCase'
+
+Code:
+  1 | release-date: 1
+
+`;
+
+exports[`invalid(8): release-date: 1 2`] = `
+
+Message:
+> 1 | release-date: 1
+    | ^^^^^^^^^^^^ The key \`release-date\` is not in camelCase.
+
+`;
+
+exports[`invalid(9): releaseDate: 1 1`] = `
+
+Options:
+- case: 'PascalCase'
+
+Code:
+  1 | releaseDate: 1
+
+`;
+
+exports[`invalid(9): releaseDate: 1 2`] = `
+
+Message:
+> 1 | releaseDate: 1
+    | ^^^^^^^^^^^ The key \`releaseDate\` is not in PascalCase.
+
+`;

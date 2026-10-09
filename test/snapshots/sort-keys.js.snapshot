@@ -1,0 +1,667 @@
+exports[`invalid(1): b: 1\na: 2 1`] = `
+
+  1 | b: 1
+  2 | a: 2
+
+`;
+
+exports[`invalid(1): b: 1\na: 2 2`] = `
+
+Message:
+  1 | b: 1
+> 2 | a: 2
+    | ^ Expected keys to be in code point case-sensitive ascending order. \`a\` should be before \`b\`.
+
+Output:
+  1 | a: 2
+  2 | b: 1
+
+`;
+
+exports[`invalid(10): B: 1\na: 2 1`] = `
+
+Options:
+- 'asc'
+- caseSensitive: false
+
+Code:
+  1 | B: 1
+  2 | a: 2
+
+`;
+
+exports[`invalid(10): B: 1\na: 2 2`] = `
+
+Message:
+  1 | B: 1
+> 2 | a: 2
+    | ^ Expected keys to be in code point case-insensitive ascending order. \`a\` should be before \`B\`.
+
+Output:
+  1 | a: 2
+  2 | B: 1
+
+`;
+
+exports[`invalid(11): \"\\u{1f600}\": 1\n\"\\u{ff61}\": 2 1`] = `
+
+  1 | "\\u{1f600}": 1
+  2 | "\\u{ff61}": 2
+
+`;
+
+exports[`invalid(11): \"\\u{1f600}\": 1\n\"\\u{ff61}\": 2 2`] = `
+
+Message:
+  1 | "\\u{1f600}": 1
+> 2 | "\\u{ff61}": 2
+    | ^^^^^^^^^^ Expected keys to be in code point case-sensitive ascending order. \`"\\u{ff61}"\` should be before \`"\\u{1f600}"\`.
+
+Output:
+  1 | "\\u{ff61}": 2
+  2 | "\\u{1f600}": 1
+
+`;
+
+exports[`invalid(12): b: 1 # About b\na: 2 1`] = `
+
+  1 | b: 1 # About b
+  2 | a: 2
+
+`;
+
+exports[`invalid(12): b: 1 # About b\na: 2 2`] = `
+
+Message:
+  1 | b: 1 # About b
+> 2 | a: 2
+    | ^ Expected keys to be in code point case-sensitive ascending order. \`a\` should be before \`b\`.
+
+`;
+
+exports[`invalid(13): # About b\nb: 1\na: 2 1`] = `
+
+  1 | # About b
+  2 | b: 1
+  3 | a: 2
+
+`;
+
+exports[`invalid(13): # About b\nb: 1\na: 2 2`] = `
+
+Message:
+  1 | # About b
+  2 | b: 1
+> 3 | a: 2
+    | ^ Expected keys to be in code point case-sensitive ascending order. \`a\` should be before \`b\`.
+
+`;
+
+exports[`invalid(14): b: 1\n# Not a blank line\na: 2 1`] = `
+
+Options:
+- 'asc'
+- allowLineSeparatedGroups: true
+
+Code:
+  1 | b: 1
+  2 | # Not a blank line
+  3 | a: 2
+
+`;
+
+exports[`invalid(14): b: 1\n# Not a blank line\na: 2 2`] = `
+
+Message:
+  1 | b: 1
+  2 | # Not a blank line
+> 3 | a: 2
+    | ^ Expected keys to be in code point case-sensitive ascending order. \`a\` should be before \`b\`.
+
+`;
+
+exports[`invalid(15): b: 1\n/*\n\n*/\na: 2 1`] = `
+
+Options:
+- 'asc'
+- allowLineSeparatedGroups: true
+
+Code:
+  1 | b: 1
+  2 | /*
+  3 |
+  4 | */
+  5 | a: 2
+
+`;
+
+exports[`invalid(15): b: 1\n/*\n\n*/\na: 2 2`] = `
+
+Message:
+  1 | b: 1
+  2 | /*
+  3 |
+  4 | */
+> 5 | a: 2
+    | ^ Expected keys to be in code point case-sensitive ascending order. \`a\` should be before \`b\`.
+
+`;
+
+exports[`invalid(16): a: {\n\tc: [1, 2],\n\tb: {\n\t\ty: 1,\n\t},\n} 1`] = `
+
+  1 | a: {
+  2 | 	c: [1, 2],
+  3 | 	b: {
+  4 | 		y: 1,
+  5 | 	},
+  6 | }
+
+`;
+
+exports[`invalid(16): a: {\n\tc: [1, 2],\n\tb: {\n\t\ty: 1,\n\t},\n} 2`] = `
+
+Message:
+  1 | a: {
+  2 | 	c: [1, 2],
+> 3 | 	b: {
+    | 	^ Expected keys to be in code point case-sensitive ascending order. \`b\` should be before \`c\`.
+  4 | 		y: 1,
+  5 | 	},
+  6 | }
+
+Output:
+  1 | a: {
+  2 | 	b: {
+  3 | 		y: 1,
+  4 | 	},
+  5 | 	c: [1, 2],
+  6 | }
+
+`;
+
+exports[`invalid(17): id9007199254740993: 1\nid9007199254740992: 2 1`] = `
+
+Options:
+- 'asc'
+- natural: true
+
+Code:
+  1 | id9007199254740993: 1
+  2 | id9007199254740992: 2
+
+`;
+
+exports[`invalid(17): id9007199254740993: 1\nid9007199254740992: 2 2`] = `
+
+Message:
+  1 | id9007199254740993: 1
+> 2 | id9007199254740992: 2
+    | ^^^^^^^^^^^^^^^^^^ Expected keys to be in natural case-sensitive ascending order. \`id9007199254740992\` should be before \`id9007199254740993\`.
+
+Output:
+  1 | id9007199254740992: 2
+  2 | id9007199254740993: 1
+
+`;
+
+exports[`invalid(18): 12345678901234567891: 1\n12345678901234567890: 2 1`] = `
+
+Options:
+- 'asc'
+- natural: true
+
+Code:
+  1 | 12345678901234567891: 1
+  2 | 12345678901234567890: 2
+
+`;
+
+exports[`invalid(18): 12345678901234567891: 1\n12345678901234567890: 2 2`] = `
+
+Message:
+  1 | 12345678901234567891: 1
+> 2 | 12345678901234567890: 2
+    | ^^^^^^^^^^^^^^^^^^^^ Expected keys to be in natural case-sensitive ascending order. \`12345678901234567890\` should be before \`12345678901234567891\`.
+
+Output:
+  1 | 12345678901234567890: 2
+  2 | 12345678901234567891: 1
+
+`;
+
+exports[`invalid(19): a010: 1\na9: 2 1`] = `
+
+Options:
+- 'asc'
+- natural: true
+
+Code:
+  1 | a010: 1
+  2 | a9: 2
+
+`;
+
+exports[`invalid(19): a010: 1\na9: 2 2`] = `
+
+Message:
+  1 | a010: 1
+> 2 | a9: 2
+    | ^^ Expected keys to be in natural case-sensitive ascending order. \`a9\` should be before \`a010\`.
+
+Output:
+  1 | a9: 2
+  2 | a010: 1
+
+`;
+
+exports[`invalid(2): a: {c: 1, b: 2} 1`] = `
+
+  1 | a: {c: 1, b: 2}
+
+`;
+
+exports[`invalid(2): a: {c: 1, b: 2} 2`] = `
+
+Message:
+> 1 | a: {c: 1, b: 2}
+    |           ^ Expected keys to be in code point case-sensitive ascending order. \`b\` should be before \`c\`.
+
+Output:
+  1 | a: {b: 2, c: 1}
+
+`;
+
+exports[`invalid(20): a_b: 1\na-b: 2 1`] = `
+
+Options:
+- 'asc'
+- natural: true
+
+Code:
+  1 | a_b: 1
+  2 | a-b: 2
+
+`;
+
+exports[`invalid(20): a_b: 1\na-b: 2 2`] = `
+
+Message:
+  1 | a_b: 1
+> 2 | a-b: 2
+    | ^^^ Expected keys to be in natural case-sensitive ascending order. \`a-b\` should be before \`a_b\`.
+
+Output:
+  1 | a-b: 2
+  2 | a_b: 1
+
+`;
+
+exports[`invalid(21): \"\\u{1f600}\": 1\n\"\\u{ff61}\": 2 1`] = `
+
+Options:
+- 'asc'
+- natural: true
+
+Code:
+  1 | "\\u{1f600}": 1
+  2 | "\\u{ff61}": 2
+
+`;
+
+exports[`invalid(21): \"\\u{1f600}\": 1\n\"\\u{ff61}\": 2 2`] = `
+
+Message:
+  1 | "\\u{1f600}": 1
+> 2 | "\\u{ff61}": 2
+    | ^^^^^^^^^^ Expected keys to be in natural case-sensitive ascending order. \`"\\u{ff61}"\` should be before \`"\\u{1f600}"\`.
+
+Output:
+  1 | "\\u{ff61}": 2
+  2 | "\\u{1f600}": 1
+
+`;
+
+exports[`invalid(22): a1: 1\na01: 2 1`] = `
+
+Options:
+- 'asc'
+- natural: true
+
+Code:
+  1 | a1: 1
+  2 | a01: 2
+
+`;
+
+exports[`invalid(22): a1: 1\na01: 2 2`] = `
+
+Message:
+  1 | a1: 1
+> 2 | a01: 2
+    | ^^^ Expected keys to be in natural case-sensitive ascending order. \`a01\` should be before \`a1\`.
+
+Output:
+  1 | a01: 2
+  2 | a1: 1
+
+`;
+
+exports[`invalid(23): id9007199254740993a: 1\nid9007199254740992b: 2 1`] = `
+
+Options:
+- 'asc'
+- natural: true
+
+Code:
+  1 | id9007199254740993a: 1
+  2 | id9007199254740992b: 2
+
+`;
+
+exports[`invalid(23): id9007199254740993a: 1\nid9007199254740992b: 2 2`] = `
+
+Message:
+  1 | id9007199254740993a: 1
+> 2 | id9007199254740992b: 2
+    | ^^^^^^^^^^^^^^^^^^^ Expected keys to be in natural case-sensitive ascending order. \`id9007199254740992b\` should be before \`id9007199254740993a\`.
+
+Output:
+  1 | id9007199254740992b: 2
+  2 | id9007199254740993a: 1
+
+`;
+
+exports[`invalid(24): '😀2': 1\n'😀10': 2\n'😀1': 3 1`] = `
+
+Options:
+- 'asc'
+- natural: true
+
+Code:
+  1 | '😀2': 1
+  2 | '😀10': 2
+  3 | '😀1': 3
+
+`;
+
+exports[`invalid(24): '😀2': 1\n'😀10': 2\n'😀1': 3 2`] = `
+
+Message:
+  1 | '😀2': 1
+  2 | '😀10': 2
+> 3 | '😀1': 3
+    | ^^^^^ Expected keys to be in natural case-sensitive ascending order. \`'😀1'\` should be before \`'😀10'\`.
+
+Output:
+  1 | '😀1': 3
+  2 | '😀2': 1
+  3 | '😀10': 2
+
+`;
+
+exports[`invalid(25): b: 1\na: 2\n\nc: 3 1`] = `
+
+Options:
+- 'asc'
+- allowLineSeparatedGroups: true
+
+Code:
+  1 | b: 1
+  2 | a: 2
+  3 |
+  4 | c: 3
+
+`;
+
+exports[`invalid(25): b: 1\na: 2\n\nc: 3 2`] = `
+
+Message:
+  1 | b: 1
+> 2 | a: 2
+    | ^ Expected keys to be in code point case-sensitive ascending order. \`a\` should be before \`b\`.
+  3 |
+  4 | c: 3
+
+Output:
+  1 | a: 2
+  2 | b: 1
+  3 |
+  4 | c: 3
+
+`;
+
+exports[`invalid(26): b: 1\n\na: 2 1`] = `
+
+  1 | b: 1
+  2 |
+  3 | a: 2
+
+`;
+
+exports[`invalid(26): b: 1\n\na: 2 2`] = `
+
+Message:
+  1 | b: 1
+  2 |
+> 3 | a: 2
+    | ^ Expected keys to be in code point case-sensitive ascending order. \`a\` should be before \`b\`.
+
+Output:
+  1 | a: 2
+  2 |
+  3 | b: 1
+
+`;
+
+exports[`invalid(27): ab: 1\na: 2\nabc: 3 1`] = `
+
+Options:
+- 'asc'
+- natural: true
+
+Code:
+  1 | ab: 1
+  2 | a: 2
+  3 | abc: 3
+
+`;
+
+exports[`invalid(27): ab: 1\na: 2\nabc: 3 2`] = `
+
+Message:
+  1 | ab: 1
+> 2 | a: 2
+    | ^ Expected keys to be in natural case-sensitive ascending order. \`a\` should be before \`ab\`.
+  3 | abc: 3
+
+Output:
+  1 | a: 2
+  2 | ab: 1
+  3 | abc: 3
+
+`;
+
+exports[`invalid(28): a: {'‮A': 1, z: 2} 1`] = `
+
+  1 | a: {'‮A': 1, z: 2}
+
+`;
+
+exports[`invalid(28): a: {'‮A': 1, z: 2} 2`] = `
+
+Message:
+> 1 | a: {'‮A': 1, z: 2}
+    |              ^ Expected keys to be in code point case-sensitive ascending order. \`z\` should be before \`'\\u{202e}A'\`.
+
+Output:
+  1 | a: {z: 2, '‮A': 1}
+
+`;
+
+exports[`invalid(3): a: {\n\tc: 1\n\tb: 2\n} 1`] = `
+
+  1 | a: {
+  2 | 	c: 1
+  3 | 	b: 2
+  4 | }
+
+`;
+
+exports[`invalid(3): a: {\n\tc: 1\n\tb: 2\n} 2`] = `
+
+Message:
+  1 | a: {
+  2 | 	c: 1
+> 3 | 	b: 2
+    | 	^ Expected keys to be in code point case-sensitive ascending order. \`b\` should be before \`c\`.
+  4 | }
+
+Output:
+  1 | a: {
+  2 | 	b: 2
+  3 | 	c: 1
+  4 | }
+
+`;
+
+exports[`invalid(4): b: 1\n'a': 2 1`] = `
+
+  1 | b: 1
+  2 | 'a': 2
+
+`;
+
+exports[`invalid(4): b: 1\n'a': 2 2`] = `
+
+Message:
+  1 | b: 1
+> 2 | 'a': 2
+    | ^^^ Expected keys to be in code point case-sensitive ascending order. \`'a'\` should be before \`b\`.
+
+Output:
+  1 | 'a': 2
+  2 | b: 1
+
+`;
+
+exports[`invalid(5): 'b.c': 1\na: 2 1`] = `
+
+  1 | 'b.c': 1
+  2 | a: 2
+
+`;
+
+exports[`invalid(5): 'b.c': 1\na: 2 2`] = `
+
+Message:
+  1 | 'b.c': 1
+> 2 | a: 2
+    | ^ Expected keys to be in code point case-sensitive ascending order. \`a\` should be before \`'b.c'\`.
+
+Output:
+  1 | a: 2
+  2 | 'b.c': 1
+
+`;
+
+exports[`invalid(6): a: 1\nB: 2 1`] = `
+
+  1 | a: 1
+  2 | B: 2
+
+`;
+
+exports[`invalid(6): a: 1\nB: 2 2`] = `
+
+Message:
+  1 | a: 1
+> 2 | B: 2
+    | ^ Expected keys to be in code point case-sensitive ascending order. \`B\` should be before \`a\`.
+
+Output:
+  1 | B: 2
+  2 | a: 1
+
+`;
+
+exports[`invalid(7): c: 1\nb: 2\na: 3 1`] = `
+
+  1 | c: 1
+  2 | b: 2
+  3 | a: 3
+
+`;
+
+exports[`invalid(7): c: 1\nb: 2\na: 3 2`] = `
+
+Message:
+  1 | c: 1
+> 2 | b: 2
+    | ^ Expected keys to be in code point case-sensitive ascending order. \`b\` should be before \`c\`.
+  3 | a: 3
+
+Output:
+  1 | a: 3
+  2 | b: 2
+  3 | c: 1
+
+`;
+
+exports[`invalid(7): c: 1\nb: 2\na: 3 3`] = `
+
+Message:
+  1 | c: 1
+  2 | b: 2
+> 3 | a: 3
+    | ^ Expected keys to be in code point case-sensitive ascending order. \`a\` should be before \`b\`.
+
+`;
+
+exports[`invalid(8): a: 1\nb: 2 1`] = `
+
+Options:
+- 'desc'
+
+Code:
+  1 | a: 1
+  2 | b: 2
+
+`;
+
+exports[`invalid(8): a: 1\nb: 2 2`] = `
+
+Message:
+  1 | a: 1
+> 2 | b: 2
+    | ^ Expected keys to be in code point case-sensitive descending order. \`b\` should be before \`a\`.
+
+Output:
+  1 | b: 2
+  2 | a: 1
+
+`;
+
+exports[`invalid(9): a10: 1\na2: 2 1`] = `
+
+Options:
+- 'asc'
+- natural: true
+
+Code:
+  1 | a10: 1
+  2 | a2: 2
+
+`;
+
+exports[`invalid(9): a10: 1\na2: 2 2`] = `
+
+Message:
+  1 | a10: 1
+> 2 | a2: 2
+    | ^^ Expected keys to be in natural case-sensitive ascending order. \`a2\` should be before \`a10\`.
+
+Output:
+  1 | a2: 2
+  2 | a10: 1
+
+`;

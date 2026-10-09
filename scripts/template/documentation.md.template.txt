@@ -1,0 +1,16 @@
+# Rule title
+
+<!-- end auto-generated rule header -->
+<!-- Do not manually modify this header. Run: `npm run fix:eslint-docs` -->
+
+<!-- Remove this comment, add more detailed description. -->
+
+## Examples
+
+```soml
+# ❌
+name: "unicorn"
+
+# ✅
+name: 'unicorn'
+```

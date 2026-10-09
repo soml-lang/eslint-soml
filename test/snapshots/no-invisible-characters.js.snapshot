@@ -1,0 +1,808 @@
+exports[`invalid(1): name: 'Ada Lovelace' 1`] = `
+
+  1 | name: 'Ada Lovelace'
+
+`;
+
+exports[`invalid(1): name: 'Ada Lovelace' 2`] = `
+
+Message:
+> 1 | name: 'Ada Lovelace'
+    |           ^ The character U+00A0 is invisible or looks like a space. Write it as an escape, \`\\u{a0}\`.
+
+Output:
+  1 | name: "Ada\\u{a0}Lovelace"
+
+`;
+
+exports[`invalid(10): a: \"　\\n\" 1`] = `
+
+  1 | a: "　\\n"
+
+`;
+
+exports[`invalid(10): a: \"　\\n\" 2`] = `
+
+Message:
+> 1 | a: "　\\n"
+    |     ^ The character U+3000 is invisible or looks like a space. Write it as an escape, \`\\u{3000}\`.
+
+Output:
+  1 | a: "\\u{3000}\\n"
+
+`;
+
+exports[`invalid(11): 'a b': 1 1`] = `
+
+  1 | 'a b': 1
+
+`;
+
+exports[`invalid(11): 'a b': 1 2`] = `
+
+Message:
+> 1 | 'a b': 1
+    |   ^ The character U+00A0 is invisible or looks like a space. Write it as an escape, \`\\u{a0}\`.
+
+Output:
+  1 | "a\\u{a0}b": 1
+
+`;
+
+exports[`invalid(12): a: 'tab\there' 1`] = `
+
+  1 | a: 'tab	here'
+
+`;
+
+exports[`invalid(12): a: 'tab\there' 2`] = `
+
+Message:
+> 1 | a: 'tab	here'
+    |        ^ The character U+0009 is invisible or looks like a space. Write it as an escape, \`\\t\`.
+
+Output:
+  1 | a: "tab\\there"
+
+`;
+
+exports[`invalid(13): a: \"tab\there\" 1`] = `
+
+  1 | a: "tab	here"
+
+`;
+
+exports[`invalid(13): a: \"tab\there\" 2`] = `
+
+Message:
+> 1 | a: "tab	here"
+    |        ^ The character U+0009 is invisible or looks like a space. Write it as an escape, \`\\t\`.
+
+Output:
+  1 | a: "tab\\there"
+
+`;
+
+exports[`invalid(14): a: \"a\\\\\t\" 1`] = `
+
+  1 | a: "a\\\\	"
+
+`;
+
+exports[`invalid(14): a: \"a\\\\\t\" 2`] = `
+
+Message:
+> 1 | a: "a\\\\	"
+    |        ^ The character U+0009 is invisible or looks like a space. Write it as an escape, \`\\t\`.
+
+Output:
+  1 | a: "a\\\\\\t"
+
+`;
+
+exports[`invalid(15): a: '\t' 1`] = `
+
+  1 | a: '	'
+
+`;
+
+exports[`invalid(15): a: '\t' 2`] = `
+
+Message:
+> 1 | a: '	'
+    |     ^ The character U+0009 is invisible or looks like a space. Write it as an escape, \`\\t\`.
+
+Output:
+  1 | a: "\\t"
+
+`;
+
+exports[`invalid(16): a: \"\t\t\" 1`] = `
+
+  1 | a: "		"
+
+`;
+
+exports[`invalid(16): a: \"\t\t\" 2`] = `
+
+Message:
+> 1 | a: "		"
+    |     ^ The character U+0009 is invisible or looks like a space. Write it as an escape, \`\\t\`.
+
+Output:
+  1 | a: "\\t	"
+
+`;
+
+exports[`invalid(16): a: \"\t\t\" 3`] = `
+
+Message:
+> 1 | a: "		"
+    |     	^ The character U+0009 is invisible or looks like a space. Write it as an escape, \`\\t\`.
+
+Output:
+  1 | a: "	\\t"
+
+`;
+
+exports[`invalid(17): a: ['x\ty', \"x\ty\"] 1`] = `
+
+  1 | a: ['x	y', "x	y"]
+
+`;
+
+exports[`invalid(17): a: ['x\ty', \"x\ty\"] 2`] = `
+
+Message:
+> 1 | a: ['x	y', "x	y"]
+    |       ^ The character U+0009 is invisible or looks like a space. Write it as an escape, \`\\t\`.
+
+Output:
+  1 | a: ["x\\ty", "x	y"]
+
+`;
+
+exports[`invalid(17): a: ['x\ty', \"x\ty\"] 3`] = `
+
+Message:
+> 1 | a: ['x	y', "x	y"]
+    |       	      ^ The character U+0009 is invisible or looks like a space. Write it as an escape, \`\\t\`.
+
+Output:
+  1 | a: ['x	y', "x\\ty"]
+
+`;
+
+exports[`invalid(18): 'a\tb': 1 1`] = `
+
+  1 | 'a	b': 1
+
+`;
+
+exports[`invalid(18): 'a\tb': 1 2`] = `
+
+Message:
+> 1 | 'a	b': 1
+    |   ^ The character U+0009 is invisible or looks like a space. Write it as an escape, \`\\t\`.
+
+Output:
+  1 | "a\\tb": 1
+
+`;
+
+exports[`invalid(19): \"a\tb\": 1 1`] = `
+
+  1 | "a	b": 1
+
+`;
+
+exports[`invalid(19): \"a\tb\": 1 2`] = `
+
+Message:
+> 1 | "a	b": 1
+    |   ^ The character U+0009 is invisible or looks like a space. Write it as an escape, \`\\t\`.
+
+Output:
+  1 | "a\\tb": 1
+
+`;
+
+exports[`invalid(2): name: \"Ada Lovelace\" 1`] = `
+
+  1 | name: "Ada Lovelace"
+
+`;
+
+exports[`invalid(2): name: \"Ada Lovelace\" 2`] = `
+
+Message:
+> 1 | name: "Ada Lovelace"
+    |           ^ The character U+00A0 is invisible or looks like a space. Write it as an escape, \`\\u{a0}\`.
+
+Output:
+  1 | name: "Ada\\u{a0}Lovelace"
+
+`;
+
+exports[`invalid(20): a: {'\tb': 1} 1`] = `
+
+  1 | a: {'	b': 1}
+
+`;
+
+exports[`invalid(20): a: {'\tb': 1} 2`] = `
+
+Message:
+> 1 | a: {'	b': 1}
+    |      ^ The character U+0009 is invisible or looks like a space. Write it as an escape, \`\\t\`.
+
+Output:
+  1 | a: {"\\tb": 1}
+
+`;
+
+exports[`invalid(21): a: 'x\ty z\tw' 1`] = `
+
+  1 | a: 'x	y z	w'
+
+`;
+
+exports[`invalid(21): a: 'x\ty z\tw' 2`] = `
+
+Message:
+> 1 | a: 'x	y z	w'
+    |      ^ The character U+0009 is invisible or looks like a space. Write it as an escape, \`\\t\`.
+
+Output:
+  1 | a: "x\\ty\\u{a0}z\\tw"
+
+`;
+
+exports[`invalid(21): a: 'x\ty z\tw' 3`] = `
+
+Message:
+> 1 | a: 'x	y z	w'
+    |      	 ^ The character U+00A0 is invisible or looks like a space. Write it as an escape, \`\\u{a0}\`.
+
+`;
+
+exports[`invalid(21): a: 'x\ty z\tw' 4`] = `
+
+Message:
+> 1 | a: 'x	y z	w'
+    |      	   ^ The character U+0009 is invisible or looks like a space. Write it as an escape, \`\\t\`.
+
+`;
+
+exports[`invalid(22): a: \"x\ty z\" 1`] = `
+
+  1 | a: "x	y z"
+
+`;
+
+exports[`invalid(22): a: \"x\ty z\" 2`] = `
+
+Message:
+> 1 | a: "x	y z"
+    |      ^ The character U+0009 is invisible or looks like a space. Write it as an escape, \`\\t\`.
+
+Output:
+  1 | a: "x\\ty z"
+
+`;
+
+exports[`invalid(22): a: \"x\ty z\" 3`] = `
+
+Message:
+> 1 | a: "x	y z"
+    |      	 ^ The character U+00A0 is invisible or looks like a space. Write it as an escape, \`\\u{a0}\`.
+
+Output:
+  1 | a: "x	y\\u{a0}z"
+
+`;
+
+exports[`invalid(23): a: 'x\ty' # note 1`] = `
+
+  1 | a: 'x	y' # note
+
+`;
+
+exports[`invalid(23): a: 'x\ty' # note 2`] = `
+
+Message:
+> 1 | a: 'x	y' # note
+    |      ^ The character U+0009 is invisible or looks like a space. Write it as an escape, \`\\t\`.
+
+Output:
+  1 | a: "x\\ty" # note
+
+`;
+
+exports[`invalid(24): a: {\"b c\": 1} 1`] = `
+
+  1 | a: {"b c": 1}
+
+`;
+
+exports[`invalid(24): a: {\"b c\": 1} 2`] = `
+
+Message:
+> 1 | a: {"b c": 1}
+    |       ^ The character U+00A0 is invisible or looks like a space. Write it as an escape, \`\\u{a0}\`.
+
+Output:
+  1 | a: {"b\\u{a0}c": 1}
+
+`;
+
+exports[`invalid(25): [' '] 1`] = `
+
+  1 | [' ']
+
+`;
+
+exports[`invalid(25): [' '] 2`] = `
+
+Message:
+> 1 | [' ']
+    |   ^ The character U+00A0 is invisible or looks like a space. Write it as an escape, \`\\u{a0}\`.
+
+Output:
+  1 | ["\\u{a0}"]
+
+`;
+
+exports[`invalid(26): a: '''\n\tx y\n\t''' 1`] = `
+
+  1 | a: '''
+  2 | 	x y
+  3 | 	'''
+
+`;
+
+exports[`invalid(26): a: '''\n\tx y\n\t''' 2`] = `
+
+Message:
+  1 | a: '''
+> 2 | 	x y
+    | 	 ^ The character U+00A0 is invisible or looks like a space. Remove it, or move the text to a \`"…"\` string and write it as \`\\u{a0}\`.
+  3 | 	'''
+
+`;
+
+exports[`invalid(27): a: \"\"\"\n\tx y \\t\n\t\"\"\" 1`] = `
+
+  1 | a: """
+  2 | 	x y \\t
+  3 | 	"""
+
+`;
+
+exports[`invalid(27): a: \"\"\"\n\tx y \\t\n\t\"\"\" 2`] = `
+
+Message:
+  1 | a: """
+> 2 | 	x y \\t
+    | 	 ^ The character U+00A0 is invisible or looks like a space. Write it as an escape, \`\\u{a0}\`.
+  3 | 	"""
+
+Output:
+  1 | a: """
+  2 | 	x\\u{a0}y \\t
+  3 | 	"""
+
+`;
+
+exports[`invalid(28): # Hidden space\na: 1 1`] = `
+
+  1 | # Hidden space
+  2 | a: 1
+
+`;
+
+exports[`invalid(28): # Hidden space\na: 1 2`] = `
+
+Message:
+> 1 | # Hidden space
+    |         ^ The character U+00A0 is invisible or looks like a space. Remove it.
+  2 | a: 1
+
+`;
+
+exports[`invalid(29): /* bidi ‮ */\na: 1 1`] = `
+
+  1 | /* bidi ‮ */
+  2 | a: 1
+
+`;
+
+exports[`invalid(29): /* bidi ‮ */\na: 1 2`] = `
+
+Message:
+> 1 | /* bidi ‮ */
+    |         ^ The character U+202E is invisible or looks like a space. Remove it.
+  2 | a: 1
+
+`;
+
+exports[`invalid(3): name: 'C:\\\\Users x \"q\"' 1`] = `
+
+  1 | name: 'C:\\\\Users x "q"'
+
+`;
+
+exports[`invalid(3): name: 'C:\\\\Users x \"q\"' 2`] = `
+
+Message:
+> 1 | name: 'C:\\\\Users x "q"'
+    |                 ^ The character U+00A0 is invisible or looks like a space. Write it as an escape, \`\\u{a0}\`.
+
+Output:
+  1 | name: "C:\\\\\\\\Users\\u{a0}x \\"q\\""
+
+`;
+
+exports[`invalid(30): a: \"f⁡(x) 2⁢x a⁣b 1⁤½\" 1`] = `
+
+  1 | a: "f⁡(x) 2⁢x a⁣b 1⁤½"
+
+`;
+
+exports[`invalid(30): a: \"f⁡(x) 2⁢x a⁣b 1⁤½\" 2`] = `
+
+Message:
+> 1 | a: "f⁡(x) 2⁢x a⁣b 1⁤½"
+    |      ^ The character U+2061 is invisible or looks like a space. Write it as an escape, \`\\u{2061}\`.
+
+Output:
+  1 | a: "f\\u{2061}(x) 2⁢x a⁣b 1⁤½"
+
+`;
+
+exports[`invalid(30): a: \"f⁡(x) 2⁢x a⁣b 1⁤½\" 3`] = `
+
+Message:
+> 1 | a: "f⁡(x) 2⁢x a⁣b 1⁤½"
+    |            ^ The character U+2062 is invisible or looks like a space. Write it as an escape, \`\\u{2062}\`.
+
+Output:
+  1 | a: "f⁡(x) 2\\u{2062}x a⁣b 1⁤½"
+
+`;
+
+exports[`invalid(30): a: \"f⁡(x) 2⁢x a⁣b 1⁤½\" 4`] = `
+
+Message:
+> 1 | a: "f⁡(x) 2⁢x a⁣b 1⁤½"
+    |                ^ The character U+2063 is invisible or looks like a space. Write it as an escape, \`\\u{2063}\`.
+
+Output:
+  1 | a: "f⁡(x) 2⁢x a\\u{2063}b 1⁤½"
+
+`;
+
+exports[`invalid(30): a: \"f⁡(x) 2⁢x a⁣b 1⁤½\" 5`] = `
+
+Message:
+> 1 | a: "f⁡(x) 2⁢x a⁣b 1⁤½"
+    |                    ^ The character U+2064 is invisible or looks like a space. Write it as an escape, \`\\u{2064}\`.
+
+Output:
+  1 | a: "f⁡(x) 2⁢x a⁣b 1\\u{2064}½"
+
+`;
+
+exports[`invalid(31): a: 'xㅤyᅟzᅠwﾠv' 1`] = `
+
+  1 | a: 'xㅤyᅟzᅠwﾠv'
+
+`;
+
+exports[`invalid(31): a: 'xㅤyᅟzᅠwﾠv' 2`] = `
+
+Message:
+> 1 | a: 'xㅤyᅟzᅠwﾠv'
+    |      ^ The character U+3164 is invisible or looks like a space. Write it as an escape, \`\\u{3164}\`.
+
+Output:
+  1 | a: "x\\u{3164}y\\u{115f}z\\u{1160}w\\u{ffa0}v"
+
+`;
+
+exports[`invalid(31): a: 'xㅤyᅟzᅠwﾠv' 3`] = `
+
+Message:
+> 1 | a: 'xㅤyᅟzᅠwﾠv'
+    |        ^ The character U+115F is invisible or looks like a space. Write it as an escape, \`\\u{115f}\`.
+
+`;
+
+exports[`invalid(31): a: 'xㅤyᅟzᅠwﾠv' 4`] = `
+
+Message:
+> 1 | a: 'xㅤyᅟzᅠwﾠv'
+    |          ^ The character U+1160 is invisible or looks like a space. Write it as an escape, \`\\u{1160}\`.
+
+`;
+
+exports[`invalid(31): a: 'xㅤyᅟzᅠwﾠv' 5`] = `
+
+Message:
+> 1 | a: 'xㅤyᅟzᅠwﾠv'
+    |            ^ The character U+FFA0 is invisible or looks like a space. Write it as an escape, \`\\u{ffa0}\`.
+
+`;
+
+exports[`invalid(32): note: 'Approve󠁁󠁂 this' 1`] = `
+
+  1 | note: 'Approve󠁁󠁂 this'
+
+`;
+
+exports[`invalid(32): note: 'Approve󠁁󠁂 this' 2`] = `
+
+Message:
+> 1 | note: 'Approve󠁁󠁂 this'
+    |               ^^ The character U+E0041 is invisible or looks like a space. Write it as an escape, \`\\u{e0041}\`.
+
+Output:
+  1 | note: "Approve\\u{e0041}\\u{e0042} this"
+
+`;
+
+exports[`invalid(32): note: 'Approve󠁁󠁂 this' 3`] = `
+
+Message:
+> 1 | note: 'Approve󠁁󠁂 this'
+    |                 ^^ The character U+E0042 is invisible or looks like a space. Write it as an escape, \`\\u{e0042}\`.
+
+`;
+
+exports[`invalid(33): a: 'a᠎b⁪c⁯d' 1`] = `
+
+  1 | a: 'a᠎b⁪c⁯d'
+
+`;
+
+exports[`invalid(33): a: 'a᠎b⁪c⁯d' 2`] = `
+
+Message:
+> 1 | a: 'a᠎b⁪c⁯d'
+    |      ^ The character U+180E is invisible or looks like a space. Write it as an escape, \`\\u{180e}\`.
+
+Output:
+  1 | a: "a\\u{180e}b\\u{206a}c\\u{206f}d"
+
+`;
+
+exports[`invalid(33): a: 'a᠎b⁪c⁯d' 3`] = `
+
+Message:
+> 1 | a: 'a᠎b⁪c⁯d'
+    |        ^ The character U+206A is invisible or looks like a space. Write it as an escape, \`\\u{206a}\`.
+
+`;
+
+exports[`invalid(33): a: 'a᠎b⁪c⁯d' 4`] = `
+
+Message:
+> 1 | a: 'a᠎b⁪c⁯d'
+    |          ^ The character U+206F is invisible or looks like a space. Write it as an escape, \`\\u{206f}\`.
+
+`;
+
+exports[`invalid(34): a: \"󠀁x\" 1`] = `
+
+  1 | a: "󠀁x"
+
+`;
+
+exports[`invalid(34): a: \"󠀁x\" 2`] = `
+
+Message:
+> 1 | a: "󠀁x"
+    |     ^^ The character U+E0001 is invisible or looks like a space. Write it as an escape, \`\\u{e0001}\`.
+
+Output:
+  1 | a: "\\u{e0001}x"
+
+`;
+
+exports[`invalid(35): a: '🏴󠁨󠁩' 1`] = `
+
+  1 | a: '🏴󠁨󠁩'
+
+`;
+
+exports[`invalid(35): a: '🏴󠁨󠁩' 2`] = `
+
+Message:
+> 1 | a: '🏴󠁨󠁩'
+    |       ^^ The character U+E0068 is invisible or looks like a space. Write it as an escape, \`\\u{e0068}\`.
+
+Output:
+  1 | a: "🏴\\u{e0068}\\u{e0069}"
+
+`;
+
+exports[`invalid(35): a: '🏴󠁨󠁩' 3`] = `
+
+Message:
+> 1 | a: '🏴󠁨󠁩'
+    |         ^^ The character U+E0069 is invisible or looks like a space. Write it as an escape, \`\\u{e0069}\`.
+
+`;
+
+exports[`invalid(36): a: '🏴󠁡󠁢󠁣󠁤󠁥󠁦󠁧󠁿' 1`] = `
+
+  1 | a: '🏴󠁡󠁢󠁣󠁤󠁥󠁦󠁧󠁿'
+
+`;
+
+exports[`invalid(36): a: '🏴󠁡󠁢󠁣󠁤󠁥󠁦󠁧󠁿' 2`] = `
+
+Message:
+> 1 | a: '🏴󠁡󠁢󠁣󠁤󠁥󠁦󠁧󠁿'
+    |       ^^ The character U+E0061 is invisible or looks like a space. Write it as an escape, \`\\u{e0061}\`.
+
+Output:
+  1 | a: "🏴\\u{e0061}󠁢󠁣󠁤󠁥󠁦\\u{e0067}\\u{e007f}"
+
+`;
+
+exports[`invalid(36): a: '🏴󠁡󠁢󠁣󠁤󠁥󠁦󠁧󠁿' 3`] = `
+
+Message:
+> 1 | a: '🏴󠁡󠁢󠁣󠁤󠁥󠁦󠁧󠁿'
+    |                   ^^ The character U+E0067 is invisible or looks like a space. Write it as an escape, \`\\u{e0067}\`.
+
+`;
+
+exports[`invalid(36): a: '🏴󠁡󠁢󠁣󠁤󠁥󠁦󠁧󠁿' 4`] = `
+
+Message:
+> 1 | a: '🏴󠁡󠁢󠁣󠁤󠁥󠁦󠁧󠁿'
+    |                     ^^ The character U+E007F is invisible or looks like a space. Write it as an escape, \`\\u{e007f}\`.
+
+`;
+
+exports[`invalid(37): a: 'x󠁿' 1`] = `
+
+  1 | a: 'x󠁿'
+
+`;
+
+exports[`invalid(37): a: 'x󠁿' 2`] = `
+
+Message:
+> 1 | a: 'x󠁿'
+    |      ^^ The character U+E007F is invisible or looks like a space. Write it as an escape, \`\\u{e007f}\`.
+
+Output:
+  1 | a: "x\\u{e007f}"
+
+`;
+
+exports[`invalid(4): a: \"x​y​z\" 1`] = `
+
+  1 | a: "x​y​z"
+
+`;
+
+exports[`invalid(4): a: \"x​y​z\" 2`] = `
+
+Message:
+> 1 | a: "x​y​z"
+    |      ^ The character U+200B is invisible or looks like a space. Write it as an escape, \`\\u{200b}\`.
+
+Output:
+  1 | a: "x\\u{200b}y​z"
+
+`;
+
+exports[`invalid(4): a: \"x​y​z\" 3`] = `
+
+Message:
+> 1 | a: "x​y​z"
+    |        ^ The character U+200B is invisible or looks like a space. Write it as an escape, \`\\u{200b}\`.
+
+Output:
+  1 | a: "x​y\\u{200b}z"
+
+`;
+
+exports[`invalid(5): a: 'x‮y⁦z' 1`] = `
+
+  1 | a: 'x‮y⁦z'
+
+`;
+
+exports[`invalid(5): a: 'x‮y⁦z' 2`] = `
+
+Message:
+> 1 | a: 'x‮y⁦z'
+    |      ^ The character U+202E is invisible or looks like a space. Write it as an escape, \`\\u{202e}\`.
+
+Output:
+  1 | a: "x\\u{202e}y\\u{2066}z"
+
+`;
+
+exports[`invalid(5): a: 'x‮y⁦z' 3`] = `
+
+Message:
+> 1 | a: 'x‮y⁦z'
+    |        ^ The character U+2066 is invisible or looks like a space. Write it as an escape, \`\\u{2066}\`.
+
+`;
+
+exports[`invalid(6): a: ' ' 1`] = `
+
+  1 | a: '
+  2 | '
+
+`;
+
+exports[`invalid(6): a: ' ' 2`] = `
+
+Message:
+> 1 | a: '
+    |     ^ The character U+2028 is invisible or looks like a space. Write it as an escape, \`\\u{2028}\`.
+  2 | '
+
+Output:
+  1 | a: "\\u{2028}"
+
+`;
+
+exports[`invalid(7): a: '﻿' 1`] = `
+
+  1 | a: '﻿'
+
+`;
+
+exports[`invalid(7): a: '﻿' 2`] = `
+
+Message:
+> 1 | a: '﻿'
+    |     ^ The character U+FEFF is invisible or looks like a space. Write it as an escape, \`\\u{feff}\`.
+
+Output:
+  1 | a: "\\u{feff}"
+
+`;
+
+exports[`invalid(8): a: 'soft­hyphen' 1`] = `
+
+  1 | a: 'soft­hyphen'
+
+`;
+
+exports[`invalid(8): a: 'soft­hyphen' 2`] = `
+
+Message:
+> 1 | a: 'soft­hyphen'
+    |         ^ The character U+00AD is invisible or looks like a space. Write it as an escape, \`\\u{ad}\`.
+
+Output:
+  1 | a: "soft\\u{ad}hyphen"
+
+`;
+
+exports[`invalid(9): a: '' 1`] = `
+
+  1 | a: ''
+
+`;
+
+exports[`invalid(9): a: '' 2`] = `
+
+Message:
+> 1 | a: ''
+    |     ^ The character U+0085 is invisible or looks like a space. Write it as an escape, \`\\u{85}\`.
+
+Output:
+  1 | a: "\\u{85}"
+
+`;

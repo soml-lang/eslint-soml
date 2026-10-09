@@ -1,0 +1,565 @@
+exports[`invalid(1): message: 'Line one\\nLine two' 1`] = `
+
+  1 | message: 'Line one\\nLine two'
+
+`;
+
+exports[`invalid(1): message: 'Line one\\nLine two' 2`] = `
+
+Message:
+> 1 | message: 'Line one\\nLine two'
+    |          ^^^^^^^^^^^^^^^^^^^^ A literal string, \`'…'\`, has no escapes, so \`\\n\` is a backslash and \`n\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`"Line one\\nLine two"\`.:
+  1 | message: "Line one\\nLine two"
+
+`;
+
+exports[`invalid(10): text: 'src\\nfoo\\n' 1`] = `
+
+  1 | text: 'src\\nfoo\\n'
+
+`;
+
+exports[`invalid(10): text: 'src\\nfoo\\n' 2`] = `
+
+Message:
+> 1 | text: 'src\\nfoo\\n'
+    |       ^^^^^^^^^^^^ A literal string, \`'…'\`, has no escapes, so \`\\n\` is a backslash and \`n\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`"src\\nfoo\\n"\`.:
+  1 | text: "src\\nfoo\\n"
+
+`;
+
+exports[`invalid(11): name: 'caf\\u{e9}' 1`] = `
+
+  1 | name: 'caf\\u{e9}'
+
+`;
+
+exports[`invalid(11): name: 'caf\\u{e9}' 2`] = `
+
+Message:
+> 1 | name: 'caf\\u{e9}'
+    |       ^^^^^^^^^^^ A literal string, \`'…'\`, has no escapes, so \`\\u{e9}\` is a backslash and \`u{e9}\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`'café'\`.:
+  1 | name: 'café'
+
+`;
+
+exports[`invalid(12): emoji: '\\u{1f600}' 1`] = `
+
+  1 | emoji: '\\u{1f600}'
+
+`;
+
+exports[`invalid(12): emoji: '\\u{1f600}' 2`] = `
+
+Message:
+> 1 | emoji: '\\u{1f600}'
+    |        ^^^^^^^^^^^ A literal string, \`'…'\`, has no escapes, so \`\\u{1f600}\` is a backslash and \`u{1f600}\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`'😀'\`.:
+  1 | emoji: '😀'
+
+`;
+
+exports[`invalid(13): path: 'src\\u{2f}x' 1`] = `
+
+  1 | path: 'src\\u{2f}x'
+
+`;
+
+exports[`invalid(13): path: 'src\\u{2f}x' 2`] = `
+
+Message:
+> 1 | path: 'src\\u{2f}x'
+    |       ^^^^^^^^^^^^ A literal string, \`'…'\`, has no escapes, so \`\\u{2f}\` is a backslash and \`u{2f}\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`'src/x'\`.:
+  1 | path: 'src/x'
+
+`;
+
+exports[`invalid(14): text: 'x\\u{41}' 1`] = `
+
+  1 | text: 'x\\u{41}'
+
+`;
+
+exports[`invalid(14): text: 'x\\u{41}' 2`] = `
+
+Message:
+> 1 | text: 'x\\u{41}'
+    |       ^^^^^^^^^ A literal string, \`'…'\`, has no escapes, so \`\\u{41}\` is a backslash and \`u{41}\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`'xA'\`.:
+  1 | text: 'xA'
+
+`;
+
+exports[`invalid(15): text: 'say \\u{22}hi\\u{22}' 1`] = `
+
+  1 | text: 'say \\u{22}hi\\u{22}'
+
+`;
+
+exports[`invalid(15): text: 'say \\u{22}hi\\u{22}' 2`] = `
+
+Message:
+> 1 | text: 'say \\u{22}hi\\u{22}'
+    |       ^^^^^^^^^^^^^^^^^^^^ A literal string, \`'…'\`, has no escapes, so \`\\u{22}\` is a backslash and \`u{22}\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`'say "hi"'\`.:
+  1 | text: 'say "hi"'
+
+`;
+
+exports[`invalid(16): text: 'a\\u{0}b' 1`] = `
+
+  1 | text: 'a\\u{0}b'
+
+`;
+
+exports[`invalid(16): text: 'a\\u{0}b' 2`] = `
+
+Message:
+> 1 | text: 'a\\u{0}b'
+    |       ^^^^^^^^^ A literal string, \`'…'\`, has no escapes, so \`\\u{0}\` is a backslash and \`u{0}\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`"a\\u{0}b"\`.:
+  1 | text: "a\\u{0}b"
+
+`;
+
+exports[`invalid(17): text: '\\u{a0}' 1`] = `
+
+  1 | text: '\\u{a0}'
+
+`;
+
+exports[`invalid(17): text: '\\u{a0}' 2`] = `
+
+Message:
+> 1 | text: '\\u{a0}'
+    |       ^^^^^^^^ A literal string, \`'…'\`, has no escapes, so \`\\u{a0}\` is a backslash and \`u{a0}\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`"\\u{a0}"\`.:
+  1 | text: "\\u{a0}"
+
+`;
+
+exports[`invalid(18): text: 'it\\u{27}s' 1`] = `
+
+  1 | text: 'it\\u{27}s'
+
+`;
+
+exports[`invalid(18): text: 'it\\u{27}s' 2`] = `
+
+Message:
+> 1 | text: 'it\\u{27}s'
+    |       ^^^^^^^^^^^ A literal string, \`'…'\`, has no escapes, so \`\\u{27}\` is a backslash and \`u{27}\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`"it's"\`.:
+  1 | text: "it's"
+
+`;
+
+exports[`invalid(19): text: 'a\\\\b and\\nc' 1`] = `
+
+  1 | text: 'a\\\\b and\\nc'
+
+`;
+
+exports[`invalid(19): text: 'a\\\\b and\\nc' 2`] = `
+
+Message:
+> 1 | text: 'a\\\\b and\\nc'
+    |       ^^^^^^^^^^^^^ A literal string, \`'…'\`, has no escapes, so \`\\n\` is a backslash and \`n\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`"a\\\\b and\\nc"\`.:
+  1 | text: "a\\\\b and\\nc"
+
+`;
+
+exports[`invalid(2): separator: '\\t' 1`] = `
+
+  1 | separator: '\\t'
+
+`;
+
+exports[`invalid(2): separator: '\\t' 2`] = `
+
+Message:
+> 1 | separator: '\\t'
+    |            ^^^^ A literal string, \`'…'\`, has no escapes, so \`\\t\` is a backslash and \`t\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`"\\t"\`.:
+  1 | separator: "\\t"
+
+`;
+
+exports[`invalid(20): text: 'Use \\\\n for a new line, caf\\u{e9}' 1`] = `
+
+  1 | text: 'Use \\\\n for a new line, caf\\u{e9}'
+
+`;
+
+exports[`invalid(20): text: 'Use \\\\n for a new line, caf\\u{e9}' 2`] = `
+
+Message:
+> 1 | text: 'Use \\\\n for a new line, caf\\u{e9}'
+    |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ A literal string, \`'…'\`, has no escapes, so \`\\u{e9}\` is a backslash and \`u{e9}\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`"Use \\\\n for a new line, café"\`.:
+  1 | text: "Use \\\\n for a new line, café"
+
+`;
+
+exports[`invalid(21): text: 'caf\\u{e9} ^\\\\\\\\d+$' 1`] = `
+
+  1 | text: 'caf\\u{e9} ^\\\\\\\\d+$'
+
+`;
+
+exports[`invalid(21): text: 'caf\\u{e9} ^\\\\\\\\d+$' 2`] = `
+
+Message:
+> 1 | text: 'caf\\u{e9} ^\\\\\\\\d+$'
+    |       ^^^^^^^^^^^^^^^^^^^^ A literal string, \`'…'\`, has no escapes, so \`\\u{e9}\` is a backslash and \`u{e9}\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`"café ^\\\\\\\\d+$"\`.:
+  1 | text: "café ^\\\\\\\\d+$"
+
+`;
+
+exports[`invalid(22): text: 'a\tb\\n' 1`] = `
+
+  1 | text: 'a	b\\n'
+
+`;
+
+exports[`invalid(22): text: 'a\tb\\n' 2`] = `
+
+Message:
+> 1 | text: 'a	b\\n'
+    |       ^^^^^^^ A literal string, \`'…'\`, has no escapes, so \`\\n\` is a backslash and \`n\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`"a\\tb\\n"\`.:
+  1 | text: "a\\tb\\n"
+
+`;
+
+exports[`invalid(23): text: 'a b\\n' 1`] = `
+
+  1 | text: 'a b\\n'
+
+`;
+
+exports[`invalid(23): text: 'a b\\n' 2`] = `
+
+Message:
+> 1 | text: 'a b\\n'
+    |       ^^^^^^^ A literal string, \`'…'\`, has no escapes, so \`\\n\` is a backslash and \`n\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`"a\\u{a0}b\\n"\`.:
+  1 | text: "a\\u{a0}b\\n"
+
+`;
+
+exports[`invalid(24): dir: 'My Documents\\notes' 1`] = `
+
+  1 | dir: 'My Documents\\notes'
+
+`;
+
+exports[`invalid(24): dir: 'My Documents\\notes' 2`] = `
+
+Message:
+> 1 | dir: 'My Documents\\notes'
+    |      ^^^^^^^^^^^^^^^^^^^^ A literal string, \`'…'\`, has no escapes, so \`\\n\` is a backslash and \`n\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`"My Documents\\notes"\`.:
+  1 | dir: "My Documents\\notes"
+
+`;
+
+exports[`invalid(25): lines: ['first\\n', 'second'] 1`] = `
+
+  1 | lines: ['first\\n', 'second']
+
+`;
+
+exports[`invalid(25): lines: ['first\\n', 'second'] 2`] = `
+
+Message:
+> 1 | lines: ['first\\n', 'second']
+    |         ^^^^^^^^^ A literal string, \`'…'\`, has no escapes, so \`\\n\` is a backslash and \`n\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`"first\\n"\`.:
+  1 | lines: ["first\\n", 'second']
+
+`;
+
+exports[`invalid(26): a: {b: 'x y\\n'} 1`] = `
+
+  1 | a: {b: 'x y\\n'}
+
+`;
+
+exports[`invalid(26): a: {b: 'x y\\n'} 2`] = `
+
+Message:
+> 1 | a: {b: 'x y\\n'}
+    |        ^^^^^^^ A literal string, \`'…'\`, has no escapes, so \`\\n\` is a backslash and \`n\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`"x y\\n"\`.:
+  1 | a: {b: "x y\\n"}
+
+`;
+
+exports[`invalid(27): ['a b\\tc'] 1`] = `
+
+  1 | ['a b\\tc']
+
+`;
+
+exports[`invalid(27): ['a b\\tc'] 2`] = `
+
+Message:
+> 1 | ['a b\\tc']
+    |  ^^^^^^^^ A literal string, \`'…'\`, has no escapes, so \`\\t\` is a backslash and \`t\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`"a b\\tc"\`.:
+  1 | ["a b\\tc"]
+
+`;
+
+exports[`invalid(28): {a: 'x\\n'} 1`] = `
+
+  1 | {a: 'x\\n'}
+
+`;
+
+exports[`invalid(28): {a: 'x\\n'} 2`] = `
+
+Message:
+> 1 | {a: 'x\\n'}
+    |     ^^^^^ A literal string, \`'…'\`, has no escapes, so \`\\n\` is a backslash and \`n\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`"x\\n"\`.:
+  1 | {a: "x\\n"}
+
+`;
+
+exports[`invalid(29): a: 'x\\n' # comment 1`] = `
+
+  1 | a: 'x\\n' # comment
+
+`;
+
+exports[`invalid(29): a: 'x\\n' # comment 2`] = `
+
+Message:
+> 1 | a: 'x\\n' # comment
+    |    ^^^^^ A literal string, \`'…'\`, has no escapes, so \`\\n\` is a backslash and \`n\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`"x\\n"\`.:
+  1 | a: "x\\n" # comment
+
+`;
+
+exports[`invalid(3): line-ending: '\\n' 1`] = `
+
+  1 | line-ending: '\\n'
+
+`;
+
+exports[`invalid(3): line-ending: '\\n' 2`] = `
+
+Message:
+> 1 | line-ending: '\\n'
+    |              ^^^^ A literal string, \`'…'\`, has no escapes, so \`\\n\` is a backslash and \`n\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`"\\n"\`.:
+  1 | line-ending: "\\n"
+
+`;
+
+exports[`invalid(30): a: /* comment */ 'x\\n' 1`] = `
+
+  1 | a: /* comment */ 'x\\n'
+
+`;
+
+exports[`invalid(30): a: /* comment */ 'x\\n' 2`] = `
+
+Message:
+> 1 | a: /* comment */ 'x\\n'
+    |                  ^^^^^ A literal string, \`'…'\`, has no escapes, so \`\\n\` is a backslash and \`n\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`"x\\n"\`.:
+  1 | a: /* comment */ "x\\n"
+
+`;
+
+exports[`invalid(31): 'the key': 'value\\n' 1`] = `
+
+  1 | 'the key': 'value\\n'
+
+`;
+
+exports[`invalid(31): 'the key': 'value\\n' 2`] = `
+
+Message:
+> 1 | 'the key': 'value\\n'
+    |            ^^^^^^^^^ A literal string, \`'…'\`, has no escapes, so \`\\n\` is a backslash and \`n\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`"value\\n"\`.:
+  1 | 'the key': "value\\n"
+
+`;
+
+exports[`invalid(32): a: ['x\\n', 'y\\t', 'z\\u{e9}'] 1`] = `
+
+  1 | a: ['x\\n', 'y\\t', 'z\\u{e9}']
+
+`;
+
+exports[`invalid(32): a: ['x\\n', 'y\\t', 'z\\u{e9}'] 2`] = `
+
+Message:
+> 1 | a: ['x\\n', 'y\\t', 'z\\u{e9}']
+    |     ^^^^^ A literal string, \`'…'\`, has no escapes, so \`\\n\` is a backslash and \`n\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`"x\\n"\`.:
+  1 | a: ["x\\n", 'y\\t', 'z\\u{e9}']
+
+`;
+
+exports[`invalid(32): a: ['x\\n', 'y\\t', 'z\\u{e9}'] 3`] = `
+
+Message:
+> 1 | a: ['x\\n', 'y\\t', 'z\\u{e9}']
+    |            ^^^^^ A literal string, \`'…'\`, has no escapes, so \`\\t\` is a backslash and \`t\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`"y\\t"\`.:
+  1 | a: ['x\\n', "y\\t", 'z\\u{e9}']
+
+`;
+
+exports[`invalid(32): a: ['x\\n', 'y\\t', 'z\\u{e9}'] 4`] = `
+
+Message:
+> 1 | a: ['x\\n', 'y\\t', 'z\\u{e9}']
+    |                   ^^^^^^^^^ A literal string, \`'…'\`, has no escapes, so \`\\u{e9}\` is a backslash and \`u{e9}\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`'zé'\`.:
+  1 | a: ['x\\n', 'y\\t', 'zé']
+
+`;
+
+exports[`invalid(4): format: '%s\\n' 1`] = `
+
+  1 | format: '%s\\n'
+
+`;
+
+exports[`invalid(4): format: '%s\\n' 2`] = `
+
+Message:
+> 1 | format: '%s\\n'
+    |         ^^^^^^ A literal string, \`'…'\`, has no escapes, so \`\\n\` is a backslash and \`n\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`"%s\\n"\`.:
+  1 | format: "%s\\n"
+
+`;
+
+exports[`invalid(5): text: 'Done.\\n' 1`] = `
+
+  1 | text: 'Done.\\n'
+
+`;
+
+exports[`invalid(5): text: 'Done.\\n' 2`] = `
+
+Message:
+> 1 | text: 'Done.\\n'
+    |       ^^^^^^^^^ A literal string, \`'…'\`, has no escapes, so \`\\n\` is a backslash and \`n\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`"Done.\\n"\`.:
+  1 | text: "Done.\\n"
+
+`;
+
+exports[`invalid(6): text: '\\nindented text' 1`] = `
+
+  1 | text: '\\nindented text'
+
+`;
+
+exports[`invalid(6): text: '\\nindented text' 2`] = `
+
+Message:
+> 1 | text: '\\nindented text'
+    |       ^^^^^^^^^^^^^^^^^ A literal string, \`'…'\`, has no escapes, so \`\\n\` is a backslash and \`n\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`"\\nindented text"\`.:
+  1 | text: "\\nindented text"
+
+`;
+
+exports[`invalid(7): text: 'tab\\tseparated values' 1`] = `
+
+  1 | text: 'tab\\tseparated values'
+
+`;
+
+exports[`invalid(7): text: 'tab\\tseparated values' 2`] = `
+
+Message:
+> 1 | text: 'tab\\tseparated values'
+    |       ^^^^^^^^^^^^^^^^^^^^^^^ A literal string, \`'…'\`, has no escapes, so \`\\t\` is a backslash and \`t\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`"tab\\tseparated values"\`.:
+  1 | text: "tab\\tseparated values"
+
+`;
+
+exports[`invalid(8): text: 'Line 1\\n\\nLine 3' 1`] = `
+
+  1 | text: 'Line 1\\n\\nLine 3'
+
+`;
+
+exports[`invalid(8): text: 'Line 1\\n\\nLine 3' 2`] = `
+
+Message:
+> 1 | text: 'Line 1\\n\\nLine 3'
+    |       ^^^^^^^^^^^^^^^^^^ A literal string, \`'…'\`, has no escapes, so \`\\n\` is a backslash and \`n\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`"Line 1\\n\\nLine 3"\`.:
+  1 | text: "Line 1\\n\\nLine 3"
+
+`;
+
+exports[`invalid(9): text: 'x\\n-y' 1`] = `
+
+  1 | text: 'x\\n-y'
+
+`;
+
+exports[`invalid(9): text: 'x\\n-y' 2`] = `
+
+Message:
+> 1 | text: 'x\\n-y'
+    |       ^^^^^^^ A literal string, \`'…'\`, has no escapes, so \`\\n\` is a backslash and \`n\`. Use a \`"…"\` string for escapes.
+
+Suggestion 1/1: Write it as \`"x\\n-y"\`.:
+  1 | text: "x\\n-y"
+
+`;

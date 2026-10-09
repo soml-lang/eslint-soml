@@ -1,0 +1,463 @@
+exports[`invalid(1): #Comment\na: 1 1`] = `
+
+  1 | #Comment
+  2 | a: 1
+
+`;
+
+exports[`invalid(1): #Comment\na: 1 2`] = `
+
+Message:
+> 1 | #Comment
+    | ^^^^^^^^ Add a space after \`#\`.
+  2 | a: 1
+
+Output:
+  1 | # Comment
+  2 | a: 1
+
+`;
+
+exports[`invalid(10): #fffff\na: 1 1`] = `
+
+  1 | #fffff
+  2 | a: 1
+
+`;
+
+exports[`invalid(10): #fffff\na: 1 2`] = `
+
+Message:
+> 1 | #fffff
+    | ^^^^^^ Add a space after \`#\`.
+  2 | a: 1
+
+Output:
+  1 | # fffff
+  2 | a: 1
+
+`;
+
+exports[`invalid(11): ##Section\na: 1 1`] = `
+
+  1 | ##Section
+  2 | a: 1
+
+`;
+
+exports[`invalid(11): ##Section\na: 1 2`] = `
+
+Message:
+> 1 | ##Section
+    | ^^^^^^^^^ Add a space after \`#\`.
+  2 | a: 1
+
+Output:
+  1 | ## Section
+  2 | a: 1
+
+`;
+
+exports[`invalid(12): ###Section\na: 1 1`] = `
+
+  1 | ###Section
+  2 | a: 1
+
+`;
+
+exports[`invalid(12): ###Section\na: 1 2`] = `
+
+Message:
+> 1 | ###Section
+    | ^^^^^^^^^^ Add a space after \`#\`.
+  2 | a: 1
+
+Output:
+  1 | ### Section
+  2 | a: 1
+
+`;
+
+exports[`invalid(13): /**Note */\na: 1 1`] = `
+
+  1 | /**Note */
+  2 | a: 1
+
+`;
+
+exports[`invalid(13): /**Note */\na: 1 2`] = `
+
+Message:
+> 1 | /**Note */
+    | ^^^^^^^^^^ Add a space after \`/*\`.
+  2 | a: 1
+
+Output:
+  1 | /** Note */
+  2 | a: 1
+
+`;
+
+exports[`invalid(14): /* Note**/\na: 1 1`] = `
+
+  1 | /* Note**/
+  2 | a: 1
+
+`;
+
+exports[`invalid(14): /* Note**/\na: 1 2`] = `
+
+Message:
+> 1 | /* Note**/
+    | ^^^^^^^^^^ Add a space before \`*/\`.
+  2 | a: 1
+
+Output:
+  1 | /* Note **/
+  2 | a: 1
+
+`;
+
+exports[`invalid(15): /**Note**/\na: 1 1`] = `
+
+  1 | /**Note**/
+  2 | a: 1
+
+`;
+
+exports[`invalid(15): /**Note**/\na: 1 2`] = `
+
+Message:
+> 1 | /**Note**/
+    | ^^^^^^^^^^ Add a space after \`/*\`.
+  2 | a: 1
+
+Output:
+  1 | /** Note**/
+  2 | a: 1
+
+`;
+
+exports[`invalid(15): /**Note**/\na: 1 3`] = `
+
+Message:
+> 1 | /**Note**/
+    | ^^^^^^^^^^ Add a space before \`*/\`.
+  2 | a: 1
+
+Output:
+  1 | /**Note **/
+  2 | a: 1
+
+`;
+
+exports[`invalid(16): a: [1, ##x\n2] 1`] = `
+
+  1 | a: [1, ##x
+  2 | 2]
+
+`;
+
+exports[`invalid(16): a: [1, ##x\n2] 2`] = `
+
+Message:
+> 1 | a: [1, ##x
+    |        ^^^ Add a space after \`#\`.
+  2 | 2]
+
+Output:
+  1 | a: [1, ## x
+  2 | 2]
+
+`;
+
+exports[`invalid(17): /***Banner***/\na: 1 1`] = `
+
+  1 | /***Banner***/
+  2 | a: 1
+
+`;
+
+exports[`invalid(17): /***Banner***/\na: 1 2`] = `
+
+Message:
+> 1 | /***Banner***/
+    | ^^^^^^^^^^^^^^ Add a space after \`/*\`.
+  2 | a: 1
+
+Output:
+  1 | /*** Banner***/
+  2 | a: 1
+
+`;
+
+exports[`invalid(17): /***Banner***/\na: 1 3`] = `
+
+Message:
+> 1 | /***Banner***/
+    | ^^^^^^^^^^^^^^ Add a space before \`*/\`.
+  2 | a: 1
+
+Output:
+  1 | /***Banner ***/
+  2 | a: 1
+
+`;
+
+exports[`invalid(18): ##eslint-disable-next-line\na: 1 1`] = `
+
+  1 | ##eslint-disable-next-line
+  2 | a: 1
+
+`;
+
+exports[`invalid(18): ##eslint-disable-next-line\na: 1 2`] = `
+
+Message:
+> 1 | ##eslint-disable-next-line
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^ Add a space after \`#\`.
+  2 | a: 1
+
+Output:
+  1 | ## eslint-disable-next-line
+  2 | a: 1
+
+`;
+
+exports[`invalid(19): ##ff0000\na: 1 1`] = `
+
+  1 | ##ff0000
+  2 | a: 1
+
+`;
+
+exports[`invalid(19): ##ff0000\na: 1 2`] = `
+
+Message:
+> 1 | ##ff0000
+    | ^^^^^^^^ Add a space after \`#\`.
+  2 | a: 1
+
+Output:
+  1 | ## ff0000
+  2 | a: 1
+
+`;
+
+exports[`invalid(2): a: 1 #Trailing 1`] = `
+
+  1 | a: 1 #Trailing
+
+`;
+
+exports[`invalid(2): a: 1 #Trailing 2`] = `
+
+Message:
+> 1 | a: 1 #Trailing
+    |      ^^^^^^^^^ Add a space after \`#\`.
+
+Output:
+  1 | a: 1 # Trailing
+
+`;
+
+exports[`invalid(20): #ff0000 red\na: 1 1`] = `
+
+  1 | #ff0000 red
+  2 | a: 1
+
+`;
+
+exports[`invalid(20): #ff0000 red\na: 1 2`] = `
+
+Message:
+> 1 | #ff0000 red
+    | ^^^^^^^^^^^ Add a space after \`#\`.
+  2 | a: 1
+
+Output:
+  1 | # ff0000 red
+  2 | a: 1
+
+`;
+
+exports[`invalid(21): #ff0000 ,x\na: 1 1`] = `
+
+  1 | #ff0000 ,x
+  2 | a: 1
+
+`;
+
+exports[`invalid(21): #ff0000 ,x\na: 1 2`] = `
+
+Message:
+> 1 | #ff0000 ,x
+    | ^^^^^^^^^^ Add a space after \`#\`.
+  2 | a: 1
+
+Output:
+  1 | # ff0000 ,x
+  2 | a: 1
+
+`;
+
+exports[`invalid(3): #!shebang\na: 1 1`] = `
+
+  1 | #!shebang
+  2 | a: 1
+
+`;
+
+exports[`invalid(3): #!shebang\na: 1 2`] = `
+
+Message:
+> 1 | #!shebang
+    | ^^^^^^^^^ Add a space after \`#\`.
+  2 | a: 1
+
+Output:
+  1 | # !shebang
+  2 | a: 1
+
+`;
+
+exports[`invalid(4): /*Comment */\na: 1 1`] = `
+
+  1 | /*Comment */
+  2 | a: 1
+
+`;
+
+exports[`invalid(4): /*Comment */\na: 1 2`] = `
+
+Message:
+> 1 | /*Comment */
+    | ^^^^^^^^^^^^ Add a space after \`/*\`.
+  2 | a: 1
+
+Output:
+  1 | /* Comment */
+  2 | a: 1
+
+`;
+
+exports[`invalid(5): /* Comment*/\na: 1 1`] = `
+
+  1 | /* Comment*/
+  2 | a: 1
+
+`;
+
+exports[`invalid(5): /* Comment*/\na: 1 2`] = `
+
+Message:
+> 1 | /* Comment*/
+    | ^^^^^^^^^^^^ Add a space before \`*/\`.
+  2 | a: 1
+
+Output:
+  1 | /* Comment */
+  2 | a: 1
+
+`;
+
+exports[`invalid(6): /*Comment*/\na: 1 1`] = `
+
+  1 | /*Comment*/
+  2 | a: 1
+
+`;
+
+exports[`invalid(6): /*Comment*/\na: 1 2`] = `
+
+Message:
+> 1 | /*Comment*/
+    | ^^^^^^^^^^^ Add a space after \`/*\`.
+  2 | a: 1
+
+Output:
+  1 | /* Comment*/
+  2 | a: 1
+
+`;
+
+exports[`invalid(6): /*Comment*/\na: 1 3`] = `
+
+Message:
+> 1 | /*Comment*/
+    | ^^^^^^^^^^^ Add a space before \`*/\`.
+  2 | a: 1
+
+Output:
+  1 | /*Comment */
+  2 | a: 1
+
+`;
+
+exports[`invalid(7): a: [1, /*x*/ 2] 1`] = `
+
+  1 | a: [1, /*x*/ 2]
+
+`;
+
+exports[`invalid(7): a: [1, /*x*/ 2] 2`] = `
+
+Message:
+> 1 | a: [1, /*x*/ 2]
+    |        ^^^^^ Add a space after \`/*\`.
+
+Output:
+  1 | a: [1, /* x*/ 2]
+
+`;
+
+exports[`invalid(7): a: [1, /*x*/ 2] 3`] = `
+
+Message:
+> 1 | a: [1, /*x*/ 2]
+    |        ^^^^^ Add a space before \`*/\`.
+
+Output:
+  1 | a: [1, /*x */ 2]
+
+`;
+
+exports[`invalid(8): #eslint-disable-next-line\na: 1 1`] = `
+
+  1 | #eslint-disable-next-line
+  2 | a: 1
+
+`;
+
+exports[`invalid(8): #eslint-disable-next-line\na: 1 2`] = `
+
+Message:
+> 1 | #eslint-disable-next-line
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^ Add a space after \`#\`.
+  2 | a: 1
+
+Output:
+  1 | # eslint-disable-next-line
+  2 | a: 1
+
+`;
+
+exports[`invalid(9): #fg0\na: 1 1`] = `
+
+  1 | #fg0
+  2 | a: 1
+
+`;
+
+exports[`invalid(9): #fg0\na: 1 2`] = `
+
+Message:
+> 1 | #fg0
+    | ^^^^ Add a space after \`#\`.
+  2 | a: 1
+
+Output:
+  1 | # fg0
+  2 | a: 1
+
+`;

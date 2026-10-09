@@ -1,0 +1,716 @@
+exports[`invalid(1): a:1 1`] = `
+
+  1 | a:1
+
+`;
+
+exports[`invalid(1): a:1 2`] = `
+
+Message:
+> 1 | a:1
+    |   ^ Insert \`·\`.
+
+Output:
+  1 | a: 1
+  2 |
+
+`;
+
+exports[`invalid(1): a:1 3`] = `
+
+Message:
+> 1 | a:1
+    |    ^ Insert \`⏎\`.
+
+`;
+
+exports[`invalid(10): a: [\n\t1\n\t2,\n] 1`] = `
+
+  1 | a: [
+  2 | 	1
+  3 | 	2,
+  4 | ]
+
+`;
+
+exports[`invalid(10): a: [\n\t1\n\t2,\n] 2`] = `
+
+Message:
+  1 | a: [
+  2 | 	1
+> 3 | 	2,
+    | 	 ^ Delete \`,\`.
+  4 | ]
+
+Output:
+  1 | a: [
+  2 | 	1
+  3 | 	2
+  4 | ]
+  5 |
+
+`;
+
+exports[`invalid(10): a: [\n\t1\n\t2,\n] 3`] = `
+
+Message:
+  1 | a: [
+  2 | 	1
+  3 | 	2,
+> 4 | ]
+    |  ^ Insert \`⏎\`.
+
+`;
+
+exports[`invalid(11): a: [1, /* note */ 2\n] 1`] = `
+
+  1 | a: [1, /* note */ 2
+  2 | ]
+
+`;
+
+exports[`invalid(11): a: [1, /* note */ 2\n] 2`] = `
+
+Message:
+> 1 | a: [1, /* note */ 2
+    |     ^ Insert \`⏎↹\`.
+  2 | ]
+
+Output:
+  1 | a: [
+  2 | 	1
+  3 | 	/* note */ 2
+  4 | ]
+  5 |
+
+`;
+
+exports[`invalid(11): a: [1, /* note */ 2\n] 3`] = `
+
+Message:
+> 1 | a: [1, /* note */ 2
+    |      ^^ Replace \`,·\` with \`⏎↹\`.
+  2 | ]
+
+`;
+
+exports[`invalid(11): a: [1, /* note */ 2\n] 4`] = `
+
+Message:
+  1 | a: [1, /* note */ 2
+> 2 | ]
+    |  ^ Insert \`⏎\`.
+
+`;
+
+exports[`invalid(12): {\na: 1} 1`] = `
+
+  1 | {
+  2 | a: 1}
+
+`;
+
+exports[`invalid(12): {\na: 1} 2`] = `
+
+Message:
+  1 | {
+> 2 | a: 1}
+    | ^ Insert \`↹\`.
+
+Output:
+  1 | {
+  2 | 	a: 1
+  3 | }
+  4 |
+
+`;
+
+exports[`invalid(12): {\na: 1} 3`] = `
+
+Message:
+  1 | {
+> 2 | a: 1}
+    |     ^ Insert \`⏎\`.
+
+`;
+
+exports[`invalid(12): {\na: 1} 4`] = `
+
+Message:
+  1 | {
+> 2 | a: 1}
+    |      ^ Insert \`⏎\`.
+
+`;
+
+exports[`invalid(13): a:\n\t1 1`] = `
+
+  1 | a:
+  2 | 	1
+
+`;
+
+exports[`invalid(13): a:\n\t1 2`] = `
+
+Message:
+> 1 | a:
+    |   ^
+> 2 | 	1
+    | ^ Replace \`⏎↹\` with \`·\`.
+
+Output:
+  1 | a: 1
+  2 |
+
+`;
+
+exports[`invalid(13): a:\n\t1 3`] = `
+
+Message:
+  1 | a:
+> 2 | 	1
+    | 	 ^ Insert \`⏎\`.
+
+`;
+
+exports[`invalid(14): a: {\n    b: '''\n        text\n          more\n        ''',\n} 1`] = `
+
+  1 | a: {
+  2 |     b: '''
+  3 |         text
+  4 |           more
+  5 |         ''',
+  6 | }
+
+`;
+
+exports[`invalid(14): a: {\n    b: '''\n        text\n          more\n        ''',\n} 2`] = `
+
+Message:
+  1 | a: {
+> 2 |     b: '''
+    | ^^^^ Replace \`····\` with \`↹\`.
+  3 |         text
+  4 |           more
+  5 |         ''',
+  6 | }
+
+Output:
+  1 | a: {
+  2 | 	b:
+  3 | 		'''
+  4 | 		text
+  5 | 		  more
+  6 | 		'''
+  7 | }
+  8 |
+
+`;
+
+exports[`invalid(14): a: {\n    b: '''\n        text\n          more\n        ''',\n} 3`] = `
+
+Message:
+  1 | a: {
+> 2 |     b: '''
+    |       ^ Replace \`·\` with \`⏎↹↹\`.
+  3 |         text
+  4 |           more
+  5 |         ''',
+  6 | }
+
+`;
+
+exports[`invalid(14): a: {\n    b: '''\n        text\n          more\n        ''',\n} 4`] = `
+
+Message:
+  1 | a: {
+  2 |     b: '''
+> 3 |         text
+    | ^^^^^^^^ Replace \`········\` with \`↹↹\`.
+  4 |           more
+  5 |         ''',
+  6 | }
+
+`;
+
+exports[`invalid(14): a: {\n    b: '''\n        text\n          more\n        ''',\n} 5`] = `
+
+Message:
+  1 | a: {
+  2 |     b: '''
+  3 |         text
+> 4 |           more
+    | ^^^^^^^^ Replace \`········\` with \`↹↹\`.
+  5 |         ''',
+  6 | }
+
+`;
+
+exports[`invalid(14): a: {\n    b: '''\n        text\n          more\n        ''',\n} 6`] = `
+
+Message:
+  1 | a: {
+  2 |     b: '''
+  3 |         text
+  4 |           more
+> 5 |         ''',
+    | ^^^^^^^^ Replace \`········\` with \`↹↹\`.
+  6 | }
+
+`;
+
+exports[`invalid(14): a: {\n    b: '''\n        text\n          more\n        ''',\n} 7`] = `
+
+Message:
+  1 | a: {
+  2 |     b: '''
+  3 |         text
+  4 |           more
+> 5 |         ''',
+    |            ^ Delete \`,\`.
+  6 | }
+
+`;
+
+exports[`invalid(14): a: {\n    b: '''\n        text\n          more\n        ''',\n} 8`] = `
+
+Message:
+  1 | a: {
+  2 |     b: '''
+  3 |         text
+  4 |           more
+  5 |         ''',
+> 6 | }
+    |  ^ Insert \`⏎\`.
+
+`;
+
+exports[`invalid(15): a: [\n\t'''\n\ttext\n\t''',\n] 1`] = `
+
+  1 | a: [
+  2 | 	'''
+  3 | 	text
+  4 | 	''',
+  5 | ]
+
+`;
+
+exports[`invalid(15): a: [\n\t'''\n\ttext\n\t''',\n] 2`] = `
+
+Message:
+  1 | a: [
+  2 | 	'''
+  3 | 	text
+> 4 | 	''',
+    | 	   ^ Delete \`,\`.
+  5 | ]
+
+Output:
+  1 | a: [
+  2 | 	'''
+  3 | 	text
+  4 | 	'''
+  5 | ]
+  6 |
+
+`;
+
+exports[`invalid(15): a: [\n\t'''\n\ttext\n\t''',\n] 3`] = `
+
+Message:
+  1 | a: [
+  2 | 	'''
+  3 | 	text
+  4 | 	''',
+> 5 | ]
+    |  ^ Insert \`⏎\`.
+
+`;
+
+exports[`invalid(16): a: '''\n\ttext\n\t'''\n 1`] = `
+
+  1 | a: '''
+  2 | 	text
+  3 | 	'''
+  4 |
+
+`;
+
+exports[`invalid(16): a: '''\n\ttext\n\t'''\n 2`] = `
+
+Message:
+> 1 | a: '''
+    |   ^ Replace \`·\` with \`⏎↹\`.
+  2 | 	text
+  3 | 	'''
+  4 |
+
+Output:
+  1 | a:
+  2 | 	'''
+  3 | 	text
+  4 | 	'''
+  5 |
+
+`;
+
+exports[`invalid(17): a: [1,   2,] 1`] = `
+
+  1 | a: [1,   2,]
+
+`;
+
+exports[`invalid(17): a: [1,   2,] 2`] = `
+
+Message:
+> 1 | a: [1,   2,]
+    |        ^^ Delete \`··\`.
+
+Output:
+  1 | a: [1, 2]
+  2 |
+
+`;
+
+exports[`invalid(17): a: [1,   2,] 3`] = `
+
+Message:
+> 1 | a: [1,   2,]
+    |           ^ Delete \`,\`.
+
+`;
+
+exports[`invalid(17): a: [1,   2,] 4`] = `
+
+Message:
+> 1 | a: [1,   2,]
+    |             ^ Insert \`⏎\`.
+
+`;
+
+exports[`invalid(18): a: [ /* note */ ] 1`] = `
+
+  1 | a: [ /* note */ ]
+
+`;
+
+exports[`invalid(18): a: [ /* note */ ] 2`] = `
+
+Message:
+> 1 | a: [ /* note */ ]
+    |     ^ Delete \`·\`.
+
+Output:
+  1 | a: [/* note */]
+  2 |
+
+`;
+
+exports[`invalid(18): a: [ /* note */ ] 3`] = `
+
+Message:
+> 1 | a: [ /* note */ ]
+    |                ^ Delete \`·\`.
+
+`;
+
+exports[`invalid(18): a: [ /* note */ ] 4`] = `
+
+Message:
+> 1 | a: [ /* note */ ]
+    |                  ^ Insert \`⏎\`.
+
+`;
+
+exports[`invalid(2): a: [1,\n2] 1`] = `
+
+  1 | a: [1,
+  2 | 2]
+
+`;
+
+exports[`invalid(2): a: [1,\n2] 2`] = `
+
+Message:
+> 1 | a: [1,
+    |     ^ Insert \`⏎↹\`.
+  2 | 2]
+
+Output:
+  1 | a: [
+  2 | 	1
+  3 | 	2
+  4 | ]
+  5 |
+
+`;
+
+exports[`invalid(2): a: [1,\n2] 3`] = `
+
+Message:
+> 1 | a: [1,
+    |      ^
+> 2 | 2]
+    | ^ Replace \`,⏎\` with \`⏎↹\`.
+
+`;
+
+exports[`invalid(2): a: [1,\n2] 4`] = `
+
+Message:
+  1 | a: [1,
+> 2 | 2]
+    |  ^ Insert \`⏎\`.
+
+`;
+
+exports[`invalid(2): a: [1,\n2] 5`] = `
+
+Message:
+  1 | a: [1,
+> 2 | 2]
+    |   ^ Insert \`⏎\`.
+
+`;
+
+exports[`invalid(3): a: {b: 1,c: 2} 1`] = `
+
+  1 | a: {b: 1,c: 2}
+
+`;
+
+exports[`invalid(3): a: {b: 1,c: 2} 2`] = `
+
+Message:
+> 1 | a: {b: 1,c: 2}
+    |          ^ Insert \`·\`.
+
+Output:
+  1 | a: {b: 1, c: 2}
+  2 |
+
+`;
+
+exports[`invalid(3): a: {b: 1,c: 2} 3`] = `
+
+Message:
+> 1 | a: {b: 1,c: 2}
+    |               ^ Insert \`⏎\`.
+
+`;
+
+exports[`invalid(4): a: 1    1`] = `
+
+  1 | a: 1   
+
+`;
+
+exports[`invalid(4): a: 1    2`] = `
+
+Message:
+> 1 | a: 1   
+    |     ^^^ Replace \`···\` with \`⏎\`.
+
+Output:
+  1 | a: 1
+  2 |
+
+`;
+
+exports[`invalid(5): a: 1\n\n\n\nb: 2 1`] = `
+
+  1 | a: 1
+  2 |
+  3 |
+  4 |
+  5 | b: 2
+
+`;
+
+exports[`invalid(5): a: 1\n\n\n\nb: 2 2`] = `
+
+Message:
+  1 | a: 1
+  2 |
+> 3 |
+    | ^
+> 4 |
+    | ^
+> 5 | b: 2
+    | ^ Delete \`⏎⏎\`.
+
+Output:
+  1 | a: 1
+  2 |
+  3 | b: 2
+  4 |
+
+`;
+
+exports[`invalid(5): a: 1\n\n\n\nb: 2 3`] = `
+
+Message:
+  1 | a: 1
+  2 |
+  3 |
+  4 |
+> 5 | b: 2
+    |     ^ Insert \`⏎\`.
+
+`;
+
+exports[`invalid(6): \n\na: 1 1`] = `
+
+  1 |
+  2 |
+  3 | a: 1
+
+`;
+
+exports[`invalid(6): \n\na: 1 2`] = `
+
+Message:
+> 1 |
+    | ^
+> 2 |
+    | ^
+> 3 | a: 1
+    | ^ Delete \`⏎⏎\`.
+
+Output:
+  1 | a: 1
+  2 |
+
+`;
+
+exports[`invalid(6): \n\na: 1 3`] = `
+
+Message:
+  1 |
+  2 |
+> 3 | a: 1
+    |     ^ Insert \`⏎\`.
+
+`;
+
+exports[`invalid(7): a: 1\n\n 1`] = `
+
+  1 | a: 1
+  2 |
+  3 |
+
+`;
+
+exports[`invalid(7): a: 1\n\n 2`] = `
+
+Message:
+  1 | a: 1
+> 2 |
+    | ^
+> 3 |
+    | ^ Delete \`⏎\`.
+
+Output:
+  1 | a: 1
+  2 |
+
+`;
+
+exports[`invalid(8): a: [\n  1,\n  2\n] 1`] = `
+
+  1 | a: [
+  2 |   1,
+  3 |   2
+  4 | ]
+
+`;
+
+exports[`invalid(8): a: [\n  1,\n  2\n] 2`] = `
+
+Message:
+  1 | a: [
+> 2 |   1,
+    | ^^ Replace \`··\` with \`↹\`.
+  3 |   2
+  4 | ]
+
+Output:
+  1 | a: [
+  2 | 	1
+  3 | 	2
+  4 | ]
+  5 |
+
+`;
+
+exports[`invalid(8): a: [\n  1,\n  2\n] 3`] = `
+
+Message:
+  1 | a: [
+> 2 |   1,
+    |    ^
+> 3 |   2
+    | ^^ Replace \`,⏎··\` with \`⏎↹\`.
+  4 | ]
+
+`;
+
+exports[`invalid(8): a: [\n  1,\n  2\n] 4`] = `
+
+Message:
+  1 | a: [
+  2 |   1,
+  3 |   2
+> 4 | ]
+    |  ^ Insert \`⏎\`.
+
+`;
+
+exports[`invalid(9): a: [\n\t1,\n\t2,\n] 1`] = `
+
+  1 | a: [
+  2 | 	1,
+  3 | 	2,
+  4 | ]
+
+`;
+
+exports[`invalid(9): a: [\n\t1,\n\t2,\n] 2`] = `
+
+Message:
+  1 | a: [
+> 2 | 	1,
+    | 	 ^ Delete \`,\`.
+  3 | 	2,
+  4 | ]
+
+Output:
+  1 | a: [
+  2 | 	1
+  3 | 	2
+  4 | ]
+  5 |
+
+`;
+
+exports[`invalid(9): a: [\n\t1,\n\t2,\n] 3`] = `
+
+Message:
+  1 | a: [
+  2 | 	1,
+> 3 | 	2,
+    | 	 ^ Delete \`,\`.
+  4 | ]
+
+`;
+
+exports[`invalid(9): a: [\n\t1,\n\t2,\n] 4`] = `
+
+Message:
+  1 | a: [
+  2 | 	1,
+  3 | 	2,
+> 4 | ]
+    |  ^ Insert \`⏎\`.
+
+`;

@@ -1,0 +1,301 @@
+exports[`invalid(1): name: \"soml\" 1`] = `
+
+  1 | name: "soml"
+
+`;
+
+exports[`invalid(1): name: \"soml\" 2`] = `
+
+Message:
+> 1 | name: "soml"
+    |       ^^^^^^ Prefer a literal string. A \`"…"\` string is only needed for escapes.
+
+Output:
+  1 | name: 'soml'
+
+`;
+
+exports[`invalid(10): a: \"\" 1`] = `
+
+  1 | a: ""
+
+`;
+
+exports[`invalid(10): a: \"\" 2`] = `
+
+Message:
+> 1 | a: ""
+    |    ^^ Prefer a literal string. A \`"…"\` string is only needed for escapes.
+
+Output:
+  1 | a: ''
+
+`;
+
+exports[`invalid(11): \"name\": 1 1`] = `
+
+  1 | "name": 1
+
+`;
+
+exports[`invalid(11): \"name\": 1 2`] = `
+
+Message:
+> 1 | "name": 1
+    | ^^^^^^ Prefer a literal string. A \`"…"\` string is only needed for escapes.
+
+Output:
+  1 | 'name': 1
+
+`;
+
+exports[`invalid(12): a: {\"b c\": 1} 1`] = `
+
+  1 | a: {"b c": 1}
+
+`;
+
+exports[`invalid(12): a: {\"b c\": 1} 2`] = `
+
+Message:
+> 1 | a: {"b c": 1}
+    |     ^^^^^ Prefer a literal string. A \`"…"\` string is only needed for escapes.
+
+Output:
+  1 | a: {'b c': 1}
+
+`;
+
+exports[`invalid(13): [1, \"two\"] 1`] = `
+
+  1 | [1, "two"]
+
+`;
+
+exports[`invalid(13): [1, \"two\"] 2`] = `
+
+Message:
+> 1 | [1, "two"]
+    |     ^^^^^ Prefer a literal string. A \`"…"\` string is only needed for escapes.
+
+Output:
+  1 | [1, 'two']
+
+`;
+
+exports[`invalid(14): a: \"\"\"\n\tone \"two\"\n\t\"\"\" 1`] = `
+
+  1 | a: """
+  2 | 	one "two"
+  3 | 	"""
+
+`;
+
+exports[`invalid(14): a: \"\"\"\n\tone \"two\"\n\t\"\"\" 2`] = `
+
+Message:
+> 1 | a: """
+    |    ^^^
+> 2 | 	one "two"
+    | ^^^^^^^^^^
+> 3 | 	"""
+    | ^^^^ Prefer a literal string. A \`"…"\` string is only needed for escapes.
+
+Output:
+  1 | a: '''
+  2 | 	one "two"
+  3 | 	'''
+
+`;
+
+exports[`invalid(15): a: {\n\tb: \"\"\"\"\n\t\t\"\"\"\n\t\t\"\"\"\",\n} 1`] = `
+
+  1 | a: {
+  2 | 	b: """"
+  3 | 		"""
+  4 | 		"""",
+  5 | }
+
+`;
+
+exports[`invalid(15): a: {\n\tb: \"\"\"\"\n\t\t\"\"\"\n\t\t\"\"\"\",\n} 2`] = `
+
+Message:
+  1 | a: {
+> 2 | 	b: """"
+    | 	   ^^^^
+> 3 | 		"""
+    | ^^^^^
+> 4 | 		"""",
+    | ^^^^^^ Prefer a literal string. A \`"…"\` string is only needed for escapes.
+  5 | }
+
+Output:
+  1 | a: {
+  2 | 	b: ''''
+  3 | 		"""
+  4 | 		'''',
+  5 | }
+
+`;
+
+exports[`invalid(16): a: \"\"\"\n\tx\n\"\"\" 1`] = `
+
+  1 | a: """
+  2 | 	x
+  3 | """
+
+`;
+
+exports[`invalid(16): a: \"\"\"\n\tx\n\"\"\" 2`] = `
+
+Message:
+> 1 | a: """
+    |    ^^^
+> 2 | 	x
+    | ^^
+> 3 | """
+    | ^^^ Prefer a literal string. A \`"…"\` string is only needed for escapes.
+
+Output:
+  1 | a: '''
+  2 | 	x
+  3 | '''
+
+`;
+
+exports[`invalid(2): path: \"C:\\\\Users\" 1`] = `
+
+  1 | path: "C:\\\\Users"
+
+`;
+
+exports[`invalid(2): path: \"C:\\\\Users\" 2`] = `
+
+Message:
+> 1 | path: "C:\\\\Users"
+    |       ^^^^^^^^^^^ Prefer a literal string. A \`"…"\` string is only needed for escapes.
+
+Output:
+  1 | path: 'C:\\Users'
+
+`;
+
+exports[`invalid(3): path: \"C:\\\\new\\\\temp\" 1`] = `
+
+  1 | path: "C:\\\\new\\\\temp"
+
+`;
+
+exports[`invalid(3): path: \"C:\\\\new\\\\temp\" 2`] = `
+
+Message:
+> 1 | path: "C:\\\\new\\\\temp"
+    |       ^^^^^^^^^^^^^^^ Prefer a literal string. A \`"…"\` string is only needed for escapes.
+
+Output:
+  1 | path: 'C:\\new\\temp'
+
+`;
+
+exports[`invalid(4): path: \"src\\\\test\" 1`] = `
+
+  1 | path: "src\\\\test"
+
+`;
+
+exports[`invalid(4): path: \"src\\\\test\" 2`] = `
+
+Message:
+> 1 | path: "src\\\\test"
+    |       ^^^^^^^^^^^ Prefer a literal string. A \`"…"\` string is only needed for escapes.
+
+Output:
+  1 | path: 'src\\test'
+
+`;
+
+exports[`invalid(5): pattern: \"^\\\\d+\\\\n$\" 1`] = `
+
+  1 | pattern: "^\\\\d+\\\\n$"
+
+`;
+
+exports[`invalid(5): pattern: \"^\\\\d+\\\\n$\" 2`] = `
+
+Message:
+> 1 | pattern: "^\\\\d+\\\\n$"
+    |          ^^^^^^^^^^^ Prefer a literal string. A \`"…"\` string is only needed for escapes.
+
+Output:
+  1 | pattern: '^\\d+\\n$'
+
+`;
+
+exports[`invalid(6): a: \"Hello\\\\nWorld\" 1`] = `
+
+  1 | a: "Hello\\\\nWorld"
+
+`;
+
+exports[`invalid(6): a: \"Hello\\\\nWorld\" 2`] = `
+
+Message:
+> 1 | a: "Hello\\\\nWorld"
+    |    ^^^^^^^^^^^^^^^ Prefer a literal string. A \`"…"\` string is only needed for escapes.
+
+Output:
+  1 | a: 'Hello\\nWorld'
+
+`;
+
+exports[`invalid(7): command: \"printf \\\"%s\\\\n\\\" a\" 1`] = `
+
+  1 | command: "printf \\"%s\\\\n\\" a"
+
+`;
+
+exports[`invalid(7): command: \"printf \\\"%s\\\\n\\\" a\" 2`] = `
+
+Message:
+> 1 | command: "printf \\"%s\\\\n\\" a"
+    |          ^^^^^^^^^^^^^^^^^^^^ Prefer a literal string. A \`"…"\` string is only needed for escapes.
+
+Output:
+  1 | command: 'printf "%s\\n" a'
+
+`;
+
+exports[`invalid(8): a: \"say \\\"hi\\\"\" 1`] = `
+
+  1 | a: "say \\"hi\\""
+
+`;
+
+exports[`invalid(8): a: \"say \\\"hi\\\"\" 2`] = `
+
+Message:
+> 1 | a: "say \\"hi\\""
+    |    ^^^^^^^^^^^^ Prefer a literal string. A \`"…"\` string is only needed for escapes.
+
+Output:
+  1 | a: 'say "hi"'
+
+`;
+
+exports[`invalid(9): a: \"caf\\u{e9}\" 1`] = `
+
+  1 | a: "caf\\u{e9}"
+
+`;
+
+exports[`invalid(9): a: \"caf\\u{e9}\" 2`] = `
+
+Message:
+> 1 | a: "caf\\u{e9}"
+    |    ^^^^^^^^^^^ Prefer a literal string. A \`"…"\` string is only needed for escapes.
+
+Output:
+  1 | a: 'café'
+
+`;

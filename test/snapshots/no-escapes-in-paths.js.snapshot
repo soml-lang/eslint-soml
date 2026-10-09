@@ -1,0 +1,163 @@
+exports[`invalid(1): dir: \"C:\\new\\temp\" 1`] = `
+
+  1 | dir: "C:\\new\\temp"
+
+`;
+
+exports[`invalid(1): dir: \"C:\\new\\temp\" 2`] = `
+
+Message:
+> 1 | dir: "C:\\new\\temp"
+    |      ^^^^^^^^^^^^^ In a \`"…"\` string, \`\\n\` is a line break, not a backslash and \`n\`, so this path is broken.
+
+Suggestion 1/1: Write it as \`'C:\\new\\temp'\`.:
+  1 | dir: 'C:\\new\\temp'
+
+`;
+
+exports[`invalid(10): dir: \"C:\\new\\u{1f600}\\u{27}\\\"\\\\temp\" 1`] = `
+
+  1 | dir: "C:\\new\\u{1f600}\\u{27}\\"\\\\temp"
+
+`;
+
+exports[`invalid(10): dir: \"C:\\new\\u{1f600}\\u{27}\\\"\\\\temp\" 2`] = `
+
+Message:
+> 1 | dir: "C:\\new\\u{1f600}\\u{27}\\"\\\\temp"
+    |      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ In a \`"…"\` string, \`\\n\` is a line break, not a backslash and \`n\`, so this path is broken.
+
+Suggestion 1/1: Write it as \`"C:\\\\new😀'\\"\\\\temp"\`.:
+  1 | dir: "C:\\\\new😀'\\"\\\\temp"
+
+`;
+
+exports[`invalid(2): dir: \"D:\\\\Users\\temp\" 1`] = `
+
+  1 | dir: "D:\\\\Users\\temp"
+
+`;
+
+exports[`invalid(2): dir: \"D:\\\\Users\\temp\" 2`] = `
+
+Message:
+> 1 | dir: "D:\\\\Users\\temp"
+    |      ^^^^^^^^^^^^^^^^ In a \`"…"\` string, \`\\t\` is a tab, not a backslash and \`t\`, so this path is broken.
+
+Suggestion 1/1: Write it as \`'D:\\Users\\temp'\`.:
+  1 | dir: 'D:\\Users\\temp'
+
+`;
+
+exports[`invalid(3): dir: \"C:\\new\\\\don't\" 1`] = `
+
+  1 | dir: "C:\\new\\\\don't"
+
+`;
+
+exports[`invalid(3): dir: \"C:\\new\\\\don't\" 2`] = `
+
+Message:
+> 1 | dir: "C:\\new\\\\don't"
+    |      ^^^^^^^^^^^^^^^ In a \`"…"\` string, \`\\n\` is a line break, not a backslash and \`n\`, so this path is broken.
+
+Suggestion 1/1: Write it as \`"C:\\\\new\\\\don't"\`.:
+  1 | dir: "C:\\\\new\\\\don't"
+
+`;
+
+exports[`invalid(4): dir: \"C:\\new\\u{a0}x\" 1`] = `
+
+  1 | dir: "C:\\new\\u{a0}x"
+
+`;
+
+exports[`invalid(4): dir: \"C:\\new\\u{a0}x\" 2`] = `
+
+Message:
+> 1 | dir: "C:\\new\\u{a0}x"
+    |      ^^^^^^^^^^^^^^^ In a \`"…"\` string, \`\\n\` is a line break, not a backslash and \`n\`, so this path is broken.
+
+Suggestion 1/1: Write it as \`"C:\\\\new\\u{a0}x"\`.:
+  1 | dir: "C:\\\\new\\u{a0}x"
+
+`;
+
+exports[`invalid(5): dirs: [\"C:\\temp\", \"C:\\\\ok\"] 1`] = `
+
+  1 | dirs: ["C:\\temp", "C:\\\\ok"]
+
+`;
+
+exports[`invalid(5): dirs: [\"C:\\temp\", \"C:\\\\ok\"] 2`] = `
+
+Message:
+> 1 | dirs: ["C:\\temp", "C:\\\\ok"]
+    |        ^^^^^^^^^ In a \`"…"\` string, \`\\t\` is a tab, not a backslash and \`t\`, so this path is broken.
+
+Suggestion 1/1: Write it as \`'C:\\temp'\`.:
+  1 | dirs: ['C:\\temp', "C:\\\\ok"]
+
+`;
+
+exports[`invalid(6): dir: \"C:\\nøkler\" 1`] = `
+
+  1 | dir: "C:\\nøkler"
+
+`;
+
+exports[`invalid(6): dir: \"C:\\nøkler\" 2`] = `
+
+Message:
+> 1 | dir: "C:\\nøkler"
+    |      ^^^^^^^^^^^ In a \`"…"\` string, \`\\n\` is a line break, not a backslash and \`n\`, so this path is broken.
+
+Suggestion 1/1: Write it as \`'C:\\nøkler'\`.:
+  1 | dir: 'C:\\nøkler'
+
+`;
+
+exports[`invalid(7): dir: \"C:\\new\\tâches\" 1`] = `
+
+  1 | dir: "C:\\new\\tâches"
+
+`;
+
+exports[`invalid(7): dir: \"C:\\new\\tâches\" 2`] = `
+
+Message:
+> 1 | dir: "C:\\new\\tâches"
+    |      ^^^^^^^^^^^^^^^ In a \`"…"\` string, \`\\n\` is a line break, not a backslash and \`n\`, so this path is broken.
+
+Suggestion 1/1: Write it as \`'C:\\new\\tâches'\`.:
+  1 | dir: 'C:\\new\\tâches'
+
+`;
+
+exports[`invalid(8): dir: \"C:\\new\tx\" 1`] = `
+
+  1 | dir: "C:\\new	x"
+
+`;
+
+exports[`invalid(8): dir: \"C:\\new\tx\" 2`] = `
+
+Message:
+> 1 | dir: "C:\\new	x"
+    |      ^^^^^^^^^^ In a \`"…"\` string, \`\\n\` is a line break, not a backslash and \`n\`, so this path is broken.
+
+`;
+
+exports[`invalid(9): dir: \"C:\\new\\n\" 1`] = `
+
+  1 | dir: "C:\\new\\n"
+
+`;
+
+exports[`invalid(9): dir: \"C:\\new\\n\" 2`] = `
+
+Message:
+> 1 | dir: "C:\\new\\n"
+    |      ^^^^^^^^^^ In a \`"…"\` string, \`\\n\` is a line break, not a backslash and \`n\`, so this path is broken.
+
+`;

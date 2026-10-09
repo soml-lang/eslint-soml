@@ -1,0 +1,492 @@
+exports[`invalid(1): mode: 644 1`] = `
+
+  1 | mode: 644
+
+`;
+
+exports[`invalid(1): mode: 644 2`] = `
+
+Message:
+> 1 | mode: 644
+    |       ^^^ \`644\` is a decimal number, so this file mode is \`0o1204\`. A file mode is octal, as in \`0o644\`.
+
+Suggestion 1/1: Write it as \`0o644\`.:
+  1 | mode: 0o644
+
+`;
+
+exports[`invalid(10): chmod: 7_55 1`] = `
+
+  1 | chmod: 7_55
+
+`;
+
+exports[`invalid(10): chmod: 7_55 2`] = `
+
+Message:
+> 1 | chmod: 7_55
+    |        ^^^^ \`7_55\` is a decimal number, so this file mode is \`0o1363\`. A file mode is octal, as in \`0o755\`.
+
+Suggestion 1/1: Write it as \`0o755\`.:
+  1 | chmod: 0o755
+
+`;
+
+exports[`invalid(11): file-mode: 640 1`] = `
+
+  1 | file-mode: 640
+
+`;
+
+exports[`invalid(11): file-mode: 640 2`] = `
+
+Message:
+> 1 | file-mode: 640
+    |            ^^^ \`640\` is a decimal number, so this file mode is \`0o1200\`. A file mode is octal, as in \`0o640\`.
+
+Suggestion 1/1: Write it as \`0o640\`.:
+  1 | file-mode: 0o640
+
+`;
+
+exports[`invalid(12): dir_mode: 750 1`] = `
+
+  1 | dir_mode: 750
+
+`;
+
+exports[`invalid(12): dir_mode: 750 2`] = `
+
+Message:
+> 1 | dir_mode: 750
+    |           ^^^ \`750\` is a decimal number, so this file mode is \`0o1356\`. A file mode is octal, as in \`0o750\`.
+
+Suggestion 1/1: Write it as \`0o750\`.:
+  1 | dir_mode: 0o750
+
+`;
+
+exports[`invalid(13): defaultMode: 400 1`] = `
+
+  1 | defaultMode: 400
+
+`;
+
+exports[`invalid(13): defaultMode: 400 2`] = `
+
+Message:
+> 1 | defaultMode: 400
+    |              ^^^ \`400\` is a decimal number, so this file mode is \`0o620\`. A file mode is octal, as in \`0o400\`.
+
+Suggestion 1/1: Write it as \`0o400\`.:
+  1 | defaultMode: 0o400
+
+`;
+
+exports[`invalid(14): permissions: 644 1`] = `
+
+  1 | permissions: 644
+
+`;
+
+exports[`invalid(14): permissions: 644 2`] = `
+
+Message:
+> 1 | permissions: 644
+    |              ^^^ \`644\` is a decimal number, so this file mode is \`0o1204\`. A file mode is octal, as in \`0o644\`.
+
+Suggestion 1/1: Write it as \`0o644\`.:
+  1 | permissions: 0o644
+
+`;
+
+exports[`invalid(15): perms: 644 1`] = `
+
+  1 | perms: 644
+
+`;
+
+exports[`invalid(15): perms: 644 2`] = `
+
+Message:
+> 1 | perms: 644
+    |        ^^^ \`644\` is a decimal number, so this file mode is \`0o1204\`. A file mode is octal, as in \`0o644\`.
+
+Suggestion 1/1: Write it as \`0o644\`.:
+  1 | perms: 0o644
+
+`;
+
+exports[`invalid(16): chmod: 755 1`] = `
+
+  1 | chmod: 755
+
+`;
+
+exports[`invalid(16): chmod: 755 2`] = `
+
+Message:
+> 1 | chmod: 755
+    |        ^^^ \`755\` is a decimal number, so this file mode is \`0o1363\`. A file mode is octal, as in \`0o755\`.
+
+Suggestion 1/1: Write it as \`0o755\`.:
+  1 | chmod: 0o755
+
+`;
+
+exports[`invalid(17): files: {config: {mode: 644}} 1`] = `
+
+  1 | files: {config: {mode: 644}}
+
+`;
+
+exports[`invalid(17): files: {config: {mode: 644}} 2`] = `
+
+Message:
+> 1 | files: {config: {mode: 644}}
+    |                        ^^^ \`644\` is a decimal number, so this file mode is \`0o1204\`. A file mode is octal, as in \`0o644\`.
+
+Suggestion 1/1: Write it as \`0o644\`.:
+  1 | files: {config: {mode: 0o644}}
+
+`;
+
+exports[`invalid(18): volumes: [{path: '/etc/x', mode: 600}] 1`] = `
+
+  1 | volumes: [{path: '/etc/x', mode: 600}]
+
+`;
+
+exports[`invalid(18): volumes: [{path: '/etc/x', mode: 600}] 2`] = `
+
+Message:
+> 1 | volumes: [{path: '/etc/x', mode: 600}]
+    |                                  ^^^ \`600\` is a decimal number, so this file mode is \`0o1130\`. A file mode is octal, as in \`0o600\`.
+
+Suggestion 1/1: Write it as \`0o600\`.:
+  1 | volumes: [{path: '/etc/x', mode: 0o600}]
+
+`;
+
+exports[`invalid(19): mode: 4600 1`] = `
+
+  1 | mode: 4600
+
+`;
+
+exports[`invalid(19): mode: 4600 2`] = `
+
+Message:
+> 1 | mode: 4600
+    |       ^^^^ \`4600\` is a decimal number, so this file mode is \`0o10770\`. A file mode is octal, as in \`0o4600\`.
+
+Suggestion 1/1: Write it as \`0o4600\`.:
+  1 | mode: 0o4600
+
+`;
+
+exports[`invalid(2): mode: 755 1`] = `
+
+  1 | mode: 755
+
+`;
+
+exports[`invalid(2): mode: 755 2`] = `
+
+Message:
+> 1 | mode: 755
+    |       ^^^ \`755\` is a decimal number, so this file mode is \`0o1363\`. A file mode is octal, as in \`0o755\`.
+
+Suggestion 1/1: Write it as \`0o755\`.:
+  1 | mode: 0o755
+
+`;
+
+exports[`invalid(20): mode: 6644 1`] = `
+
+  1 | mode: 6644
+
+`;
+
+exports[`invalid(20): mode: 6644 2`] = `
+
+Message:
+> 1 | mode: 6644
+    |       ^^^^ \`6644\` is a decimal number, so this file mode is \`0o14764\`. A file mode is octal, as in \`0o6644\`.
+
+Suggestion 1/1: Write it as \`0o6644\`.:
+  1 | mode: 0o6644
+
+`;
+
+exports[`invalid(21): mode: 7744 1`] = `
+
+  1 | mode: 7744
+
+`;
+
+exports[`invalid(21): mode: 7744 2`] = `
+
+Message:
+> 1 | mode: 7744
+    |       ^^^^ \`7744\` is a decimal number, so this file mode is \`0o17100\`. A file mode is octal, as in \`0o7744\`.
+
+Suggestion 1/1: Write it as \`0o7744\`.:
+  1 | mode: 0o7744
+
+`;
+
+exports[`invalid(22): 'listen.mode': 660 1`] = `
+
+  1 | 'listen.mode': 660
+
+`;
+
+exports[`invalid(22): 'listen.mode': 660 2`] = `
+
+Message:
+> 1 | 'listen.mode': 660
+    |                ^^^ \`660\` is a decimal number, so this file mode is \`0o1224\`. A file mode is octal, as in \`0o660\`.
+
+Suggestion 1/1: Write it as \`0o660\`.:
+  1 | 'listen.mode': 0o660
+
+`;
+
+exports[`invalid(23): 'dfs.datanode.data.dir.perm': 700 1`] = `
+
+  1 | 'dfs.datanode.data.dir.perm': 700
+
+`;
+
+exports[`invalid(23): 'dfs.datanode.data.dir.perm': 700 2`] = `
+
+Message:
+> 1 | 'dfs.datanode.data.dir.perm': 700
+    |                               ^^^ \`700\` is a decimal number, so this file mode is \`0o1274\`. A file mode is octal, as in \`0o700\`.
+
+Suggestion 1/1: Write it as \`0o700\`.:
+  1 | 'dfs.datanode.data.dir.perm': 0o700
+
+`;
+
+exports[`invalid(24): FILE_UPLOAD_PERMISSIONS: 644 1`] = `
+
+  1 | FILE_UPLOAD_PERMISSIONS: 644
+
+`;
+
+exports[`invalid(24): FILE_UPLOAD_PERMISSIONS: 644 2`] = `
+
+Message:
+> 1 | FILE_UPLOAD_PERMISSIONS: 644
+    |                          ^^^ \`644\` is a decimal number, so this file mode is \`0o1204\`. A file mode is octal, as in \`0o644\`.
+
+Suggestion 1/1: Write it as \`0o644\`.:
+  1 | FILE_UPLOAD_PERMISSIONS: 0o644
+
+`;
+
+exports[`invalid(25): net: {unixDomainSocket: {filePermissions: 700}} 1`] = `
+
+  1 | net: {unixDomainSocket: {filePermissions: 700}}
+
+`;
+
+exports[`invalid(25): net: {unixDomainSocket: {filePermissions: 700}} 2`] = `
+
+Message:
+> 1 | net: {unixDomainSocket: {filePermissions: 700}}
+    |                                           ^^^ \`700\` is a decimal number, so this file mode is \`0o1274\`. A file mode is octal, as in \`0o700\`.
+
+Suggestion 1/1: Write it as \`0o700\`.:
+  1 | net: {unixDomainSocket: {filePermissions: 0o700}}
+
+`;
+
+exports[`invalid(26): Mode: 644 1`] = `
+
+  1 | Mode: 644
+
+`;
+
+exports[`invalid(26): Mode: 644 2`] = `
+
+Message:
+> 1 | Mode: 644
+    |       ^^^ \`644\` is a decimal number, so this file mode is \`0o1204\`. A file mode is octal, as in \`0o644\`.
+
+Suggestion 1/1: Write it as \`0o644\`.:
+  1 | Mode: 0o644
+
+`;
+
+exports[`invalid(27): DirPerms: 750 1`] = `
+
+  1 | DirPerms: 750
+
+`;
+
+exports[`invalid(27): DirPerms: 750 2`] = `
+
+Message:
+> 1 | DirPerms: 750
+    |           ^^^ \`750\` is a decimal number, so this file mode is \`0o1356\`. A file mode is octal, as in \`0o750\`.
+
+Suggestion 1/1: Write it as \`0o750\`.:
+  1 | DirPerms: 0o750
+
+`;
+
+exports[`invalid(28): 'file mode': 644 1`] = `
+
+  1 | 'file mode': 644
+
+`;
+
+exports[`invalid(28): 'file mode': 644 2`] = `
+
+Message:
+> 1 | 'file mode': 644
+    |              ^^^ \`644\` is a decimal number, so this file mode is \`0o1204\`. A file mode is octal, as in \`0o644\`.
+
+Suggestion 1/1: Write it as \`0o644\`.:
+  1 | 'file mode': 0o644
+
+`;
+
+exports[`invalid(29): 'php_admin_value[mode]': 600 1`] = `
+
+  1 | 'php_admin_value[mode]': 600
+
+`;
+
+exports[`invalid(29): 'php_admin_value[mode]': 600 2`] = `
+
+Message:
+> 1 | 'php_admin_value[mode]': 600
+    |                          ^^^ \`600\` is a decimal number, so this file mode is \`0o1130\`. A file mode is octal, as in \`0o600\`.
+
+Suggestion 1/1: Write it as \`0o600\`.:
+  1 | 'php_admin_value[mode]': 0o600
+
+`;
+
+exports[`invalid(3): mode: 777 1`] = `
+
+  1 | mode: 777
+
+`;
+
+exports[`invalid(3): mode: 777 2`] = `
+
+Message:
+> 1 | mode: 777
+    |       ^^^ \`777\` is a decimal number, so this file mode is \`0o1411\`. A file mode is octal, as in \`0o777\`.
+
+Suggestion 1/1: Write it as \`0o777\`.:
+  1 | mode: 0o777
+
+`;
+
+exports[`invalid(4): mode: 600 1`] = `
+
+  1 | mode: 600
+
+`;
+
+exports[`invalid(4): mode: 600 2`] = `
+
+Message:
+> 1 | mode: 600
+    |       ^^^ \`600\` is a decimal number, so this file mode is \`0o1130\`. A file mode is octal, as in \`0o600\`.
+
+Suggestion 1/1: Write it as \`0o600\`.:
+  1 | mode: 0o600
+
+`;
+
+exports[`invalid(5): mode: 711 1`] = `
+
+  1 | mode: 711
+
+`;
+
+exports[`invalid(5): mode: 711 2`] = `
+
+Message:
+> 1 | mode: 711
+    |       ^^^ \`711\` is a decimal number, so this file mode is \`0o1307\`. A file mode is octal, as in \`0o711\`.
+
+Suggestion 1/1: Write it as \`0o711\`.:
+  1 | mode: 0o711
+
+`;
+
+exports[`invalid(6): mode: 1777 1`] = `
+
+  1 | mode: 1777
+
+`;
+
+exports[`invalid(6): mode: 1777 2`] = `
+
+Message:
+> 1 | mode: 1777
+    |       ^^^^ \`1777\` is a decimal number, so this file mode is \`0o3361\`. A file mode is octal, as in \`0o1777\`.
+
+Suggestion 1/1: Write it as \`0o1777\`.:
+  1 | mode: 0o1777
+
+`;
+
+exports[`invalid(7): mode: 6440 1`] = `
+
+  1 | mode: 6440
+
+`;
+
+exports[`invalid(7): mode: 6440 2`] = `
+
+Message:
+> 1 | mode: 6440
+    |       ^^^^ \`6440\` is a decimal number, so this file mode is \`0o14450\`. A file mode is octal, as in \`0o6440\`.
+
+Suggestion 1/1: Write it as \`0o6440\`.:
+  1 | mode: 0o6440
+
+`;
+
+exports[`invalid(8): mode: 6_44 1`] = `
+
+  1 | mode: 6_44
+
+`;
+
+exports[`invalid(8): mode: 6_44 2`] = `
+
+Message:
+> 1 | mode: 6_44
+    |       ^^^^ \`6_44\` is a decimal number, so this file mode is \`0o1204\`. A file mode is octal, as in \`0o644\`.
+
+Suggestion 1/1: Write it as \`0o644\`.:
+  1 | mode: 0o644
+
+`;
+
+exports[`invalid(9): mode: 6_440 1`] = `
+
+  1 | mode: 6_440
+
+`;
+
+exports[`invalid(9): mode: 6_440 2`] = `
+
+Message:
+> 1 | mode: 6_440
+    |       ^^^^^ \`6_440\` is a decimal number, so this file mode is \`0o14450\`. A file mode is octal, as in \`0o6440\`.
+
+Suggestion 1/1: Write it as \`0o6440\`.:
+  1 | mode: 0o6440
+
+`;

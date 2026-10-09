@@ -1,0 +1,322 @@
+exports[`invalid(1): 'timeout ': 30s 1`] = `
+
+  1 | 'timeout ': 30s
+
+`;
+
+exports[`invalid(1): 'timeout ': 30s 2`] = `
+
+Message:
+> 1 | 'timeout ': 30s
+    | ^^^^^^^^^^ The whitespace at the start or end of \`'timeout '\` is part of the key, so a program that reads \`timeout\` does not find it.
+
+`;
+
+exports[`invalid(10): 'timeout ': 30s 1`] = `
+
+  1 | 'timeout ': 30s
+
+`;
+
+exports[`invalid(10): 'timeout ': 30s 2`] = `
+
+Message:
+> 1 | 'timeout ': 30s
+    | ^^^^^^^^^^ The whitespace at the start or end of \`'timeout\\u{a0}'\` is part of the key, so a program that reads \`timeout\` does not find it.
+
+`;
+
+exports[`invalid(11): 'timeout ': 30s 1`] = `
+
+  1 | 'timeout
+  2 | ': 30s
+
+`;
+
+exports[`invalid(11): 'timeout ': 30s 2`] = `
+
+Message:
+> 1 | 'timeout
+    | ^^^^^^^^^^ The whitespace at the start or end of \`'timeout\\u{2028}'\` is part of the key, so a program that reads \`timeout\` does not find it.
+  2 | ': 30s
+
+`;
+
+exports[`invalid(12): 'timeout\t': 30s 1`] = `
+
+  1 | 'timeout	': 30s
+
+`;
+
+exports[`invalid(12): 'timeout\t': 30s 2`] = `
+
+Message:
+> 1 | 'timeout	': 30s
+    | ^^^^^^^^^^ The whitespace at the start or end of \`'timeout\\t'\` is part of the key, so a program that reads \`timeout\` does not find it.
+
+`;
+
+exports[`invalid(13): ' a﻿': 1 1`] = `
+
+  1 | ' a﻿': 1
+
+`;
+
+exports[`invalid(13): ' a﻿': 1 2`] = `
+
+Message:
+> 1 | ' a﻿': 1
+    | ^^^^^ The whitespace at the start or end of \`' a\\u{feff}'\` is part of the key, so a program that reads \`a\\u{feff}\` does not find it.
+
+`;
+
+exports[`invalid(14): 'database.host ': 'localhost' 1`] = `
+
+  1 | 'database.host ': 'localhost'
+
+`;
+
+exports[`invalid(14): 'database.host ': 'localhost' 2`] = `
+
+Message:
+> 1 | 'database.host ': 'localhost'
+    | ^^^^^^^^^^^^^^^^ The whitespace at the start or end of \`'database.host '\` is part of the key, so a program that reads \`database.host\` does not find it.
+
+`;
+
+exports[`invalid(15): 'display name ': 'Ada' 1`] = `
+
+  1 | 'display name ': 'Ada'
+
+`;
+
+exports[`invalid(15): 'display name ': 'Ada' 2`] = `
+
+Message:
+> 1 | 'display name ': 'Ada'
+    | ^^^^^^^^^^^^^^^ The whitespace at the start or end of \`'display name '\` is part of the key, so a program that reads \`display name\` does not find it.
+
+`;
+
+exports[`invalid(16): a: {'b ': 1} 1`] = `
+
+  1 | a: {'b ': 1}
+
+`;
+
+exports[`invalid(16): a: {'b ': 1} 2`] = `
+
+Message:
+> 1 | a: {'b ': 1}
+    |     ^^^^ The whitespace at the start or end of \`'b '\` is part of the key, so a program that reads \`b\` does not find it.
+
+`;
+
+exports[`invalid(17): [{' c': 1}] 1`] = `
+
+  1 | [{' c': 1}]
+
+`;
+
+exports[`invalid(17): [{' c': 1}] 2`] = `
+
+Message:
+> 1 | [{' c': 1}]
+    |   ^^^^ The whitespace at the start or end of \`' c'\` is part of the key, so a program that reads \`c\` does not find it.
+
+`;
+
+exports[`invalid(18): {'d ': 1} 1`] = `
+
+  1 | {'d ': 1}
+
+`;
+
+exports[`invalid(18): {'d ': 1} 2`] = `
+
+Message:
+> 1 | {'d ': 1}
+    |  ^^^^ The whitespace at the start or end of \`'d '\` is part of the key, so a program that reads \`d\` does not find it.
+
+`;
+
+exports[`invalid(19): 'a ': 1 # comment 1`] = `
+
+  1 | 'a ': 1 # comment
+
+`;
+
+exports[`invalid(19): 'a ': 1 # comment 2`] = `
+
+Message:
+> 1 | 'a ': 1 # comment
+    | ^^^^ The whitespace at the start or end of \`'a '\` is part of the key, so a program that reads \`a\` does not find it.
+
+`;
+
+exports[`invalid(2): ' timeout': 30s 1`] = `
+
+  1 | ' timeout': 30s
+
+`;
+
+exports[`invalid(2): ' timeout': 30s 2`] = `
+
+Message:
+> 1 | ' timeout': 30s
+    | ^^^^^^^^^^ The whitespace at the start or end of \`' timeout'\` is part of the key, so a program that reads \`timeout\` does not find it.
+
+`;
+
+exports[`invalid(20): /* comment */ 'a ': 1 1`] = `
+
+  1 | /* comment */ 'a ': 1
+
+`;
+
+exports[`invalid(20): /* comment */ 'a ': 1 2`] = `
+
+Message:
+> 1 | /* comment */ 'a ': 1
+    |               ^^^^ The whitespace at the start or end of \`'a '\` is part of the key, so a program that reads \`a\` does not find it.
+
+`;
+
+exports[`invalid(21): 'a ': 1\n' b': 2 1`] = `
+
+  1 | 'a ': 1
+  2 | ' b': 2
+
+`;
+
+exports[`invalid(21): 'a ': 1\n' b': 2 2`] = `
+
+Message:
+> 1 | 'a ': 1
+    | ^^^^ The whitespace at the start or end of \`'a '\` is part of the key, so a program that reads \`a\` does not find it.
+  2 | ' b': 2
+
+`;
+
+exports[`invalid(21): 'a ': 1\n' b': 2 3`] = `
+
+Message:
+  1 | 'a ': 1
+> 2 | ' b': 2
+    | ^^^^ The whitespace at the start or end of \`' b'\` is part of the key, so a program that reads \`b\` does not find it.
+
+`;
+
+exports[`invalid(22): 'timeout ': 2s\ntimeout: 1s 1`] = `
+
+  1 | 'timeout ': 2s
+  2 | timeout: 1s
+
+`;
+
+exports[`invalid(22): 'timeout ': 2s\ntimeout: 1s 2`] = `
+
+Message:
+> 1 | 'timeout ': 2s
+    | ^^^^^^^^^^ The whitespace at the start or end of \`'timeout '\` is part of the key, so a program that reads \`timeout\` does not find it.
+  2 | timeout: 1s
+
+`;
+
+exports[`invalid(3): ' timeout ': 30s 1`] = `
+
+  1 | ' timeout ': 30s
+
+`;
+
+exports[`invalid(3): ' timeout ': 30s 2`] = `
+
+Message:
+> 1 | ' timeout ': 30s
+    | ^^^^^^^^^^^ The whitespace at the start or end of \`' timeout '\` is part of the key, so a program that reads \`timeout\` does not find it.
+
+`;
+
+exports[`invalid(4): \"timeout \": 30s 1`] = `
+
+  1 | "timeout ": 30s
+
+`;
+
+exports[`invalid(4): \"timeout \": 30s 2`] = `
+
+Message:
+> 1 | "timeout ": 30s
+    | ^^^^^^^^^^ The whitespace at the start or end of \`"timeout "\` is part of the key, so a program that reads \`timeout\` does not find it.
+
+`;
+
+exports[`invalid(5): \"timeout\\t\": 30s 1`] = `
+
+  1 | "timeout\\t": 30s
+
+`;
+
+exports[`invalid(5): \"timeout\\t\": 30s 2`] = `
+
+Message:
+> 1 | "timeout\\t": 30s
+    | ^^^^^^^^^^^ The whitespace at the start or end of \`"timeout\\t"\` is part of the key, so a program that reads \`timeout\` does not find it.
+
+`;
+
+exports[`invalid(6): \"\\ntimeout\": 30s 1`] = `
+
+  1 | "\\ntimeout": 30s
+
+`;
+
+exports[`invalid(6): \"\\ntimeout\": 30s 2`] = `
+
+Message:
+> 1 | "\\ntimeout": 30s
+    | ^^^^^^^^^^^ The whitespace at the start or end of \`"\\ntimeout"\` is part of the key, so a program that reads \`timeout\` does not find it.
+
+`;
+
+exports[`invalid(7): \"timeout\\u{a0}\": 30s 1`] = `
+
+  1 | "timeout\\u{a0}": 30s
+
+`;
+
+exports[`invalid(7): \"timeout\\u{a0}\": 30s 2`] = `
+
+Message:
+> 1 | "timeout\\u{a0}": 30s
+    | ^^^^^^^^^^^^^^^ The whitespace at the start or end of \`"timeout\\u{a0}"\` is part of the key, so a program that reads \`timeout\` does not find it.
+
+`;
+
+exports[`invalid(8): \"timeout\\u{85}\": 30s 1`] = `
+
+  1 | "timeout\\u{85}": 30s
+
+`;
+
+exports[`invalid(8): \"timeout\\u{85}\": 30s 2`] = `
+
+Message:
+> 1 | "timeout\\u{85}": 30s
+    | ^^^^^^^^^^^^^^^ The whitespace at the start or end of \`"timeout\\u{85}"\` is part of the key, so a program that reads \`timeout\` does not find it.
+
+`;
+
+exports[`invalid(9): \"timeout\\u{3000}\": 30s 1`] = `
+
+  1 | "timeout\\u{3000}": 30s
+
+`;
+
+exports[`invalid(9): \"timeout\\u{3000}\": 30s 2`] = `
+
+Message:
+> 1 | "timeout\\u{3000}": 30s
+    | ^^^^^^^^^^^^^^^^^ The whitespace at the start or end of \`"timeout\\u{3000}"\` is part of the key, so a program that reads \`timeout\` does not find it.
+
+`;

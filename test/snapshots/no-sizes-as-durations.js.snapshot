@@ -1,0 +1,571 @@
+exports[`invalid(1): memory: 512m 1`] = `
+
+  1 | memory: 512m
+
+`;
+
+exports[`invalid(1): memory: 512m 2`] = `
+
+Message:
+> 1 | memory: 512m
+    |         ^^^^ \`512m\` is a duration, in which \`m\` is minutes, not a size for \`memory\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'512m'\`.:
+  1 | memory: '512m'
+
+`;
+
+exports[`invalid(10): heap: 1.5m 1`] = `
+
+  1 | heap: 1.5m
+
+`;
+
+exports[`invalid(10): heap: 1.5m 2`] = `
+
+Message:
+> 1 | heap: 1.5m
+    |       ^^^^ \`1.5m\` is a duration, in which \`m\` is minutes, not a size for \`heap\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'1.5m'\`.:
+  1 | heap: '1.5m'
+
+`;
+
+exports[`invalid(11): memory: 1_024m 1`] = `
+
+  1 | memory: 1_024m
+
+`;
+
+exports[`invalid(11): memory: 1_024m 2`] = `
+
+Message:
+> 1 | memory: 1_024m
+    |         ^^^^^^ \`1_024m\` is a duration, in which \`m\` is minutes, not a size for \`memory\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'1024m'\`.:
+  1 | memory: '1024m'
+
+`;
+
+exports[`invalid(12): sparkConf: {'spark.executor.memory': 512m} 1`] = `
+
+  1 | sparkConf: {'spark.executor.memory': 512m}
+
+`;
+
+exports[`invalid(12): sparkConf: {'spark.executor.memory': 512m} 2`] = `
+
+Message:
+> 1 | sparkConf: {'spark.executor.memory': 512m}
+    |                                      ^^^^ \`512m\` is a duration, in which \`m\` is minutes, not a size for \`'spark.executor.memory'\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'512m'\`.:
+  1 | sparkConf: {'spark.executor.memory': '512m'}
+
+`;
+
+exports[`invalid(13): flink: {'taskmanager.memory.process.size': 1728m} 1`] = `
+
+  1 | flink: {'taskmanager.memory.process.size': 1728m}
+
+`;
+
+exports[`invalid(13): flink: {'taskmanager.memory.process.size': 1728m} 2`] = `
+
+Message:
+> 1 | flink: {'taskmanager.memory.process.size': 1728m}
+    |                                            ^^^^^ \`1728m\` is a duration, in which \`m\` is minutes, not a size for \`'taskmanager.memory.process.size'\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'1728m'\`.:
+  1 | flink: {'taskmanager.memory.process.size': '1728m'}
+
+`;
+
+exports[`invalid(14): 'spark.executor.memoryOverhead': 384m 1`] = `
+
+  1 | 'spark.executor.memoryOverhead': 384m
+
+`;
+
+exports[`invalid(14): 'spark.executor.memoryOverhead': 384m 2`] = `
+
+Message:
+> 1 | 'spark.executor.memoryOverhead': 384m
+    |                                  ^^^^ \`384m\` is a duration, in which \`m\` is minutes, not a size for \`'spark.executor.memoryOverhead'\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'384m'\`.:
+  1 | 'spark.executor.memoryOverhead': '384m'
+
+`;
+
+exports[`invalid(15): 'spark.executor.cpus': 1m 1`] = `
+
+  1 | 'spark.executor.cpus': 1m
+
+`;
+
+exports[`invalid(15): 'spark.executor.cpus': 1m 2`] = `
+
+Message:
+> 1 | 'spark.executor.cpus': 1m
+    |                        ^^ \`1m\` is a duration, in which \`m\` is minutes, not a size for \`'spark.executor.cpus'\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'1m'\`.:
+  1 | 'spark.executor.cpus': '1m'
+
+`;
+
+exports[`invalid(16): \"docker.shm-size\": 64m 1`] = `
+
+  1 | "docker.shm-size": 64m
+
+`;
+
+exports[`invalid(16): \"docker.shm-size\": 64m 2`] = `
+
+Message:
+> 1 | "docker.shm-size": 64m
+    |                    ^^^ \`64m\` is a duration, in which \`m\` is minutes, not a size for \`"docker.shm-size"\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'64m'\`.:
+  1 | "docker.shm-size": '64m'
+
+`;
+
+exports[`invalid(17): timeout: {'spark.executor.memory': 512m} 1`] = `
+
+  1 | timeout: {'spark.executor.memory': 512m}
+
+`;
+
+exports[`invalid(17): timeout: {'spark.executor.memory': 512m} 2`] = `
+
+Message:
+> 1 | timeout: {'spark.executor.memory': 512m}
+    |                                    ^^^^ \`512m\` is a duration, in which \`m\` is minutes, not a size for \`'spark.executor.memory'\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'512m'\`.:
+  1 | timeout: {'spark.executor.memory': '512m'}
+
+`;
+
+exports[`invalid(18): max__size: 5m 1`] = `
+
+  1 | max__size: 5m
+
+`;
+
+exports[`invalid(18): max__size: 5m 2`] = `
+
+Message:
+> 1 | max__size: 5m
+    |            ^^ \`5m\` is a duration, in which \`m\` is minutes, not a size for \`max__size\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'5m'\`.:
+  1 | max__size: '5m'
+
+`;
+
+exports[`invalid(19): _max_size: 5m 1`] = `
+
+  1 | _max_size: 5m
+
+`;
+
+exports[`invalid(19): _max_size: 5m 2`] = `
+
+Message:
+> 1 | _max_size: 5m
+    |            ^^ \`5m\` is a duration, in which \`m\` is minutes, not a size for \`_max_size\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'5m'\`.:
+  1 | _max_size: '5m'
+
+`;
+
+exports[`invalid(2): resources: {limits: {memory: 1m, cpu: 1m}} 1`] = `
+
+  1 | resources: {limits: {memory: 1m, cpu: 1m}}
+
+`;
+
+exports[`invalid(2): resources: {limits: {memory: 1m, cpu: 1m}} 2`] = `
+
+Message:
+> 1 | resources: {limits: {memory: 1m, cpu: 1m}}
+    |                              ^^ \`1m\` is a duration, in which \`m\` is minutes, not a size for \`memory\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'1m'\`.:
+  1 | resources: {limits: {memory: '1m', cpu: 1m}}
+
+`;
+
+exports[`invalid(2): resources: {limits: {memory: 1m, cpu: 1m}} 3`] = `
+
+Message:
+> 1 | resources: {limits: {memory: 1m, cpu: 1m}}
+    |                                       ^^ \`1m\` is a duration, in which \`m\` is minutes, not a size for \`cpu\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'1m'\`.:
+  1 | resources: {limits: {memory: 1m, cpu: '1m'}}
+
+`;
+
+exports[`invalid(20): maxRAMSize: 5m 1`] = `
+
+  1 | maxRAMSize: 5m
+
+`;
+
+exports[`invalid(20): maxRAMSize: 5m 2`] = `
+
+Message:
+> 1 | maxRAMSize: 5m
+    |             ^^ \`5m\` is a duration, in which \`m\` is minutes, not a size for \`maxRAMSize\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'5m'\`.:
+  1 | maxRAMSize: '5m'
+
+`;
+
+exports[`invalid(21): JVMHeapSize: 5m 1`] = `
+
+  1 | JVMHeapSize: 5m
+
+`;
+
+exports[`invalid(21): JVMHeapSize: 5m 2`] = `
+
+Message:
+> 1 | JVMHeapSize: 5m
+    |              ^^ \`5m\` is a duration, in which \`m\` is minutes, not a size for \`JVMHeapSize\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'5m'\`.:
+  1 | JVMHeapSize: '5m'
+
+`;
+
+exports[`invalid(22): SHMSize: 64m 1`] = `
+
+  1 | SHMSize: 64m
+
+`;
+
+exports[`invalid(22): SHMSize: 64m 2`] = `
+
+Message:
+> 1 | SHMSize: 64m
+    |          ^^^ \`64m\` is a duration, in which \`m\` is minutes, not a size for \`SHMSize\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'64m'\`.:
+  1 | SHMSize: '64m'
+
+`;
+
+exports[`invalid(23): 'spark.broadcast.blockSize': 4m 1`] = `
+
+  1 | 'spark.broadcast.blockSize': 4m
+
+`;
+
+exports[`invalid(23): 'spark.broadcast.blockSize': 4m 2`] = `
+
+Message:
+> 1 | 'spark.broadcast.blockSize': 4m
+    |                              ^^ \`4m\` is a duration, in which \`m\` is minutes, not a size for \`'spark.broadcast.blockSize'\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'4m'\`.:
+  1 | 'spark.broadcast.blockSize': '4m'
+
+`;
+
+exports[`invalid(24): 'fs.s3a.block.size': 32m 1`] = `
+
+  1 | 'fs.s3a.block.size': 32m
+
+`;
+
+exports[`invalid(24): 'fs.s3a.block.size': 32m 2`] = `
+
+Message:
+> 1 | 'fs.s3a.block.size': 32m
+    |                      ^^^ \`32m\` is a duration, in which \`m\` is minutes, not a size for \`'fs.s3a.block.size'\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'32m'\`.:
+  1 | 'fs.s3a.block.size': '32m'
+
+`;
+
+exports[`invalid(25): 'state.backend.rocksdb.block.cache-size': 8m 1`] = `
+
+  1 | 'state.backend.rocksdb.block.cache-size': 8m
+
+`;
+
+exports[`invalid(25): 'state.backend.rocksdb.block.cache-size': 8m 2`] = `
+
+Message:
+> 1 | 'state.backend.rocksdb.block.cache-size': 8m
+    |                                           ^^ \`8m\` is a duration, in which \`m\` is minutes, not a size for \`'state.backend.rocksdb.block.cache-size'\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'8m'\`.:
+  1 | 'state.backend.rocksdb.block.cache-size': '8m'
+
+`;
+
+exports[`invalid(26): 'php_admin_value[memory_limit]': 256m 1`] = `
+
+  1 | 'php_admin_value[memory_limit]': 256m
+
+`;
+
+exports[`invalid(26): 'php_admin_value[memory_limit]': 256m 2`] = `
+
+Message:
+> 1 | 'php_admin_value[memory_limit]': 256m
+    |                                  ^^^^ \`256m\` is a duration, in which \`m\` is minutes, not a size for \`'php_admin_value[memory_limit]'\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'256m'\`.:
+  1 | 'php_admin_value[memory_limit]': '256m'
+
+`;
+
+exports[`invalid(27): 'max memory': 512m 1`] = `
+
+  1 | 'max memory': 512m
+
+`;
+
+exports[`invalid(27): 'max memory': 512m 2`] = `
+
+Message:
+> 1 | 'max memory': 512m
+    |               ^^^^ \`512m\` is a duration, in which \`m\` is minutes, not a size for \`'max memory'\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'512m'\`.:
+  1 | 'max memory': '512m'
+
+`;
+
+exports[`invalid(28): 'limits/memory': 1m 1`] = `
+
+  1 | 'limits/memory': 1m
+
+`;
+
+exports[`invalid(28): 'limits/memory': 1m 2`] = `
+
+Message:
+> 1 | 'limits/memory': 1m
+    |                  ^^ \`1m\` is a duration, in which \`m\` is minutes, not a size for \`'limits/memory'\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'1m'\`.:
+  1 | 'limits/memory': '1m'
+
+`;
+
+exports[`invalid(29): buffer: {chunk_limit_size: 8m} 1`] = `
+
+  1 | buffer: {chunk_limit_size: 8m}
+
+`;
+
+exports[`invalid(29): buffer: {chunk_limit_size: 8m} 2`] = `
+
+Message:
+> 1 | buffer: {chunk_limit_size: 8m}
+    |                            ^^ \`8m\` is a duration, in which \`m\` is minutes, not a size for \`chunk_limit_size\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'8m'\`.:
+  1 | buffer: {chunk_limit_size: '8m'}
+
+`;
+
+exports[`invalid(3): mem_limit: 512m 1`] = `
+
+  1 | mem_limit: 512m
+
+`;
+
+exports[`invalid(3): mem_limit: 512m 2`] = `
+
+Message:
+> 1 | mem_limit: 512m
+    |            ^^^^ \`512m\` is a duration, in which \`m\` is minutes, not a size for \`mem_limit\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'512m'\`.:
+  1 | mem_limit: '512m'
+
+`;
+
+exports[`invalid(30): Buffer_Chunk_Size: 1m 1`] = `
+
+  1 | Buffer_Chunk_Size: 1m
+
+`;
+
+exports[`invalid(30): Buffer_Chunk_Size: 1m 2`] = `
+
+Message:
+> 1 | Buffer_Chunk_Size: 1m
+    |                    ^^ \`1m\` is a duration, in which \`m\` is minutes, not a size for \`Buffer_Chunk_Size\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'1m'\`.:
+  1 | Buffer_Chunk_Size: '1m'
+
+`;
+
+exports[`invalid(31): maxCPUs: 500m 1`] = `
+
+  1 | maxCPUs: 500m
+
+`;
+
+exports[`invalid(31): maxCPUs: 500m 2`] = `
+
+Message:
+> 1 | maxCPUs: 500m
+    |          ^^^^ \`500m\` is a duration, in which \`m\` is minutes, not a size for \`maxCPUs\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'500m'\`.:
+  1 | maxCPUs: '500m'
+
+`;
+
+exports[`invalid(32): CPUs: 1m 1`] = `
+
+  1 | CPUs: 1m
+
+`;
+
+exports[`invalid(32): CPUs: 1m 2`] = `
+
+Message:
+> 1 | CPUs: 1m
+    |       ^^ \`1m\` is a duration, in which \`m\` is minutes, not a size for \`CPUs\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'1m'\`.:
+  1 | CPUs: '1m'
+
+`;
+
+exports[`invalid(33): 'cpu‮': 512m 1`] = `
+
+  1 | 'cpu‮': 512m
+
+`;
+
+exports[`invalid(33): 'cpu‮': 512m 2`] = `
+
+Message:
+> 1 | 'cpu‮': 512m
+    |         ^^^^ \`512m\` is a duration, in which \`m\` is minutes, not a size for \`'cpu\\u{202e}'\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'512m'\`.:
+  1 | 'cpu‮': '512m'
+
+`;
+
+exports[`invalid(4): shm_size: 64m 1`] = `
+
+  1 | shm_size: 64m
+
+`;
+
+exports[`invalid(4): shm_size: 64m 2`] = `
+
+Message:
+> 1 | shm_size: 64m
+    |           ^^^ \`64m\` is a duration, in which \`m\` is minutes, not a size for \`shm_size\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'64m'\`.:
+  1 | shm_size: '64m'
+
+`;
+
+exports[`invalid(5): maxHeapSize: 2m 1`] = `
+
+  1 | maxHeapSize: 2m
+
+`;
+
+exports[`invalid(5): maxHeapSize: 2m 2`] = `
+
+Message:
+> 1 | maxHeapSize: 2m
+    |              ^^ \`2m\` is a duration, in which \`m\` is minutes, not a size for \`maxHeapSize\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'2m'\`.:
+  1 | maxHeapSize: '2m'
+
+`;
+
+exports[`invalid(6): max-size: 10m 1`] = `
+
+  1 | max-size: 10m
+
+`;
+
+exports[`invalid(6): max-size: 10m 2`] = `
+
+Message:
+> 1 | max-size: 10m
+    |           ^^^ \`10m\` is a duration, in which \`m\` is minutes, not a size for \`max-size\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'10m'\`.:
+  1 | max-size: '10m'
+
+`;
+
+exports[`invalid(7): log: {max_bytes: 1m} 1`] = `
+
+  1 | log: {max_bytes: 1m}
+
+`;
+
+exports[`invalid(7): log: {max_bytes: 1m} 2`] = `
+
+Message:
+> 1 | log: {max_bytes: 1m}
+    |                  ^^ \`1m\` is a duration, in which \`m\` is minutes, not a size for \`max_bytes\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'1m'\`.:
+  1 | log: {max_bytes: '1m'}
+
+`;
+
+exports[`invalid(8): 'memory': 512m 1`] = `
+
+  1 | 'memory': 512m
+
+`;
+
+exports[`invalid(8): 'memory': 512m 2`] = `
+
+Message:
+> 1 | 'memory': 512m
+    |           ^^^^ \`512m\` is a duration, in which \`m\` is minutes, not a size for \`'memory'\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'512m'\`.:
+  1 | 'memory': '512m'
+
+`;
+
+exports[`invalid(9): memory: 512m # Comment 1`] = `
+
+  1 | memory: 512m # Comment
+
+`;
+
+exports[`invalid(9): memory: 512m # Comment 2`] = `
+
+Message:
+> 1 | memory: 512m # Comment
+    |         ^^^^ \`512m\` is a duration, in which \`m\` is minutes, not a size for \`memory\`. Write a size as a string.
+
+Suggestion 1/1: Write it as \`'512m'\`.:
+  1 | memory: '512m' # Comment
+
+`;

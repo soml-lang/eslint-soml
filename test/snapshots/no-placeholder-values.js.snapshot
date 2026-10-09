@@ -1,0 +1,368 @@
+exports[`invalid(1): secret-key: 'CHANGE_ME_TO_A_COMPLEX_RANDOM_SECRET' 1`] = `
+
+  1 | secret-key: 'CHANGE_ME_TO_A_COMPLEX_RANDOM_SECRET'
+
+`;
+
+exports[`invalid(1): secret-key: 'CHANGE_ME_TO_A_COMPLEX_RANDOM_SECRET' 2`] = `
+
+Message:
+> 1 | secret-key: 'CHANGE_ME_TO_A_COMPLEX_RANDOM_SECRET'
+    |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ \`CHANGE_ME_TO_A_COMPLEX_RANDOM_SECRET\` looks like a placeholder. Set the real value, or leave the member out.
+
+`;
+
+exports[`invalid(10): note: '''\n\tSet this to changeme.\n\t''' 1`] = `
+
+  1 | note: '''
+  2 | 	Set this to changeme.
+  3 | 	'''
+
+`;
+
+exports[`invalid(10): note: '''\n\tSet this to changeme.\n\t''' 2`] = `
+
+Message:
+> 1 | note: '''
+    |       ^^^
+> 2 | 	Set this to changeme.
+    | ^^^^^^^^^^^^^^^^^^^^^^
+> 3 | 	'''
+    | ^^^^ \`Set this to changeme.\` looks like a placeholder. Set the real value, or leave the member out.
+
+`;
+
+exports[`invalid(11): note: '''\n\tThe key.\n\tYOUR_KEY_HERE\n\tMore text.\n\t''' 1`] = `
+
+  1 | note: '''
+  2 | 	The key.
+  3 | 	YOUR_KEY_HERE
+  4 | 	More text.
+  5 | 	'''
+
+`;
+
+exports[`invalid(11): note: '''\n\tThe key.\n\tYOUR_KEY_HERE\n\tMore text.\n\t''' 2`] = `
+
+Message:
+> 1 | note: '''
+    |       ^^^
+> 2 | 	The key.
+    | ^^^^^^^^^
+> 3 | 	YOUR_KEY_HERE
+    | ^^^^^^^^^^^^^^
+> 4 | 	More text.
+    | ^^^^^^^^^^^
+> 5 | 	'''
+    | ^^^^ \`YOUR_KEY_HERE\` looks like a placeholder. Set the real value, or leave the member out.
+
+`;
+
+exports[`invalid(12): note: '''\n\tTODO\n\tSet the key to changeme.\n\t''' 1`] = `
+
+  1 | note: '''
+  2 | 	TODO
+  3 | 	Set the key to changeme.
+  4 | 	'''
+
+`;
+
+exports[`invalid(12): note: '''\n\tTODO\n\tSet the key to changeme.\n\t''' 2`] = `
+
+Message:
+> 1 | note: '''
+    |       ^^^
+> 2 | 	TODO
+    | ^^^^^
+> 3 | 	Set the key to changeme.
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^
+> 4 | 	'''
+    | ^^^^ \`Set the key to changeme.\` looks like a placeholder. Set the real value, or leave the member out.
+
+`;
+
+exports[`invalid(13): note: \"TODO\\nSet the key to changeme.\" 1`] = `
+
+  1 | note: "TODO\\nSet the key to changeme."
+
+`;
+
+exports[`invalid(13): note: \"TODO\\nSet the key to changeme.\" 2`] = `
+
+Message:
+> 1 | note: "TODO\\nSet the key to changeme."
+    |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ \`Set the key to changeme.\` looks like a placeholder. Set the real value, or leave the member out.
+
+`;
+
+exports[`invalid(14): owner: '''\n\tTODO\n\t''' 1`] = `
+
+  1 | owner: '''
+  2 | 	TODO
+  3 | 	'''
+
+`;
+
+exports[`invalid(14): owner: '''\n\tTODO\n\t''' 2`] = `
+
+Message:
+> 1 | owner: '''
+    |        ^^^
+> 2 | 	TODO
+    | ^^^^^
+> 3 | 	'''
+    | ^^^^ \`TODO\` looks like a placeholder. Set the real value, or leave the member out.
+
+`;
+
+exports[`invalid(15): note: '''\n\tFIXME\n\tSet it to changeme.\n\tOr to your_key_here.\n\t''' 1`] = `
+
+  1 | note: '''
+  2 | 	FIXME
+  3 | 	Set it to changeme.
+  4 | 	Or to your_key_here.
+  5 | 	'''
+
+`;
+
+exports[`invalid(15): note: '''\n\tFIXME\n\tSet it to changeme.\n\tOr to your_key_here.\n\t''' 2`] = `
+
+Message:
+> 1 | note: '''
+    |       ^^^
+> 2 | 	FIXME
+    | ^^^^^^
+> 3 | 	Set it to changeme.
+    | ^^^^^^^^^^^^^^^^^^^^
+> 4 | 	Or to your_key_here.
+    | ^^^^^^^^^^^^^^^^^^^^^
+> 5 | 	'''
+    | ^^^^ \`Set it to changeme.\` looks like a placeholder. Set the real value, or leave the member out.
+
+`;
+
+exports[`invalid(16): a: \"changeme\\u{1b}[2J\\u{202e}x\" 1`] = `
+
+  1 | a: "changeme\\u{1b}[2J\\u{202e}x"
+
+`;
+
+exports[`invalid(16): a: \"changeme\\u{1b}[2J\\u{202e}x\" 2`] = `
+
+Message:
+> 1 | a: "changeme\\u{1b}[2J\\u{202e}x"
+    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ \`changeme\\u{1b}[2J\\u{202e}x\` looks like a placeholder. Set the real value, or leave the member out.
+
+`;
+
+exports[`invalid(17): hosts: ['db1', 'TODO'] 1`] = `
+
+  1 | hosts: ['db1', 'TODO']
+
+`;
+
+exports[`invalid(17): hosts: ['db1', 'TODO'] 2`] = `
+
+Message:
+> 1 | hosts: ['db1', 'TODO']
+    |                ^^^^^^ \`TODO\` looks like a placeholder. Set the real value, or leave the member out.
+
+`;
+
+exports[`invalid(18): a: ['TODO', 'TODO'] 1`] = `
+
+  1 | a: ['TODO', 'TODO']
+
+`;
+
+exports[`invalid(18): a: ['TODO', 'TODO'] 2`] = `
+
+Message:
+> 1 | a: ['TODO', 'TODO']
+    |     ^^^^^^ \`TODO\` looks like a placeholder. Set the real value, or leave the member out.
+
+`;
+
+exports[`invalid(18): a: ['TODO', 'TODO'] 3`] = `
+
+Message:
+> 1 | a: ['TODO', 'TODO']
+    |             ^^^^^^ \`TODO\` looks like a placeholder. Set the real value, or leave the member out.
+
+`;
+
+exports[`invalid(19): a: [['TODO'], 'FIXME'] 1`] = `
+
+  1 | a: [['TODO'], 'FIXME']
+
+`;
+
+exports[`invalid(19): a: [['TODO'], 'FIXME'] 2`] = `
+
+Message:
+> 1 | a: [['TODO'], 'FIXME']
+    |      ^^^^^^ \`TODO\` looks like a placeholder. Set the real value, or leave the member out.
+
+`;
+
+exports[`invalid(19): a: [['TODO'], 'FIXME'] 3`] = `
+
+Message:
+> 1 | a: [['TODO'], 'FIXME']
+    |               ^^^^^^^ \`FIXME\` looks like a placeholder. Set the real value, or leave the member out.
+
+`;
+
+exports[`invalid(2): password: 'changeme' 1`] = `
+
+  1 | password: 'changeme'
+
+`;
+
+exports[`invalid(2): password: 'changeme' 2`] = `
+
+Message:
+> 1 | password: 'changeme'
+    |           ^^^^^^^^^^ \`changeme\` looks like a placeholder. Set the real value, or leave the member out.
+
+`;
+
+exports[`invalid(20): password: 'ChangeMe123!' 1`] = `
+
+  1 | password: 'ChangeMe123!'
+
+`;
+
+exports[`invalid(20): password: 'ChangeMe123!' 2`] = `
+
+Message:
+> 1 | password: 'ChangeMe123!'
+    |           ^^^^^^^^^^^^^^ \`ChangeMe123!\` looks like a placeholder. Set the real value, or leave the member out.
+
+`;
+
+exports[`invalid(21): password: 'changeme1' 1`] = `
+
+  1 | password: 'changeme1'
+
+`;
+
+exports[`invalid(21): password: 'changeme1' 2`] = `
+
+Message:
+> 1 | password: 'changeme1'
+    |           ^^^^^^^^^^^ \`changeme1\` looks like a placeholder. Set the real value, or leave the member out.
+
+`;
+
+exports[`invalid(22): key: 'your_key_here2' 1`] = `
+
+  1 | key: 'your_key_here2'
+
+`;
+
+exports[`invalid(22): key: 'your_key_here2' 2`] = `
+
+Message:
+> 1 | key: 'your_key_here2'
+    |      ^^^^^^^^^^^^^^^^ \`your_key_here2\` looks like a placeholder. Set the real value, or leave the member out.
+
+`;
+
+exports[`invalid(3): url: 'postgres://app:changeme@db/app' 1`] = `
+
+  1 | url: 'postgres://app:changeme@db/app'
+
+`;
+
+exports[`invalid(3): url: 'postgres://app:changeme@db/app' 2`] = `
+
+Message:
+> 1 | url: 'postgres://app:changeme@db/app'
+    |      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ \`postgres://app:changeme@db/app\` looks like a placeholder. Set the real value, or leave the member out.
+
+`;
+
+exports[`invalid(4): token: 'REPLACE-ME' 1`] = `
+
+  1 | token: 'REPLACE-ME'
+
+`;
+
+exports[`invalid(4): token: 'REPLACE-ME' 2`] = `
+
+Message:
+> 1 | token: 'REPLACE-ME'
+    |        ^^^^^^^^^^^^ \`REPLACE-ME\` looks like a placeholder. Set the real value, or leave the member out.
+
+`;
+
+exports[`invalid(5): key: 'your_api_key_here' 1`] = `
+
+  1 | key: 'your_api_key_here'
+
+`;
+
+exports[`invalid(5): key: 'your_api_key_here' 2`] = `
+
+Message:
+> 1 | key: 'your_api_key_here'
+    |      ^^^^^^^^^^^^^^^^^^^ \`your_api_key_here\` looks like a placeholder. Set the real value, or leave the member out.
+
+`;
+
+exports[`invalid(6): key: '<your-token-here>' 1`] = `
+
+  1 | key: '<your-token-here>'
+
+`;
+
+exports[`invalid(6): key: '<your-token-here>' 2`] = `
+
+Message:
+> 1 | key: '<your-token-here>'
+    |      ^^^^^^^^^^^^^^^^^^^ \`<your-token-here>\` looks like a placeholder. Set the real value, or leave the member out.
+
+`;
+
+exports[`invalid(7): owner: 'TODO' 1`] = `
+
+  1 | owner: 'TODO'
+
+`;
+
+exports[`invalid(7): owner: 'TODO' 2`] = `
+
+Message:
+> 1 | owner: 'TODO'
+    |        ^^^^^^ \`TODO\` looks like a placeholder. Set the real value, or leave the member out.
+
+`;
+
+exports[`invalid(8): owner: \"FIXME\" 1`] = `
+
+  1 | owner: "FIXME"
+
+`;
+
+exports[`invalid(8): owner: \"FIXME\" 2`] = `
+
+Message:
+> 1 | owner: "FIXME"
+    |        ^^^^^^^ \`FIXME\` looks like a placeholder. Set the real value, or leave the member out.
+
+`;
+
+exports[`invalid(9): hosts: ['TBD'] 1`] = `
+
+  1 | hosts: ['TBD']
+
+`;
+
+exports[`invalid(9): hosts: ['TBD'] 2`] = `
+
+Message:
+> 1 | hosts: ['TBD']
+    |         ^^^^^ \`TBD\` looks like a placeholder. Set the real value, or leave the member out.
+
+`;

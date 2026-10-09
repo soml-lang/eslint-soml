@@ -1,0 +1,214 @@
+exports[`invalid(1): refresh: 1h0m0s 1`] = `
+
+  1 | refresh: 1h0m0s
+
+`;
+
+exports[`invalid(1): refresh: 1h0m0s 2`] = `
+
+Message:
+> 1 | refresh: 1h0m0s
+    |          ^^^^^^ \`1h0m0s\` has parts that are zero. Write it as \`1h\`.
+
+Output:
+  1 | refresh: 1h
+
+`;
+
+exports[`invalid(10): a: [5m0s, 30m0s] 1`] = `
+
+  1 | a: [5m0s, 30m0s]
+
+`;
+
+exports[`invalid(10): a: [5m0s, 30m0s] 2`] = `
+
+Message:
+> 1 | a: [5m0s, 30m0s]
+    |     ^^^^ \`5m0s\` has parts that are zero. Write it as \`5m\`.
+
+Output:
+  1 | a: [5m, 30m0s]
+
+`;
+
+exports[`invalid(10): a: [5m0s, 30m0s] 3`] = `
+
+Message:
+> 1 | a: [5m0s, 30m0s]
+    |           ^^^^^ \`30m0s\` has parts that are zero. Write it as \`30m\`.
+
+Output:
+  1 | a: [5m0s, 30m]
+
+`;
+
+exports[`invalid(11): [1h0m] # Hour 1`] = `
+
+  1 | [1h0m] # Hour
+
+`;
+
+exports[`invalid(11): [1h0m] # Hour 2`] = `
+
+Message:
+> 1 | [1h0m] # Hour
+    |  ^^^^ \`1h0m\` has parts that are zero. Write it as \`1h\`.
+
+Output:
+  1 | [1h] # Hour
+
+`;
+
+exports[`invalid(12): a: {t: -2h0m30s} 1`] = `
+
+  1 | a: {t: -2h0m30s}
+
+`;
+
+exports[`invalid(12): a: {t: -2h0m30s} 2`] = `
+
+Message:
+> 1 | a: {t: -2h0m30s}
+    |        ^^^^^^^^ \`-2h0m30s\` has parts that are zero. Write it as \`-2h30s\`.
+
+Output:
+  1 | a: {t: -2h30s}
+
+`;
+
+exports[`invalid(2): grace: 0h30m 1`] = `
+
+  1 | grace: 0h30m
+
+`;
+
+exports[`invalid(2): grace: 0h30m 2`] = `
+
+Message:
+> 1 | grace: 0h30m
+    |        ^^^^^ \`0h30m\` has parts that are zero. Write it as \`30m\`.
+
+Output:
+  1 | grace: 30m
+
+`;
+
+exports[`invalid(3): a: 5m0s 1`] = `
+
+  1 | a: 5m0s
+
+`;
+
+exports[`invalid(3): a: 5m0s 2`] = `
+
+Message:
+> 1 | a: 5m0s
+    |    ^^^^ \`5m0s\` has parts that are zero. Write it as \`5m\`.
+
+Output:
+  1 | a: 5m
+
+`;
+
+exports[`invalid(4): a: 1h0m30s 1`] = `
+
+  1 | a: 1h0m30s
+
+`;
+
+exports[`invalid(4): a: 1h0m30s 2`] = `
+
+Message:
+> 1 | a: 1h0m30s
+    |    ^^^^^^^ \`1h0m30s\` has parts that are zero. Write it as \`1h30s\`.
+
+Output:
+  1 | a: 1h30s
+
+`;
+
+exports[`invalid(5): a: -1h0m 1`] = `
+
+  1 | a: -1h0m
+
+`;
+
+exports[`invalid(5): a: -1h0m 2`] = `
+
+Message:
+> 1 | a: -1h0m
+    |    ^^^^^ \`-1h0m\` has parts that are zero. Write it as \`-1h\`.
+
+Output:
+  1 | a: -1h
+
+`;
+
+exports[`invalid(6): a: 0h0m 1`] = `
+
+  1 | a: 0h0m
+
+`;
+
+exports[`invalid(6): a: 0h0m 2`] = `
+
+Message:
+> 1 | a: 0h0m
+    |    ^^^^ \`0h0m\` has parts that are zero. Write it as \`0m\`.
+
+Output:
+  1 | a: 0m
+
+`;
+
+exports[`invalid(7): a: 0h0m0s0ms 1`] = `
+
+  1 | a: 0h0m0s0ms
+
+`;
+
+exports[`invalid(7): a: 0h0m0s0ms 2`] = `
+
+Message:
+> 1 | a: 0h0m0s0ms
+    |    ^^^^^^^^^ \`0h0m0s0ms\` has parts that are zero. Write it as \`0ms\`.
+
+Output:
+  1 | a: 0ms
+
+`;
+
+exports[`invalid(8): a: 2h0ms 1`] = `
+
+  1 | a: 2h0ms
+
+`;
+
+exports[`invalid(8): a: 2h0ms 2`] = `
+
+Message:
+> 1 | a: 2h0ms
+    |    ^^^^^ \`2h0ms\` has parts that are zero. Write it as \`2h\`.
+
+Output:
+  1 | a: 2h
+
+`;
+
+exports[`invalid(9): a: 1h0.0s 1`] = `
+
+  1 | a: 1h0.0s
+
+`;
+
+exports[`invalid(9): a: 1h0.0s 2`] = `
+
+Message:
+> 1 | a: 1h0.0s
+    |    ^^^^^^ \`1h0.0s\` has parts that are zero. Write it as \`1h\`.
+
+Output:
+  1 | a: 1h
+
+`;
