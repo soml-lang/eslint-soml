@@ -1,0 +1,380 @@
+exports[`invalid(1): logging: {format: 'json'}\n'logging.level': 'debug' 1`] = `
+
+  1 | logging: {format: 'json'}
+  2 | 'logging.level': 'debug'
+
+`;
+
+exports[`invalid(1): logging: {format: 'json'}\n'logging.level': 'debug' 2`] = `
+
+Message:
+  1 | logging: {format: 'json'}
+> 2 | 'logging.level': 'debug'
+    | ^^^^^^^^^^^^^^^ \`'logging.level'\` is a key of its own, not \`level\` in the object \`logging\`, because SOML does not split keys at \`.\`. Move it into \`logging\`.
+
+`;
+
+exports[`invalid(10): a: {}\n'a.b': 1\n'a.b.c': 2 1`] = `
+
+  1 | a: {}
+  2 | 'a.b': 1
+  3 | 'a.b.c': 2
+
+`;
+
+exports[`invalid(10): a: {}\n'a.b': 1\n'a.b.c': 2 2`] = `
+
+Message:
+  1 | a: {}
+> 2 | 'a.b': 1
+    | ^^^^^ \`'a.b'\` is a key of its own, not \`b\` in the object \`a\`, because SOML does not split keys at \`.\`. Move it into \`a\`.
+  3 | 'a.b.c': 2
+
+`;
+
+exports[`invalid(10): a: {}\n'a.b': 1\n'a.b.c': 2 3`] = `
+
+Message:
+  1 | a: {}
+  2 | 'a.b': 1
+> 3 | 'a.b.c': 2
+    | ^^^^^^^ \`'a.b.c'\` is a key of its own, not \`b.c\` in the object \`a\`, because SOML does not split keys at \`.\`. Move it into \`a\`.
+
+`;
+
+exports[`invalid(11): outer: {inner: {x: 1}, 'inner.y': 2} 1`] = `
+
+  1 | outer: {inner: {x: 1}, 'inner.y': 2}
+
+`;
+
+exports[`invalid(11): outer: {inner: {x: 1}, 'inner.y': 2} 2`] = `
+
+Message:
+> 1 | outer: {inner: {x: 1}, 'inner.y': 2}
+    |                        ^^^^^^^^^ \`'inner.y'\` is a key of its own, not \`y\` in the object \`inner\`, because SOML does not split keys at \`.\`. Move it into \`inner\`.
+
+`;
+
+exports[`invalid(12): a: {}\n'a.b': [{c: 1}] 1`] = `
+
+  1 | a: {}
+  2 | 'a.b': [{c: 1}]
+
+`;
+
+exports[`invalid(12): a: {}\n'a.b': [{c: 1}] 2`] = `
+
+Message:
+  1 | a: {}
+> 2 | 'a.b': [{c: 1}]
+    | ^^^^^ \`'a.b'\` is a key of its own, not \`b\` in the object \`a\`, because SOML does not split keys at \`.\`. Move it into \`a\`.
+
+`;
+
+exports[`invalid(13): a: {}\n'a.b': null 1`] = `
+
+  1 | a: {}
+  2 | 'a.b': null
+
+`;
+
+exports[`invalid(13): a: {}\n'a.b': null 2`] = `
+
+Message:
+  1 | a: {}
+> 2 | 'a.b': null
+    | ^^^^^ \`'a.b'\` is a key of its own, not \`b\` in the object \`a\`, because SOML does not split keys at \`.\`. Move it into \`a\`.
+
+`;
+
+exports[`invalid(14): a: {}\n'a.b': '''\n\tx\n\t''' 1`] = `
+
+  1 | a: {}
+  2 | 'a.b': '''
+  3 | 	x
+  4 | 	'''
+
+`;
+
+exports[`invalid(14): a: {}\n'a.b': '''\n\tx\n\t''' 2`] = `
+
+Message:
+  1 | a: {}
+> 2 | 'a.b': '''
+    | ^^^^^ \`'a.b'\` is a key of its own, not \`b\` in the object \`a\`, because SOML does not split keys at \`.\`. Move it into \`a\`.
+  3 | 	x
+  4 | 	'''
+
+`;
+
+exports[`invalid(15): [{a: {}, 'a.b': 1}] 1`] = `
+
+  1 | [{a: {}, 'a.b': 1}]
+
+`;
+
+exports[`invalid(15): [{a: {}, 'a.b': 1}] 2`] = `
+
+Message:
+> 1 | [{a: {}, 'a.b': 1}]
+    |          ^^^^^ \`'a.b'\` is a key of its own, not \`b\` in the object \`a\`, because SOML does not split keys at \`.\`. Move it into \`a\`.
+
+`;
+
+exports[`invalid(16): {a: {}, 'a.b': 1} 1`] = `
+
+  1 | {a: {}, 'a.b': 1}
+
+`;
+
+exports[`invalid(16): {a: {}, 'a.b': 1} 2`] = `
+
+Message:
+> 1 | {a: {}, 'a.b': 1}
+    |         ^^^^^ \`'a.b'\` is a key of its own, not \`b\` in the object \`a\`, because SOML does not split keys at \`.\`. Move it into \`a\`.
+
+`;
+
+exports[`invalid(17): a: {} # object\n'a.b': 1 # key 1`] = `
+
+  1 | a: {} # object
+  2 | 'a.b': 1 # key
+
+`;
+
+exports[`invalid(17): a: {} # object\n'a.b': 1 # key 2`] = `
+
+Message:
+  1 | a: {} # object
+> 2 | 'a.b': 1 # key
+    | ^^^^^ \`'a.b'\` is a key of its own, not \`b\` in the object \`a\`, because SOML does not split keys at \`.\`. Move it into \`a\`.
+
+`;
+
+exports[`invalid(18): a: {}\n'a.b c': 1 1`] = `
+
+  1 | a: {}
+  2 | 'a.b c': 1
+
+`;
+
+exports[`invalid(18): a: {}\n'a.b c': 1 2`] = `
+
+Message:
+  1 | a: {}
+> 2 | 'a.b c': 1
+    | ^^^^^^^ \`'a.b\\u{a0}c'\` is a key of its own, not \`b\\u{a0}c\` in the object \`a\`, because SOML does not split keys at \`.\`. Move it into \`a\`.
+
+`;
+
+exports[`invalid(19): 404: {}\n'404.html': 'x' 1`] = `
+
+  1 | 404: {}
+  2 | '404.html': 'x'
+
+`;
+
+exports[`invalid(19): 404: {}\n'404.html': 'x' 2`] = `
+
+Message:
+  1 | 404: {}
+> 2 | '404.html': 'x'
+    | ^^^^^^^^^^ \`'404.html'\` is a key of its own, not \`html\` in the object \`404\`, because SOML does not split keys at \`.\`. Move it into \`404\`.
+
+`;
+
+exports[`invalid(2): 'logging.level': 'debug'\nlogging: {format: 'json'} 1`] = `
+
+  1 | 'logging.level': 'debug'
+  2 | logging: {format: 'json'}
+
+`;
+
+exports[`invalid(2): 'logging.level': 'debug'\nlogging: {format: 'json'} 2`] = `
+
+Message:
+> 1 | 'logging.level': 'debug'
+    | ^^^^^^^^^^^^^^^ \`'logging.level'\` is a key of its own, not \`level\` in the object \`logging\`, because SOML does not split keys at \`.\`. Move it into \`logging\`.
+  2 | logging: {format: 'json'}
+
+`;
+
+exports[`invalid(20): server: {\n\tport: 8080\n}\n'server.host': 'localhost' 1`] = `
+
+  1 | server: {
+  2 | 	port: 8080
+  3 | }
+  4 | 'server.host': 'localhost'
+
+`;
+
+exports[`invalid(20): server: {\n\tport: 8080\n}\n'server.host': 'localhost' 2`] = `
+
+Message:
+  1 | server: {
+  2 | 	port: 8080
+  3 | }
+> 4 | 'server.host': 'localhost'
+    | ^^^^^^^^^^^^^ \`'server.host'\` is a key of its own, not \`host\` in the object \`server\`, because SOML does not split keys at \`.\`. Move it into \`server\`.
+
+`;
+
+exports[`invalid(21): database: {\n\tpool: {min: 2}\n\t'pool.max': 16\n} 1`] = `
+
+  1 | database: {
+  2 | 	pool: {min: 2}
+  3 | 	'pool.max': 16
+  4 | }
+
+`;
+
+exports[`invalid(21): database: {\n\tpool: {min: 2}\n\t'pool.max': 16\n} 2`] = `
+
+Message:
+  1 | database: {
+  2 | 	pool: {min: 2}
+> 3 | 	'pool.max': 16
+    | 	^^^^^^^^^^ \`'pool.max'\` is a key of its own, not \`max\` in the object \`pool\`, because SOML does not split keys at \`.\`. Move it into \`pool\`.
+  4 | }
+
+`;
+
+exports[`invalid(3): server: {}\n'server.tls.enabled': true 1`] = `
+
+  1 | server: {}
+  2 | 'server.tls.enabled': true
+
+`;
+
+exports[`invalid(3): server: {}\n'server.tls.enabled': true 2`] = `
+
+Message:
+  1 | server: {}
+> 2 | 'server.tls.enabled': true
+    | ^^^^^^^^^^^^^^^^^^^^ \`'server.tls.enabled'\` is a key of its own, not \`tls.enabled\` in the object \`server\`, because SOML does not split keys at \`.\`. Move it into \`server\`.
+
+`;
+
+exports[`invalid(4): logging: {}\n\"logging.level\": 1 1`] = `
+
+  1 | logging: {}
+  2 | "logging.level": 1
+
+`;
+
+exports[`invalid(4): logging: {}\n\"logging.level\": 1 2`] = `
+
+Message:
+  1 | logging: {}
+> 2 | "logging.level": 1
+    | ^^^^^^^^^^^^^^^ \`"logging.level"\` is a key of its own, not \`level\` in the object \`logging\`, because SOML does not split keys at \`.\`. Move it into \`logging\`.
+
+`;
+
+exports[`invalid(5): logging: {}\n\"logging\\u{2e}level\": 1 1`] = `
+
+  1 | logging: {}
+  2 | "logging\\u{2e}level": 1
+
+`;
+
+exports[`invalid(5): logging: {}\n\"logging\\u{2e}level\": 1 2`] = `
+
+Message:
+  1 | logging: {}
+> 2 | "logging\\u{2e}level": 1
+    | ^^^^^^^^^^^^^^^^^^^^ \`"logging\\u{2e}level"\` is a key of its own, not \`level\` in the object \`logging\`, because SOML does not split keys at \`.\`. Move it into \`logging\`.
+
+`;
+
+exports[`invalid(6): 'a': {}\n'a.b': 1 1`] = `
+
+  1 | 'a': {}
+  2 | 'a.b': 1
+
+`;
+
+exports[`invalid(6): 'a': {}\n'a.b': 1 2`] = `
+
+Message:
+  1 | 'a': {}
+> 2 | 'a.b': 1
+    | ^^^^^ \`'a.b'\` is a key of its own, not \`b\` in the object \`a\`, because SOML does not split keys at \`.\`. Move it into \`a\`.
+
+`;
+
+exports[`invalid(7): \"a\": {}\n'a.b': 1 1`] = `
+
+  1 | "a": {}
+  2 | 'a.b': 1
+
+`;
+
+exports[`invalid(7): \"a\": {}\n'a.b': 1 2`] = `
+
+Message:
+  1 | "a": {}
+> 2 | 'a.b': 1
+    | ^^^^^ \`'a.b'\` is a key of its own, not \`b\` in the object \`a\`, because SOML does not split keys at \`.\`. Move it into \`a\`.
+
+`;
+
+exports[`invalid(8): a: {}\n'a.b': 1\n'a.c': 2 1`] = `
+
+  1 | a: {}
+  2 | 'a.b': 1
+  3 | 'a.c': 2
+
+`;
+
+exports[`invalid(8): a: {}\n'a.b': 1\n'a.c': 2 2`] = `
+
+Message:
+  1 | a: {}
+> 2 | 'a.b': 1
+    | ^^^^^ \`'a.b'\` is a key of its own, not \`b\` in the object \`a\`, because SOML does not split keys at \`.\`. Move it into \`a\`.
+  3 | 'a.c': 2
+
+`;
+
+exports[`invalid(8): a: {}\n'a.b': 1\n'a.c': 2 3`] = `
+
+Message:
+  1 | a: {}
+  2 | 'a.b': 1
+> 3 | 'a.c': 2
+    | ^^^^^ \`'a.c'\` is a key of its own, not \`c\` in the object \`a\`, because SOML does not split keys at \`.\`. Move it into \`a\`.
+
+`;
+
+exports[`invalid(9): a: {}\nb: {}\n'a.x': 1\n'b.y': 2 1`] = `
+
+  1 | a: {}
+  2 | b: {}
+  3 | 'a.x': 1
+  4 | 'b.y': 2
+
+`;
+
+exports[`invalid(9): a: {}\nb: {}\n'a.x': 1\n'b.y': 2 2`] = `
+
+Message:
+  1 | a: {}
+  2 | b: {}
+> 3 | 'a.x': 1
+    | ^^^^^ \`'a.x'\` is a key of its own, not \`x\` in the object \`a\`, because SOML does not split keys at \`.\`. Move it into \`a\`.
+  4 | 'b.y': 2
+
+`;
+
+exports[`invalid(9): a: {}\nb: {}\n'a.x': 1\n'b.y': 2 3`] = `
+
+Message:
+  1 | a: {}
+  2 | b: {}
+  3 | 'a.x': 1
+> 4 | 'b.y': 2
+    | ^^^^^ \`'b.y'\` is a key of its own, not \`y\` in the object \`b\`, because SOML does not split keys at \`.\`. Move it into \`b\`.
+
+`;

@@ -1,0 +1,346 @@
+exports[`invalid(1): a: 1000000 1`] = `
+
+  1 | a: 1000000
+
+`;
+
+exports[`invalid(1): a: 1000000 2`] = `
+
+Message:
+> 1 | a: 1000000
+    |    ^^^^^^^ Group the digits as \`1_000_000\`.
+
+Output:
+  1 | a: 1_000_000
+
+`;
+
+exports[`invalid(10): a: [10000, 2_0] 1`] = `
+
+  1 | a: [10000, 2_0]
+
+`;
+
+exports[`invalid(10): a: [10000, 2_0] 2`] = `
+
+Message:
+> 1 | a: [10000, 2_0]
+    |     ^^^^^ Group the digits as \`10_000\`.
+
+Output:
+  1 | a: [10_000, 2_0]
+
+`;
+
+exports[`invalid(10): a: [10000, 2_0] 3`] = `
+
+Message:
+> 1 | a: [10000, 2_0]
+    |            ^^^ Group the digits as \`20\`.
+
+Output:
+  1 | a: [10000, 20]
+
+`;
+
+exports[`invalid(11): a: 1_0000_00 1`] = `
+
+Options:
+- onlyIfContainsSeparator: true
+
+Code:
+  1 | a: 1_0000_00
+
+`;
+
+exports[`invalid(11): a: 1_0000_00 2`] = `
+
+Message:
+> 1 | a: 1_0000_00
+    |    ^^^^^^^^^ Group the digits as \`1_000_000\`.
+
+Output:
+  1 | a: 1_000_000
+
+`;
+
+exports[`invalid(12): a: 0.1234567 1`] = `
+
+Options:
+- fractionGroupLength: 3
+
+Code:
+  1 | a: 0.1234567
+
+`;
+
+exports[`invalid(12): a: 0.1234567 2`] = `
+
+Message:
+> 1 | a: 0.1234567
+    |    ^^^^^^^^^ Group the digits as \`0.123_456_7\`.
+
+Output:
+  1 | a: 0.123_456_7
+
+`;
+
+exports[`invalid(13): a: 10000 1`] = `
+
+Options:
+- minimumDigits: 0
+  groupLength: 2
+
+Code:
+  1 | a: 10000
+
+`;
+
+exports[`invalid(13): a: 10000 2`] = `
+
+Message:
+> 1 | a: 10000
+    |    ^^^^^ Group the digits as \`1_00_00\`.
+
+Output:
+  1 | a: 1_00_00
+
+`;
+
+exports[`invalid(14): [1000000] # Big 1`] = `
+
+  1 | [1000000] # Big
+
+`;
+
+exports[`invalid(14): [1000000] # Big 2`] = `
+
+Message:
+> 1 | [1000000] # Big
+    |  ^^^^^^^ Group the digits as \`1_000_000\`.
+
+Output:
+  1 | [1_000_000] # Big
+
+`;
+
+exports[`invalid(15): a: {b: 12345} 1`] = `
+
+  1 | a: {b: 12345}
+
+`;
+
+exports[`invalid(15): a: {b: 12345} 2`] = `
+
+Message:
+> 1 | a: {b: 12345}
+    |        ^^^^^ Group the digits as \`12_345\`.
+
+Output:
+  1 | a: {b: 12_345}
+
+`;
+
+exports[`invalid(16): a: 1_2_3_4_5 1`] = `
+
+  1 | a: 1_2_3_4_5
+
+`;
+
+exports[`invalid(16): a: 1_2_3_4_5 2`] = `
+
+Message:
+> 1 | a: 1_2_3_4_5
+    |    ^^^^^^^^^ Group the digits as \`12_345\`.
+
+Output:
+  1 | a: 12_345
+
+`;
+
+exports[`invalid(17): a: -0.000_1 1`] = `
+
+  1 | a: -0.000_1
+
+`;
+
+exports[`invalid(17): a: -0.000_1 2`] = `
+
+Message:
+> 1 | a: -0.000_1
+    |    ^^^^^^^^ Group the digits as \`-0.0001\`.
+
+Output:
+  1 | a: -0.0001
+
+`;
+
+exports[`invalid(18): a: 9223372036854775807 1`] = `
+
+  1 | a: 9223372036854775807
+
+`;
+
+exports[`invalid(18): a: 9223372036854775807 2`] = `
+
+Message:
+> 1 | a: 9223372036854775807
+    |    ^^^^^^^^^^^^^^^^^^^ Group the digits as \`9_223_372_036_854_775_807\`.
+
+Output:
+  1 | a: 9_223_372_036_854_775_807
+
+`;
+
+exports[`invalid(19): a: -9223372036854775808 1`] = `
+
+  1 | a: -9223372036854775808
+
+`;
+
+exports[`invalid(19): a: -9223372036854775808 2`] = `
+
+Message:
+> 1 | a: -9223372036854775808
+    |    ^^^^^^^^^^^^^^^^^^^^ Group the digits as \`-9_223_372_036_854_775_808\`.
+
+Output:
+  1 | a: -9_223_372_036_854_775_808
+
+`;
+
+exports[`invalid(2): a: -1000000 1`] = `
+
+  1 | a: -1000000
+
+`;
+
+exports[`invalid(2): a: -1000000 2`] = `
+
+Message:
+> 1 | a: -1000000
+    |    ^^^^^^^^ Group the digits as \`-1_000_000\`.
+
+Output:
+  1 | a: -1_000_000
+
+`;
+
+exports[`invalid(3): a: 1_0000_00 1`] = `
+
+  1 | a: 1_0000_00
+
+`;
+
+exports[`invalid(3): a: 1_0000_00 2`] = `
+
+Message:
+> 1 | a: 1_0000_00
+    |    ^^^^^^^^^ Group the digits as \`1_000_000\`.
+
+Output:
+  1 | a: 1_000_000
+
+`;
+
+exports[`invalid(4): a: 1_000 1`] = `
+
+  1 | a: 1_000
+
+`;
+
+exports[`invalid(4): a: 1_000 2`] = `
+
+Message:
+> 1 | a: 1_000
+    |    ^^^^^ Group the digits as \`1000\`.
+
+Output:
+  1 | a: 1000
+
+`;
+
+exports[`invalid(5): a: 1234567.5 1`] = `
+
+  1 | a: 1234567.5
+
+`;
+
+exports[`invalid(5): a: 1234567.5 2`] = `
+
+Message:
+> 1 | a: 1234567.5
+    |    ^^^^^^^^^ Group the digits as \`1_234_567.5\`.
+
+Output:
+  1 | a: 1_234_567.5
+
+`;
+
+exports[`invalid(6): a: 0.000_00_1 1`] = `
+
+  1 | a: 0.000_00_1
+
+`;
+
+exports[`invalid(6): a: 0.000_00_1 2`] = `
+
+Message:
+> 1 | a: 0.000_00_1
+    |    ^^^^^^^^^^ Group the digits as \`0.000001\`.
+
+Output:
+  1 | a: 0.000001
+
+`;
+
+exports[`invalid(7): a: 1.5e1_0 1`] = `
+
+  1 | a: 1.5e1_0
+
+`;
+
+exports[`invalid(7): a: 1.5e1_0 2`] = `
+
+Message:
+> 1 | a: 1.5e1_0
+    |    ^^^^^^^ Group the digits as \`1.5e10\`.
+
+Output:
+  1 | a: 1.5e10
+
+`;
+
+exports[`invalid(8): a: 100000e10 1`] = `
+
+  1 | a: 100000e10
+
+`;
+
+exports[`invalid(8): a: 100000e10 2`] = `
+
+Message:
+> 1 | a: 100000e10
+    |    ^^^^^^^^^ Group the digits as \`100_000e10\`.
+
+Output:
+  1 | a: 100_000e10
+
+`;
+
+exports[`invalid(9): a: 10000.5 1`] = `
+
+  1 | a: 10000.5
+
+`;
+
+exports[`invalid(9): a: 10000.5 2`] = `
+
+Message:
+> 1 | a: 10000.5
+    |    ^^^^^^^ Group the digits as \`10_000.5\`.
+
+Output:
+  1 | a: 10_000.5
+
+`;

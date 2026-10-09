@@ -1,0 +1,197 @@
+exports[`invalid(1): 'name': 'soml' 1`] = `
+
+  1 | 'name': 'soml'
+
+`;
+
+exports[`invalid(1): 'name': 'soml' 2`] = `
+
+Message:
+> 1 | 'name': 'soml'
+    | ^^^^^^ The key \`name\` does not need quotes.
+
+Output:
+  1 | name: 'soml'
+
+`;
+
+exports[`invalid(10): [{'a': [{'b': 1}]}] 1`] = `
+
+  1 | [{'a': [{'b': 1}]}]
+
+`;
+
+exports[`invalid(10): [{'a': [{'b': 1}]}] 2`] = `
+
+Message:
+> 1 | [{'a': [{'b': 1}]}]
+    |   ^^^ The key \`a\` does not need quotes.
+
+Output:
+  1 | [{a: [{'b': 1}]}]
+
+`;
+
+exports[`invalid(10): [{'a': [{'b': 1}]}] 3`] = `
+
+Message:
+> 1 | [{'a': [{'b': 1}]}]
+    |          ^^^ The key \`b\` does not need quotes.
+
+Output:
+  1 | [{'a': [{b: 1}]}]
+
+`;
+
+exports[`invalid(11): 'a_b-c': 1 1`] = `
+
+  1 | 'a_b-c': 1
+
+`;
+
+exports[`invalid(11): 'a_b-c': 1 2`] = `
+
+Message:
+> 1 | 'a_b-c': 1
+    | ^^^^^^^ The key \`a_b-c\` does not need quotes.
+
+Output:
+  1 | a_b-c: 1
+
+`;
+
+exports[`invalid(2): \"name\": 'soml' 1`] = `
+
+  1 | "name": 'soml'
+
+`;
+
+exports[`invalid(2): \"name\": 'soml' 2`] = `
+
+Message:
+> 1 | "name": 'soml'
+    | ^^^^^^ The key \`name\` does not need quotes.
+
+Output:
+  1 | name: 'soml'
+
+`;
+
+exports[`invalid(3): '404': 'Not found' 1`] = `
+
+  1 | '404': 'Not found'
+
+`;
+
+exports[`invalid(3): '404': 'Not found' 2`] = `
+
+Message:
+> 1 | '404': 'Not found'
+    | ^^^^^ The key \`404\` does not need quotes.
+
+Output:
+  1 | 404: 'Not found'
+
+`;
+
+exports[`invalid(4): '-foo': 1 1`] = `
+
+  1 | '-foo': 1
+
+`;
+
+exports[`invalid(4): '-foo': 1 2`] = `
+
+Message:
+> 1 | '-foo': 1
+    | ^^^^^^ The key \`-foo\` does not need quotes.
+
+Output:
+  1 | -foo: 1
+
+`;
+
+exports[`invalid(5): 'true': 1 1`] = `
+
+  1 | 'true': 1
+
+`;
+
+exports[`invalid(5): 'true': 1 2`] = `
+
+Message:
+> 1 | 'true': 1
+    | ^^^^^^ The key \`true\` does not need quotes.
+
+Output:
+  1 | true: 1
+
+`;
+
+exports[`invalid(6): \"\\u{61}\": 1 1`] = `
+
+  1 | "\\u{61}": 1
+
+`;
+
+exports[`invalid(6): \"\\u{61}\": 1 2`] = `
+
+Message:
+> 1 | "\\u{61}": 1
+    | ^^^^^^^^ The key \`a\` does not need quotes.
+
+Output:
+  1 | a: 1
+
+`;
+
+exports[`invalid(7): a: {'b': 1} 1`] = `
+
+  1 | a: {'b': 1}
+
+`;
+
+exports[`invalid(7): a: {'b': 1} 2`] = `
+
+Message:
+> 1 | a: {'b': 1}
+    |     ^^^ The key \`b\` does not need quotes.
+
+Output:
+  1 | a: {b: 1}
+
+`;
+
+exports[`invalid(8): [{'b': 1}] 1`] = `
+
+  1 | [{'b': 1}]
+
+`;
+
+exports[`invalid(8): [{'b': 1}] 2`] = `
+
+Message:
+> 1 | [{'b': 1}]
+    |   ^^^ The key \`b\` does not need quotes.
+
+Output:
+  1 | [{b: 1}]
+
+`;
+
+exports[`invalid(9): 'a': 1 # Comment 1`] = `
+
+  1 | 'a': 1 # Comment
+
+`;
+
+exports[`invalid(9): 'a': 1 # Comment 2`] = `
+
+Message:
+> 1 | 'a': 1 # Comment
+    | ^^^ The key \`a\` does not need quotes.
+
+Output:
+  1 | a: 1 # Comment
+
+`;

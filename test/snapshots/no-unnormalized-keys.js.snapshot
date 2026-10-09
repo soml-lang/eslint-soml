@@ -1,0 +1,91 @@
+exports[`invalid(1): 'é': 1 1`] = `
+
+  1 | 'é': 1
+
+`;
+
+exports[`invalid(1): 'é': 1 2`] = `
+
+Message:
+> 1 | 'é': 1
+    | ^^^^ The key \`é\` is not in NFC, so it can look the same as a different key.
+
+`;
+
+exports[`invalid(2): \"cafe\\u{301}\": 1 1`] = `
+
+  1 | "cafe\\u{301}": 1
+
+`;
+
+exports[`invalid(2): \"cafe\\u{301}\": 1 2`] = `
+
+Message:
+> 1 | "cafe\\u{301}": 1
+    | ^^^^^^^^^^^^^ The key \`café\` is not in NFC, so it can look the same as a different key.
+
+`;
+
+exports[`invalid(3): a: {'é': 1} 1`] = `
+
+  1 | a: {'é': 1}
+
+`;
+
+exports[`invalid(3): a: {'é': 1} 2`] = `
+
+Message:
+> 1 | a: {'é': 1}
+    |     ^^^^ The key \`é\` is not in NFC, so it can look the same as a different key.
+
+`;
+
+exports[`invalid(4): 'é': 1 1`] = `
+
+Options:
+- form: 'NFD'
+
+Code:
+  1 | 'é': 1
+
+`;
+
+exports[`invalid(4): 'é': 1 2`] = `
+
+Message:
+> 1 | 'é': 1
+    | ^^^ The key \`é\` is not in NFD, so it can look the same as a different key.
+
+`;
+
+exports[`invalid(5): 'ﬁ': 1 1`] = `
+
+Options:
+- form: 'NFKC'
+
+Code:
+  1 | 'ﬁ': 1
+
+`;
+
+exports[`invalid(5): 'ﬁ': 1 2`] = `
+
+Message:
+> 1 | 'ﬁ': 1
+    | ^^^ The key \`ﬁ\` is not in NFKC, so it can look the same as a different key.
+
+`;
+
+exports[`invalid(6): \"e\\u{301}\\u{1b}[2J\\u{202e}x\": 1 1`] = `
+
+  1 | "e\\u{301}\\u{1b}[2J\\u{202e}x": 1
+
+`;
+
+exports[`invalid(6): \"e\\u{301}\\u{1b}[2J\\u{202e}x\": 1 2`] = `
+
+Message:
+> 1 | "e\\u{301}\\u{1b}[2J\\u{202e}x": 1
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ The key \`é\\u{1b}[2J\\u{202e}x\` is not in NFC, so it can look the same as a different key.
+
+`;

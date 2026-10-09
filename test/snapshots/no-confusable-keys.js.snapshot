@@ -1,0 +1,391 @@
+exports[`invalid(1): retry-after: 1\nretry_after: 2 1`] = `
+
+  1 | retry-after: 1
+  2 | retry_after: 2
+
+`;
+
+exports[`invalid(1): retry-after: 1\nretry_after: 2 2`] = `
+
+Message:
+  1 | retry-after: 1
+> 2 | retry_after: 2
+    | ^^^^^^^^^^^ \`retry_after\` and \`retry-after\` are one key to a program that ignores case or surrounding whitespace, or that treats \`-\`, \`_\`, and \`.\` as the same.
+
+`;
+
+exports[`invalid(10): 'µ': 1\n'μ': 2 1`] = `
+
+  1 | 'µ': 1
+  2 | 'μ': 2
+
+`;
+
+exports[`invalid(10): 'µ': 1\n'μ': 2 2`] = `
+
+Message:
+  1 | 'µ': 1
+> 2 | 'μ': 2
+    | ^^^ \`'μ'\` and \`'µ'\` are one key to a program that ignores case or surrounding whitespace, or that treats \`-\`, \`_\`, and \`.\` as the same.
+
+`;
+
+exports[`invalid(11): 'θ': 1\n'ϑ': 2 1`] = `
+
+  1 | 'θ': 1
+  2 | 'ϑ': 2
+
+`;
+
+exports[`invalid(11): 'θ': 1\n'ϑ': 2 2`] = `
+
+Message:
+  1 | 'θ': 1
+> 2 | 'ϑ': 2
+    | ^^^ \`'ϑ'\` and \`'θ'\` are one key to a program that ignores case or surrounding whitespace, or that treats \`-\`, \`_\`, and \`.\` as the same.
+
+`;
+
+exports[`invalid(12): '‮A': 1\n'‮a': 2 1`] = `
+
+  1 | '‮A': 1
+  2 | '‮a': 2
+
+`;
+
+exports[`invalid(12): '‮A': 1\n'‮a': 2 2`] = `
+
+Message:
+  1 | '‮A': 1
+> 2 | '‮a': 2
+    | ^^^^ \`'\\u{202e}a'\` and \`'\\u{202e}A'\` are one key to a program that ignores case or surrounding whitespace, or that treats \`-\`, \`_\`, and \`.\` as the same.
+
+`;
+
+exports[`invalid(13): a: {Content-Type: 1, content-type: 2} 1`] = `
+
+  1 | a: {Content-Type: 1, content-type: 2}
+
+`;
+
+exports[`invalid(13): a: {Content-Type: 1, content-type: 2} 2`] = `
+
+Message:
+> 1 | a: {Content-Type: 1, content-type: 2}
+    |                      ^^^^^^^^^^^^ \`content-type\` and \`Content-Type\` are one key to a program that ignores case or surrounding whitespace, or that treats \`-\`, \`_\`, and \`.\` as the same.
+
+`;
+
+exports[`invalid(14): [{a: 1, A: 2}] 1`] = `
+
+  1 | [{a: 1, A: 2}]
+
+`;
+
+exports[`invalid(14): [{a: 1, A: 2}] 2`] = `
+
+Message:
+> 1 | [{a: 1, A: 2}]
+    |         ^ \`A\` and \`a\` are one key to a program that ignores case or surrounding whitespace, or that treats \`-\`, \`_\`, and \`.\` as the same.
+
+`;
+
+exports[`invalid(15): x-id: 1\nX_ID: 2\nx_Id: 3 1`] = `
+
+  1 | x-id: 1
+  2 | X_ID: 2
+  3 | x_Id: 3
+
+`;
+
+exports[`invalid(15): x-id: 1\nX_ID: 2\nx_Id: 3 2`] = `
+
+Message:
+  1 | x-id: 1
+> 2 | X_ID: 2
+    | ^^^^ \`X_ID\` and \`x-id\` are one key to a program that ignores case or surrounding whitespace, or that treats \`-\`, \`_\`, and \`.\` as the same.
+  3 | x_Id: 3
+
+`;
+
+exports[`invalid(15): x-id: 1\nX_ID: 2\nx_Id: 3 3`] = `
+
+Message:
+  1 | x-id: 1
+  2 | X_ID: 2
+> 3 | x_Id: 3
+    | ^^^^ \`x_Id\` and \`x-id\` are one key to a program that ignores case or surrounding whitespace, or that treats \`-\`, \`_\`, and \`.\` as the same.
+
+`;
+
+exports[`invalid(16): 'a': 1\na: 2 1`] = `
+
+  1 | 'a': 1
+  2 | a: 2
+
+`;
+
+exports[`invalid(16): 'a': 1\na: 2 2`] = `
+
+Message:
+  1 | 'a': 1
+> 2 | a: 2
+    | ^ \`a\` and \`'a\\u{85}'\` are one key to a program that ignores case or surrounding whitespace, or that treats \`-\`, \`_\`, and \`.\` as the same.
+
+`;
+
+exports[`invalid(17): a: {x: 1}\nA: {y: 2} 1`] = `
+
+  1 | a: {x: 1}
+  2 | A: {y: 2}
+
+`;
+
+exports[`invalid(17): a: {x: 1}\nA: {y: 2} 2`] = `
+
+Message:
+  1 | a: {x: 1}
+> 2 | A: {y: 2}
+    | ^ \`A\` and \`a\` are one key to a program that ignores case or surrounding whitespace, or that treats \`-\`, \`_\`, and \`.\` as the same.
+
+`;
+
+exports[`invalid(18): \"a\": 1\nA: 2 1`] = `
+
+  1 | "a": 1
+  2 | A: 2
+
+`;
+
+exports[`invalid(18): \"a\": 1\nA: 2 2`] = `
+
+Message:
+  1 | "a": 1
+> 2 | A: 2
+    | ^ \`A\` and \`"a"\` are one key to a program that ignores case or surrounding whitespace, or that treats \`-\`, \`_\`, and \`.\` as the same.
+
+`;
+
+exports[`invalid(19): 'a.foo-bar': 1\n'A.foo_bar': 2 1`] = `
+
+  1 | 'a.foo-bar': 1
+  2 | 'A.foo_bar': 2
+
+`;
+
+exports[`invalid(19): 'a.foo-bar': 1\n'A.foo_bar': 2 2`] = `
+
+Message:
+  1 | 'a.foo-bar': 1
+> 2 | 'A.foo_bar': 2
+    | ^^^^^^^^^^^ \`'A.foo_bar'\` and \`'a.foo-bar'\` are one key to a program that ignores case or surrounding whitespace, or that treats \`-\`, \`_\`, and \`.\` as the same.
+
+`;
+
+exports[`invalid(2): Name: 1\nname: 2 1`] = `
+
+  1 | Name: 1
+  2 | name: 2
+
+`;
+
+exports[`invalid(2): Name: 1\nname: 2 2`] = `
+
+Message:
+  1 | Name: 1
+> 2 | name: 2
+    | ^^^^ \`name\` and \`Name\` are one key to a program that ignores case or surrounding whitespace, or that treats \`-\`, \`_\`, and \`.\` as the same.
+
+`;
+
+exports[`invalid(20): 'log.level': 1\nlog-level: 2 1`] = `
+
+  1 | 'log.level': 1
+  2 | log-level: 2
+
+`;
+
+exports[`invalid(20): 'log.level': 1\nlog-level: 2 2`] = `
+
+Message:
+  1 | 'log.level': 1
+> 2 | log-level: 2
+    | ^^^^^^^^^ \`log-level\` and \`'log.level'\` are one key to a program that ignores case or surrounding whitespace, or that treats \`-\`, \`_\`, and \`.\` as the same.
+
+`;
+
+exports[`invalid(21): 'log.level': 1\nLOG_LEVEL: 2 1`] = `
+
+  1 | 'log.level': 1
+  2 | LOG_LEVEL: 2
+
+`;
+
+exports[`invalid(21): 'log.level': 1\nLOG_LEVEL: 2 2`] = `
+
+Message:
+  1 | 'log.level': 1
+> 2 | LOG_LEVEL: 2
+    | ^^^^^^^^^ \`LOG_LEVEL\` and \`'log.level'\` are one key to a program that ignores case or surrounding whitespace, or that treats \`-\`, \`_\`, and \`.\` as the same.
+
+`;
+
+exports[`invalid(22): 'a.b': 1\na_b: 2 1`] = `
+
+  1 | 'a.b': 1
+  2 | a_b: 2
+
+`;
+
+exports[`invalid(22): 'a.b': 1\na_b: 2 2`] = `
+
+Message:
+  1 | 'a.b': 1
+> 2 | a_b: 2
+    | ^^^ \`a_b\` and \`'a.b'\` are one key to a program that ignores case or surrounding whitespace, or that treats \`-\`, \`_\`, and \`.\` as the same.
+
+`;
+
+exports[`invalid(23): 'spring.datasource.url': 'x'\nSPRING_DATASOURCE_URL: 'y' 1`] = `
+
+  1 | 'spring.datasource.url': 'x'
+  2 | SPRING_DATASOURCE_URL: 'y'
+
+`;
+
+exports[`invalid(23): 'spring.datasource.url': 'x'\nSPRING_DATASOURCE_URL: 'y' 2`] = `
+
+Message:
+  1 | 'spring.datasource.url': 'x'
+> 2 | SPRING_DATASOURCE_URL: 'y'
+    | ^^^^^^^^^^^^^^^^^^^^^ \`SPRING_DATASOURCE_URL\` and \`'spring.datasource.url'\` are one key to a program that ignores case or surrounding whitespace, or that treats \`-\`, \`_\`, and \`.\` as the same.
+
+`;
+
+exports[`invalid(24): \"a\\u{2e}b\": 1\na-b: 2 1`] = `
+
+  1 | "a\\u{2e}b": 1
+  2 | a-b: 2
+
+`;
+
+exports[`invalid(24): \"a\\u{2e}b\": 1\na-b: 2 2`] = `
+
+Message:
+  1 | "a\\u{2e}b": 1
+> 2 | a-b: 2
+    | ^^^ \`a-b\` and \`"a\\u{2e}b"\` are one key to a program that ignores case or surrounding whitespace, or that treats \`-\`, \`_\`, and \`.\` as the same.
+
+`;
+
+exports[`invalid(3): 'name ': 1\nname: 2 1`] = `
+
+  1 | 'name ': 1
+  2 | name: 2
+
+`;
+
+exports[`invalid(3): 'name ': 1\nname: 2 2`] = `
+
+Message:
+  1 | 'name ': 1
+> 2 | name: 2
+    | ^^^^ \`name\` and \`'name '\` are one key to a program that ignores case or surrounding whitespace, or that treats \`-\`, \`_\`, and \`.\` as the same.
+
+`;
+
+exports[`invalid(4): ' name': 1\nname: 2 1`] = `
+
+  1 | ' name': 1
+  2 | name: 2
+
+`;
+
+exports[`invalid(4): ' name': 1\nname: 2 2`] = `
+
+Message:
+  1 | ' name': 1
+> 2 | name: 2
+    | ^^^^ \`name\` and \`' name'\` are one key to a program that ignores case or surrounding whitespace, or that treats \`-\`, \`_\`, and \`.\` as the same.
+
+`;
+
+exports[`invalid(5): retryAfter: 1\nRETRYAFTER: 2 1`] = `
+
+  1 | retryAfter: 1
+  2 | RETRYAFTER: 2
+
+`;
+
+exports[`invalid(5): retryAfter: 1\nRETRYAFTER: 2 2`] = `
+
+Message:
+  1 | retryAfter: 1
+> 2 | RETRYAFTER: 2
+    | ^^^^^^^^^^ \`RETRYAFTER\` and \`retryAfter\` are one key to a program that ignores case or surrounding whitespace, or that treats \`-\`, \`_\`, and \`.\` as the same.
+
+`;
+
+exports[`invalid(6): 'σ': 1\n'ς': 2 1`] = `
+
+  1 | 'σ': 1
+  2 | 'ς': 2
+
+`;
+
+exports[`invalid(6): 'σ': 1\n'ς': 2 2`] = `
+
+Message:
+  1 | 'σ': 1
+> 2 | 'ς': 2
+    | ^^^ \`'ς'\` and \`'σ'\` are one key to a program that ignores case or surrounding whitespace, or that treats \`-\`, \`_\`, and \`.\` as the same.
+
+`;
+
+exports[`invalid(7): 'ΑΣ': 1\n'ασ': 2 1`] = `
+
+  1 | 'ΑΣ': 1
+  2 | 'ασ': 2
+
+`;
+
+exports[`invalid(7): 'ΑΣ': 1\n'ασ': 2 2`] = `
+
+Message:
+  1 | 'ΑΣ': 1
+> 2 | 'ασ': 2
+    | ^^^^ \`'ασ'\` and \`'ΑΣ'\` are one key to a program that ignores case or surrounding whitespace, or that treats \`-\`, \`_\`, and \`.\` as the same.
+
+`;
+
+exports[`invalid(8): 's': 1\n'ſ': 2 1`] = `
+
+  1 | 's': 1
+  2 | 'ſ': 2
+
+`;
+
+exports[`invalid(8): 's': 1\n'ſ': 2 2`] = `
+
+Message:
+  1 | 's': 1
+> 2 | 'ſ': 2
+    | ^^^ \`'ſ'\` and \`'s'\` are one key to a program that ignores case or surrounding whitespace, or that treats \`-\`, \`_\`, and \`.\` as the same.
+
+`;
+
+exports[`invalid(9): 'i': 1\n'ı': 2 1`] = `
+
+  1 | 'i': 1
+  2 | 'ı': 2
+
+`;
+
+exports[`invalid(9): 'i': 1\n'ı': 2 2`] = `
+
+Message:
+  1 | 'i': 1
+> 2 | 'ı': 2
+    | ^^^ \`'ı'\` and \`'i'\` are one key to a program that ignores case or surrounding whitespace, or that treats \`-\`, \`_\`, and \`.\` as the same.
+
+`;

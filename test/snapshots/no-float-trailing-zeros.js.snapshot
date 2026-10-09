@@ -1,0 +1,219 @@
+exports[`invalid(1): python: [3.9, 3.10] 1`] = `
+
+  1 | python: [3.9, 3.10]
+
+`;
+
+exports[`invalid(1): python: [3.9, 3.10] 2`] = `
+
+Message:
+> 1 | python: [3.9, 3.10]
+    |               ^^^^ \`3.10\` is the float \`3.1\`. If it is a version or a label, such as Python 3.10, it must be a string.
+
+Suggestion 1/2: Write it as the string \`'3.10'\`.:
+  1 | python: [3.9, '3.10']
+
+Suggestion 2/2: Write it as \`3.1\`.:
+  1 | python: [3.9, 3.1]
+
+`;
+
+exports[`invalid(10): a: {b: 3.10} 1`] = `
+
+  1 | a: {b: 3.10}
+
+`;
+
+exports[`invalid(10): a: {b: 3.10} 2`] = `
+
+Message:
+> 1 | a: {b: 3.10}
+    |        ^^^^ \`3.10\` is the float \`3.1\`. If it is a version or a label, such as Python 3.10, it must be a string.
+
+Suggestion 1/2: Write it as the string \`'3.10'\`.:
+  1 | a: {b: '3.10'}
+
+Suggestion 2/2: Write it as \`3.1\`.:
+  1 | a: {b: 3.1}
+
+`;
+
+exports[`invalid(11): a: 0.10 1`] = `
+
+  1 | a: 0.10
+
+`;
+
+exports[`invalid(11): a: 0.10 2`] = `
+
+Message:
+> 1 | a: 0.10
+    |    ^^^^ \`0.10\` is the float \`0.1\`. If it is a version or a label, such as Python 3.10, it must be a string.
+
+Suggestion 1/2: Write it as the string \`'0.10'\`.:
+  1 | a: '0.10'
+
+Suggestion 2/2: Write it as \`0.1\`.:
+  1 | a: 0.1
+
+`;
+
+exports[`invalid(2): a: 1.50 1`] = `
+
+  1 | a: 1.50
+
+`;
+
+exports[`invalid(2): a: 1.50 2`] = `
+
+Message:
+> 1 | a: 1.50
+    |    ^^^^ \`1.50\` is the float \`1.5\`. If it is a version or a label, such as Python 3.10, it must be a string.
+
+Suggestion 1/2: Write it as the string \`'1.50'\`.:
+  1 | a: '1.50'
+
+Suggestion 2/2: Write it as \`1.5\`.:
+  1 | a: 1.5
+
+`;
+
+exports[`invalid(3): a: 1.00 1`] = `
+
+  1 | a: 1.00
+
+`;
+
+exports[`invalid(3): a: 1.00 2`] = `
+
+Message:
+> 1 | a: 1.00
+    |    ^^^^ \`1.00\` is the float \`1.0\`. If it is a version or a label, such as Python 3.10, it must be a string.
+
+Suggestion 1/2: Write it as the string \`'1.00'\`.:
+  1 | a: '1.00'
+
+Suggestion 2/2: Write it as \`1.0\`.:
+  1 | a: 1.0
+
+`;
+
+exports[`invalid(4): a: -2.500 1`] = `
+
+  1 | a: -2.500
+
+`;
+
+exports[`invalid(4): a: -2.500 2`] = `
+
+Message:
+> 1 | a: -2.500
+    |    ^^^^^^ \`-2.500\` is the float \`-2.5\`. If it is a version or a label, such as Python 3.10, it must be a string.
+
+Suggestion 1/2: Write it as the string \`'-2.500'\`.:
+  1 | a: '-2.500'
+
+Suggestion 2/2: Write it as \`-2.5\`.:
+  1 | a: -2.5
+
+`;
+
+exports[`invalid(5): a: 1.5_0 1`] = `
+
+  1 | a: 1.5_0
+
+`;
+
+exports[`invalid(5): a: 1.5_0 2`] = `
+
+Message:
+> 1 | a: 1.5_0
+    |    ^^^^^ \`1.5_0\` is the float \`1.5\`. If it is a version or a label, such as Python 3.10, it must be a string.
+
+Suggestion 1/2: Write it as the string \`'1.5_0'\`.:
+  1 | a: '1.5_0'
+
+Suggestion 2/2: Write it as \`1.5\`.:
+  1 | a: 1.5
+
+`;
+
+exports[`invalid(6): a: 1.000_000 1`] = `
+
+  1 | a: 1.000_000
+
+`;
+
+exports[`invalid(6): a: 1.000_000 2`] = `
+
+Message:
+> 1 | a: 1.000_000
+    |    ^^^^^^^^^ \`1.000_000\` is the float \`1.0\`. If it is a version or a label, such as Python 3.10, it must be a string.
+
+Suggestion 1/2: Write it as the string \`'1.000_000'\`.:
+  1 | a: '1.000_000'
+
+Suggestion 2/2: Write it as \`1.0\`.:
+  1 | a: 1.0
+
+`;
+
+exports[`invalid(7): a: 1.20e3 1`] = `
+
+  1 | a: 1.20e3
+
+`;
+
+exports[`invalid(7): a: 1.20e3 2`] = `
+
+Message:
+> 1 | a: 1.20e3
+    |    ^^^^^^ \`1.20e3\` is the float \`1.2e3\`. If it is a version or a label, such as Python 3.10, it must be a string.
+
+Suggestion 1/2: Write it as the string \`'1.20e3'\`.:
+  1 | a: '1.20e3'
+
+Suggestion 2/2: Write it as \`1.2e3\`.:
+  1 | a: 1.2e3
+
+`;
+
+exports[`invalid(8): a: 1.0_0e-3 1`] = `
+
+  1 | a: 1.0_0e-3
+
+`;
+
+exports[`invalid(8): a: 1.0_0e-3 2`] = `
+
+Message:
+> 1 | a: 1.0_0e-3
+    |    ^^^^^^^^ \`1.0_0e-3\` is the float \`1.0e-3\`. If it is a version or a label, such as Python 3.10, it must be a string.
+
+Suggestion 1/2: Write it as the string \`'1.0_0e-3'\`.:
+  1 | a: '1.0_0e-3'
+
+Suggestion 2/2: Write it as \`1.0e-3\`.:
+  1 | a: 1.0e-3
+
+`;
+
+exports[`invalid(9): [2.10] # Versions 1`] = `
+
+  1 | [2.10] # Versions
+
+`;
+
+exports[`invalid(9): [2.10] # Versions 2`] = `
+
+Message:
+> 1 | [2.10] # Versions
+    |  ^^^^ \`2.10\` is the float \`2.1\`. If it is a version or a label, such as Python 3.10, it must be a string.
+
+Suggestion 1/2: Write it as the string \`'2.10'\`.:
+  1 | ['2.10'] # Versions
+
+Suggestion 2/2: Write it as \`2.1\`.:
+  1 | [2.1] # Versions
+
+`;

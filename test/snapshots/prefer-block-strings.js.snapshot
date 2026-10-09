@@ -1,0 +1,879 @@
+exports[`invalid(1): script: \"set -e\\nnpm ci\\nnpm test\" 1`] = `
+
+  1 | script: "set -e\\nnpm ci\\nnpm test"
+
+`;
+
+exports[`invalid(1): script: \"set -e\\nnpm ci\\nnpm test\" 2`] = `
+
+Message:
+> 1 | script: "set -e\\nnpm ci\\nnpm test"
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | script: '''
+  2 | 	set -e
+  3 | 	npm ci
+  4 | 	npm test
+  5 | 	'''
+
+`;
+
+exports[`invalid(10): a: \"é\\n😀\\n中\" 1`] = `
+
+  1 | a: "é\\n😀\\n中"
+
+`;
+
+exports[`invalid(10): a: \"é\\n😀\\n中\" 2`] = `
+
+Message:
+> 1 | a: "é\\n😀\\n中"
+    |    ^^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a: '''
+  2 | 	é
+  3 | 	😀
+  4 | 	中
+  5 | 	'''
+
+`;
+
+exports[`invalid(11): a: \"a\\u{a}b\\u{a}c\" 1`] = `
+
+  1 | a: "a\\u{a}b\\u{a}c"
+
+`;
+
+exports[`invalid(11): a: \"a\\u{a}b\\u{a}c\" 2`] = `
+
+Message:
+> 1 | a: "a\\u{a}b\\u{a}c"
+    |    ^^^^^^^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a: '''
+  2 | 	a
+  3 | 	b
+  4 | 	c
+  5 | 	'''
+
+`;
+
+exports[`invalid(12): certificate: \"-----BEGIN CERTIFICATE-----\\nMIIB\\n-----END CERTIFICATE-----\\n\" 1`] = `
+
+  1 | certificate: "-----BEGIN CERTIFICATE-----\\nMIIB\\n-----END CERTIFICATE-----\\n"
+
+`;
+
+exports[`invalid(12): certificate: \"-----BEGIN CERTIFICATE-----\\nMIIB\\n-----END CERTIFICATE-----\\n\" 2`] = `
+
+Message:
+> 1 | certificate: "-----BEGIN CERTIFICATE-----\\nMIIB\\n-----END CERTIFICATE-----\\n"
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | certificate: """
+  2 | 	-----BEGIN CERTIFICATE-----
+  3 | 	MIIB
+  4 | 	-----END CERTIFICATE-----\\n
+  5 | 	"""
+
+`;
+
+exports[`invalid(13): a: \"\\nx\\ny\\nz\" 1`] = `
+
+  1 | a: "\\nx\\ny\\nz"
+
+`;
+
+exports[`invalid(13): a: \"\\nx\\ny\\nz\" 2`] = `
+
+Message:
+> 1 | a: "\\nx\\ny\\nz"
+    |    ^^^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a: """
+  2 | 	\\nx
+  3 | 	y
+  4 | 	z
+  5 | 	"""
+
+`;
+
+exports[`invalid(14): a: \"\\n\\nx\\ny\\nz\\n\\n\" 1`] = `
+
+  1 | a: "\\n\\nx\\ny\\nz\\n\\n"
+
+`;
+
+exports[`invalid(14): a: \"\\n\\nx\\ny\\nz\\n\\n\" 2`] = `
+
+Message:
+> 1 | a: "\\n\\nx\\ny\\nz\\n\\n"
+    |    ^^^^^^^^^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a: """
+  2 | 	\\n\\nx
+  3 | 	y
+  4 | 	z\\n\\n
+  5 | 	"""
+
+`;
+
+exports[`invalid(15): a: \"x  \\ny\\nz\" 1`] = `
+
+  1 | a: "x  \\ny\\nz"
+
+`;
+
+exports[`invalid(15): a: \"x  \\ny\\nz\" 2`] = `
+
+Message:
+> 1 | a: "x  \\ny\\nz"
+    |    ^^^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a: """
+  2 | 	x\\u{20}\\u{20}
+  3 | 	y
+  4 | 	z
+  5 | 	"""
+
+`;
+
+exports[`invalid(16): a: \"x\\t\\ny\\nz\" 1`] = `
+
+  1 | a: "x\\t\\ny\\nz"
+
+`;
+
+exports[`invalid(16): a: \"x\\t\\ny\\nz\" 2`] = `
+
+Message:
+> 1 | a: "x\\t\\ny\\nz"
+    |    ^^^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a: """
+  2 | 	x\\t
+  3 | 	y
+  4 | 	z
+  5 | 	"""
+
+`;
+
+exports[`invalid(17): a: \"x\\n  \\ny\" 1`] = `
+
+  1 | a: "x\\n  \\ny"
+
+`;
+
+exports[`invalid(17): a: \"x\\n  \\ny\" 2`] = `
+
+Message:
+> 1 | a: "x\\n  \\ny"
+    |    ^^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a: """
+  2 | 	x
+  3 | 	\\u{20}\\u{20}
+  4 | 	y
+  5 | 	"""
+
+`;
+
+exports[`invalid(18): a: \"x\\n\\t\\ny\" 1`] = `
+
+  1 | a: "x\\n\\t\\ny"
+
+`;
+
+exports[`invalid(18): a: \"x\\n\\t\\ny\" 2`] = `
+
+Message:
+> 1 | a: "x\\n\\t\\ny"
+    |    ^^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a: """
+  2 | 	x
+  3 | 	\\t
+  4 | 	y
+  5 | 	"""
+
+`;
+
+exports[`invalid(19): a: \"^\\\\\\\\d+$\\ny\\nz\" 1`] = `
+
+  1 | a: "^\\\\\\\\d+$\\ny\\nz"
+
+`;
+
+exports[`invalid(19): a: \"^\\\\\\\\d+$\\ny\\nz\" 2`] = `
+
+Message:
+> 1 | a: "^\\\\\\\\d+$\\ny\\nz"
+    |    ^^^^^^^^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a: """
+  2 | 	^\\\\\\\\d+$
+  3 | 	y
+  4 | 	z
+  5 | 	"""
+
+`;
+
+exports[`invalid(2): a: \"x\\ny\\nz\\nw\\nv\" 1`] = `
+
+  1 | a: "x\\ny\\nz\\nw\\nv"
+
+`;
+
+exports[`invalid(2): a: \"x\\ny\\nz\\nw\\nv\" 2`] = `
+
+Message:
+> 1 | a: "x\\ny\\nz\\nw\\nv"
+    |    ^^^^^^^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a: '''
+  2 | 	x
+  3 | 	y
+  4 | 	z
+  5 | 	w
+  6 | 	v
+  7 | 	'''
+
+`;
+
+exports[`invalid(20): a: \"a\\u{a0}b\\nc\\nd\" 1`] = `
+
+  1 | a: "a\\u{a0}b\\nc\\nd"
+
+`;
+
+exports[`invalid(20): a: \"a\\u{a0}b\\nc\\nd\" 2`] = `
+
+Message:
+> 1 | a: "a\\u{a0}b\\nc\\nd"
+    |    ^^^^^^^^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a: """
+  2 | 	a\\u{a0}b
+  3 | 	c
+  4 | 	d
+  5 | 	"""
+
+`;
+
+exports[`invalid(21): a: \"a\\u{0}\\nb\\nc\" 1`] = `
+
+  1 | a: "a\\u{0}\\nb\\nc"
+
+`;
+
+exports[`invalid(21): a: \"a\\u{0}\\nb\\nc\" 2`] = `
+
+Message:
+> 1 | a: "a\\u{0}\\nb\\nc"
+    |    ^^^^^^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a: """
+  2 | 	a\\u{0}
+  3 | 	b
+  4 | 	c
+  5 | 	"""
+
+`;
+
+exports[`invalid(22): a: \"a\\n'''\\nb\" 1`] = `
+
+  1 | a: "a\\n'''\\nb"
+
+`;
+
+exports[`invalid(22): a: \"a\\n'''\\nb\" 2`] = `
+
+Message:
+> 1 | a: "a\\n'''\\nb"
+    |    ^^^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a: """
+  2 | 	a
+  3 | 	'''
+  4 | 	b
+  5 | 	"""
+
+`;
+
+exports[`invalid(23): a: \"x\\\\\\ny\\\\\\nz\\\\\" 1`] = `
+
+  1 | a: "x\\\\\\ny\\\\\\nz\\\\"
+
+`;
+
+exports[`invalid(23): a: \"x\\\\\\ny\\\\\\nz\\\\\" 2`] = `
+
+Message:
+> 1 | a: "x\\\\\\ny\\\\\\nz\\\\"
+    |    ^^^^^^^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a: '''
+  2 | 	x\\
+  3 | 	y\\
+  4 | 	z\\
+  5 | 	'''
+
+`;
+
+exports[`invalid(24): a: \"x\\ny\\nz  \\n\" 1`] = `
+
+  1 | a: "x\\ny\\nz  \\n"
+
+`;
+
+exports[`invalid(24): a: \"x\\ny\\nz  \\n\" 2`] = `
+
+Message:
+> 1 | a: "x\\ny\\nz  \\n"
+    |    ^^^^^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a: """
+  2 | 	x
+  3 | 	y
+  4 | 	z\\u{20}\\u{20}\\n
+  5 | 	"""
+
+`;
+
+exports[`invalid(25): a: \"\\tx\\n\\ty\\n\\tz\" 1`] = `
+
+  1 | a: "\\tx\\n\\ty\\n\\tz"
+
+`;
+
+exports[`invalid(25): a: \"\\tx\\n\\ty\\n\\tz\" 2`] = `
+
+Message:
+> 1 | a: "\\tx\\n\\ty\\n\\tz"
+    |    ^^^^^^^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a: '''
+  2 | 		x
+  3 | 		y
+  4 | 		z
+  5 | 	'''
+
+`;
+
+exports[`invalid(26): a: \"x\\n\\\"\\\"\\\"\\\"\\ny\" 1`] = `
+
+  1 | a: "x\\n\\"\\"\\"\\"\\ny"
+
+`;
+
+exports[`invalid(26): a: \"x\\n\\\"\\\"\\\"\\\"\\ny\" 2`] = `
+
+Message:
+> 1 | a: "x\\n\\"\\"\\"\\"\\ny"
+    |    ^^^^^^^^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a: '''
+  2 | 	x
+  3 | 	""""
+  4 | 	y
+  5 | 	'''
+
+`;
+
+exports[`invalid(27): a: \"A\\\\nB\\nC\\nD\" 1`] = `
+
+  1 | a: "A\\\\nB\\nC\\nD"
+
+`;
+
+exports[`invalid(27): a: \"A\\\\nB\\nC\\nD\" 2`] = `
+
+Message:
+> 1 | a: "A\\\\nB\\nC\\nD"
+    |    ^^^^^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a: '''
+  2 | 	A\\nB
+  3 | 	C
+  4 | 	D
+  5 | 	'''
+
+`;
+
+exports[`invalid(28): a: \"x\\\\u{41}y\\nC\\nD\" 1`] = `
+
+  1 | a: "x\\\\u{41}y\\nC\\nD"
+
+`;
+
+exports[`invalid(28): a: \"x\\\\u{41}y\\nC\\nD\" 2`] = `
+
+Message:
+> 1 | a: "x\\\\u{41}y\\nC\\nD"
+    |    ^^^^^^^^^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a: """
+  2 | 	x\\\\u{41}y
+  3 | 	C
+  4 | 	D
+  5 | 	"""
+
+`;
+
+exports[`invalid(29): a: \"x\\n''''\\ny\" 1`] = `
+
+  1 | a: "x\\n''''\\ny"
+
+`;
+
+exports[`invalid(29): a: \"x\\n''''\\ny\" 2`] = `
+
+Message:
+> 1 | a: "x\\n''''\\ny"
+    |    ^^^^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a: """
+  2 | 	x
+  3 | 	''''
+  4 | 	y
+  5 | 	"""
+
+`;
+
+exports[`invalid(3): a: \"x\\n\\ny\" 1`] = `
+
+  1 | a: "x\\n\\ny"
+
+`;
+
+exports[`invalid(3): a: \"x\\n\\ny\" 2`] = `
+
+Message:
+> 1 | a: "x\\n\\ny"
+    |    ^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a: '''
+  2 | 	x
+  3 |
+  4 | 	y
+  5 | 	'''
+
+`;
+
+exports[`invalid(30): a: {\n\tb: \"x\\ny\\nz\"\n} 1`] = `
+
+  1 | a: {
+  2 | 	b: "x\\ny\\nz"
+  3 | }
+
+`;
+
+exports[`invalid(30): a: {\n\tb: \"x\\ny\\nz\"\n} 2`] = `
+
+Message:
+  1 | a: {
+> 2 | 	b: "x\\ny\\nz"
+    | 	   ^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+  3 | }
+
+Output:
+  1 | a: {
+  2 | 	b: '''
+  3 | 		x
+  4 | 		y
+  5 | 		z
+  6 | 		'''
+  7 | }
+
+`;
+
+exports[`invalid(31): a: {\n  b: \"x\\ny\\nz\"\n} 1`] = `
+
+  1 | a: {
+  2 |   b: "x\\ny\\nz"
+  3 | }
+
+`;
+
+exports[`invalid(31): a: {\n  b: \"x\\ny\\nz\"\n} 2`] = `
+
+Message:
+  1 | a: {
+> 2 |   b: "x\\ny\\nz"
+    |      ^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+  3 | }
+
+Output:
+  1 | a: {
+  2 |   b: '''
+  3 |   	x
+  4 |   	y
+  5 |   	z
+  6 |   	'''
+  7 | }
+
+`;
+
+exports[`invalid(32): a: {b: \"x\\ny\\nz\", c: 1} 1`] = `
+
+  1 | a: {b: "x\\ny\\nz", c: 1}
+
+`;
+
+exports[`invalid(32): a: {b: \"x\\ny\\nz\", c: 1} 2`] = `
+
+Message:
+> 1 | a: {b: "x\\ny\\nz", c: 1}
+    |        ^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a: {b: '''
+  2 | 	x
+  3 | 	y
+  4 | 	z
+  5 | 	''', c: 1}
+
+`;
+
+exports[`invalid(33): a: [\n\t\"x\\ny\\nz\"\n] 1`] = `
+
+  1 | a: [
+  2 | 	"x\\ny\\nz"
+  3 | ]
+
+`;
+
+exports[`invalid(33): a: [\n\t\"x\\ny\\nz\"\n] 2`] = `
+
+Message:
+  1 | a: [
+> 2 | 	"x\\ny\\nz"
+    | 	^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+  3 | ]
+
+Output:
+  1 | a: [
+  2 | 	'''
+  3 | 	x
+  4 | 	y
+  5 | 	z
+  6 | 	'''
+  7 | ]
+
+`;
+
+exports[`invalid(34): [\"x\\ny\\nz\"] 1`] = `
+
+  1 | ["x\\ny\\nz"]
+
+`;
+
+exports[`invalid(34): [\"x\\ny\\nz\"] 2`] = `
+
+Message:
+> 1 | ["x\\ny\\nz"]
+    |  ^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | ['''
+  2 | 	x
+  3 | 	y
+  4 | 	z
+  5 | 	''']
+
+`;
+
+exports[`invalid(35): [\"x\\ny\\nz\", \"1\\n2\\n3\"] 1`] = `
+
+  1 | ["x\\ny\\nz", "1\\n2\\n3"]
+
+`;
+
+exports[`invalid(35): [\"x\\ny\\nz\", \"1\\n2\\n3\"] 2`] = `
+
+Message:
+> 1 | ["x\\ny\\nz", "1\\n2\\n3"]
+    |  ^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | ['''
+  2 | 	x
+  3 | 	y
+  4 | 	z
+  5 | 	''', "1\\n2\\n3"]
+
+`;
+
+exports[`invalid(35): [\"x\\ny\\nz\", \"1\\n2\\n3\"] 3`] = `
+
+Message:
+> 1 | ["x\\ny\\nz", "1\\n2\\n3"]
+    |             ^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | ["x\\ny\\nz", '''
+  2 | 	1
+  3 | 	2
+  4 | 	3
+  5 | 	''']
+
+`;
+
+exports[`invalid(36): a: [1, \"x\\ny\\nz\"] 1`] = `
+
+  1 | a: [1, "x\\ny\\nz"]
+
+`;
+
+exports[`invalid(36): a: [1, \"x\\ny\\nz\"] 2`] = `
+
+Message:
+> 1 | a: [1, "x\\ny\\nz"]
+    |        ^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a: [1, '''
+  2 | 	x
+  3 | 	y
+  4 | 	z
+  5 | 	''']
+
+`;
+
+exports[`invalid(37): a: \"x\\ny\\nz\" # comment 1`] = `
+
+  1 | a: "x\\ny\\nz" # comment
+
+`;
+
+exports[`invalid(37): a: \"x\\ny\\nz\" # comment 2`] = `
+
+Message:
+> 1 | a: "x\\ny\\nz" # comment
+    |    ^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a: '''
+  2 | 	x
+  3 | 	y
+  4 | 	z
+  5 | 	''' # comment
+
+`;
+
+exports[`invalid(38): a: /* comment */ \"x\\ny\\nz\" 1`] = `
+
+  1 | a: /* comment */ "x\\ny\\nz"
+
+`;
+
+exports[`invalid(38): a: /* comment */ \"x\\ny\\nz\" 2`] = `
+
+Message:
+> 1 | a: /* comment */ "x\\ny\\nz"
+    |                  ^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a: /* comment */ '''
+  2 | 	x
+  3 | 	y
+  4 | 	z
+  5 | 	'''
+
+`;
+
+exports[`invalid(39): a:\n\t\"x\\ny\\nz\" 1`] = `
+
+  1 | a:
+  2 | 	"x\\ny\\nz"
+
+`;
+
+exports[`invalid(39): a:\n\t\"x\\ny\\nz\" 2`] = `
+
+Message:
+  1 | a:
+> 2 | 	"x\\ny\\nz"
+    | 	^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a:
+  2 | 	'''
+  3 | 	x
+  4 | 	y
+  5 | 	z
+  6 | 	'''
+
+`;
+
+exports[`invalid(4): a: \"x\\n\\n\\n\\ny\" 1`] = `
+
+  1 | a: "x\\n\\n\\n\\ny"
+
+`;
+
+exports[`invalid(4): a: \"x\\n\\n\\n\\ny\" 2`] = `
+
+Message:
+> 1 | a: "x\\n\\n\\n\\ny"
+    |    ^^^^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a: '''
+  2 | 	x
+  3 |
+  4 |
+  5 |
+  6 | 	y
+  7 | 	'''
+
+`;
+
+exports[`invalid(40): a: \"\\n\\tA\\tB\\\\tC\\nD\\nE\\n\" 1`] = `
+
+  1 | a: "\\n\\tA\\tB\\\\tC\\nD\\nE\\n"
+
+`;
+
+exports[`invalid(40): a: \"\\n\\tA\\tB\\\\tC\\nD\\nE\\n\" 2`] = `
+
+Message:
+> 1 | a: "\\n\\tA\\tB\\\\tC\\nD\\nE\\n"
+    |    ^^^^^^^^^^^^^^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a: """
+  2 | 	\\n\\tA\\tB\\\\tC
+  3 | 	D
+  4 | 	E\\n
+  5 | 	"""
+
+`;
+
+exports[`invalid(5): a: \"x\\n  indented\\ny\" 1`] = `
+
+  1 | a: "x\\n  indented\\ny"
+
+`;
+
+exports[`invalid(5): a: \"x\\n  indented\\ny\" 2`] = `
+
+Message:
+> 1 | a: "x\\n  indented\\ny"
+    |    ^^^^^^^^^^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a: '''
+  2 | 	x
+  3 | 	  indented
+  4 | 	y
+  5 | 	'''
+
+`;
+
+exports[`invalid(6): a: \"a\\tb\\nc\\nd\" 1`] = `
+
+  1 | a: "a\\tb\\nc\\nd"
+
+`;
+
+exports[`invalid(6): a: \"a\\tb\\nc\\nd\" 2`] = `
+
+Message:
+> 1 | a: "a\\tb\\nc\\nd"
+    |    ^^^^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a: '''
+  2 | 	a	b
+  3 | 	c
+  4 | 	d
+  5 | 	'''
+
+`;
+
+exports[`invalid(7): a: \"C:\\\\x\\ny\\nz\" 1`] = `
+
+  1 | a: "C:\\\\x\\ny\\nz"
+
+`;
+
+exports[`invalid(7): a: \"C:\\\\x\\ny\\nz\" 2`] = `
+
+Message:
+> 1 | a: "C:\\\\x\\ny\\nz"
+    |    ^^^^^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a: '''
+  2 | 	C:\\x
+  3 | 	y
+  4 | 	z
+  5 | 	'''
+
+`;
+
+exports[`invalid(8): a: \"don't\\nstop\\nnow\" 1`] = `
+
+  1 | a: "don't\\nstop\\nnow"
+
+`;
+
+exports[`invalid(8): a: \"don't\\nstop\\nnow\" 2`] = `
+
+Message:
+> 1 | a: "don't\\nstop\\nnow"
+    |    ^^^^^^^^^^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a: '''
+  2 | 	don't
+  3 | 	stop
+  4 | 	now
+  5 | 	'''
+
+`;
+
+exports[`invalid(9): a: \"a\\n\\\"\\\"\\\"\\nb\" 1`] = `
+
+  1 | a: "a\\n\\"\\"\\"\\nb"
+
+`;
+
+exports[`invalid(9): a: \"a\\n\\\"\\\"\\\"\\nb\" 2`] = `
+
+Message:
+> 1 | a: "a\\n\\"\\"\\"\\nb"
+    |    ^^^^^^^^^^^^^^ A string of three lines or more is easier to read as a block string.
+
+Output:
+  1 | a: '''
+  2 | 	a
+  3 | 	"""
+  4 | 	b
+  5 | 	'''
+
+`;

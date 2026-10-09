@@ -1,0 +1,286 @@
+exports[`invalid(1): text: '''\n\n\tone\n\t''' 1`] = `
+
+  1 | text: '''
+  2 |
+  3 | 	one
+  4 | 	'''
+
+`;
+
+exports[`invalid(1): text: '''\n\n\tone\n\t''' 2`] = `
+
+Message:
+  1 | text: '''
+> 2 |
+    | ^ Blank lines at the start of a block string are not part of the value. To start the value with a line break, write \`\\n\` in a \`"""\` block string.
+  3 | 	one
+  4 | 	'''
+
+Output:
+  1 | text: '''
+  2 | 	one
+  3 | 	'''
+
+`;
+
+exports[`invalid(2): cert: '''\n\tone\n\n\t''' 1`] = `
+
+  1 | cert: '''
+  2 | 	one
+  3 |
+  4 | 	'''
+
+`;
+
+exports[`invalid(2): cert: '''\n\tone\n\n\t''' 2`] = `
+
+Message:
+  1 | cert: '''
+  2 | 	one
+> 3 |
+    | ^ Blank lines at the end of a block string are not part of the value. To end the value with a line break, write \`\\n\` in a \`"""\` block string.
+  4 | 	'''
+
+Output:
+  1 | cert: '''
+  2 | 	one
+  3 | 	'''
+
+`;
+
+exports[`invalid(3): text: \"\"\"\n\n\tone\n\n\t\"\"\" 1`] = `
+
+  1 | text: """
+  2 |
+  3 | 	one
+  4 |
+  5 | 	"""
+
+`;
+
+exports[`invalid(3): text: \"\"\"\n\n\tone\n\n\t\"\"\" 2`] = `
+
+Message:
+  1 | text: """
+> 2 |
+    | ^ Blank lines at the start of a block string are not part of the value. To start the value with a line break, write \`\\n\` in a \`"""\` block string.
+  3 | 	one
+  4 |
+  5 | 	"""
+
+Output:
+  1 | text: """
+  2 | 	one
+  3 |
+  4 | 	"""
+
+`;
+
+exports[`invalid(3): text: \"\"\"\n\n\tone\n\n\t\"\"\" 3`] = `
+
+Message:
+  1 | text: """
+  2 |
+  3 | 	one
+> 4 |
+    | ^ Blank lines at the end of a block string are not part of the value. To end the value with a line break, write \`\\n\` in a \`"""\` block string.
+  5 | 	"""
+
+Output:
+  1 | text: """
+  2 |
+  3 | 	one
+  4 | 	"""
+
+`;
+
+exports[`invalid(4): text: '''\n\n\tone\n\t''' # Comment 1`] = `
+
+  1 | text: '''
+  2 |
+  3 | 	one
+  4 | 	''' # Comment
+
+`;
+
+exports[`invalid(4): text: '''\n\n\tone\n\t''' # Comment 2`] = `
+
+Message:
+  1 | text: '''
+> 2 |
+    | ^ Blank lines at the start of a block string are not part of the value. To start the value with a line break, write \`\\n\` in a \`"""\` block string.
+  3 | 	one
+  4 | 	''' # Comment
+
+Output:
+  1 | text: '''
+  2 | 	one
+  3 | 	''' # Comment
+
+`;
+
+exports[`invalid(5): [\n\t'''\n\tone\n\n\t''',\n\t2\n] 1`] = `
+
+  1 | [
+  2 | 	'''
+  3 | 	one
+  4 |
+  5 | 	''',
+  6 | 	2
+  7 | ]
+
+`;
+
+exports[`invalid(5): [\n\t'''\n\tone\n\n\t''',\n\t2\n] 2`] = `
+
+Message:
+  1 | [
+  2 | 	'''
+  3 | 	one
+> 4 |
+    | ^ Blank lines at the end of a block string are not part of the value. To end the value with a line break, write \`\\n\` in a \`"""\` block string.
+  5 | 	''',
+  6 | 	2
+  7 | ]
+
+Output:
+  1 | [
+  2 | 	'''
+  3 | 	one
+  4 | 	''',
+  5 | 	2
+  6 | ]
+
+`;
+
+exports[`invalid(6): text: '''\n\t\t\n\tone\n  \n\t''' 1`] = `
+
+  1 | text: '''
+  2 | 		
+  3 | 	one
+  4 |   
+  5 | 	'''
+
+`;
+
+exports[`invalid(6): text: '''\n\t\t\n\tone\n  \n\t''' 2`] = `
+
+Message:
+  1 | text: '''
+> 2 | 		
+    | ^^ Blank lines at the start of a block string are not part of the value. To start the value with a line break, write \`\\n\` in a \`"""\` block string.
+  3 | 	one
+  4 |   
+  5 | 	'''
+
+Output:
+  1 | text: '''
+  2 | 	one
+  3 |   
+  4 | 	'''
+
+`;
+
+exports[`invalid(6): text: '''\n\t\t\n\tone\n  \n\t''' 3`] = `
+
+Message:
+  1 | text: '''
+  2 | 		
+  3 | 	one
+> 4 |   
+    | ^^ Blank lines at the end of a block string are not part of the value. To end the value with a line break, write \`\\n\` in a \`"""\` block string.
+  5 | 	'''
+
+Output:
+  1 | text: '''
+  2 | 		
+  3 | 	one
+  4 | 	'''
+
+`;
+
+exports[`invalid(7): text: '''\n\n\n''' 1`] = `
+
+  1 | text: '''
+  2 |
+  3 |
+  4 | '''
+
+`;
+
+exports[`invalid(7): text: '''\n\n\n''' 2`] = `
+
+Message:
+  1 | text: '''
+> 2 |
+    | ^
+> 3 |
+    | ^ Blank lines at the start of a block string are not part of the value. To start the value with a line break, write \`\\n\` in a \`"""\` block string.
+  4 | '''
+
+Output:
+  1 | text: '''
+  2 | '''
+
+`;
+
+exports[`invalid(8): items: [\n\t''''\n\n\tone\n\t'''\n\n\t'''',\n] 1`] = `
+
+  1 | items: [
+  2 | 	''''
+  3 |
+  4 | 	one
+  5 | 	'''
+  6 |
+  7 | 	'''',
+  8 | ]
+
+`;
+
+exports[`invalid(8): items: [\n\t''''\n\n\tone\n\t'''\n\n\t'''',\n] 2`] = `
+
+Message:
+  1 | items: [
+  2 | 	''''
+> 3 |
+    | ^ Blank lines at the start of a block string are not part of the value. To start the value with a line break, write \`\\n\` in a \`"""\` block string.
+  4 | 	one
+  5 | 	'''
+  6 |
+  7 | 	'''',
+  8 | ]
+
+Output:
+  1 | items: [
+  2 | 	''''
+  3 | 	one
+  4 | 	'''
+  5 |
+  6 | 	'''',
+  7 | ]
+
+`;
+
+exports[`invalid(8): items: [\n\t''''\n\n\tone\n\t'''\n\n\t'''',\n] 3`] = `
+
+Message:
+  1 | items: [
+  2 | 	''''
+  3 |
+  4 | 	one
+  5 | 	'''
+> 6 |
+    | ^ Blank lines at the end of a block string are not part of the value. To end the value with a line break, write \`\\n\` in a \`"""\` block string.
+  7 | 	'''',
+  8 | ]
+
+Output:
+  1 | items: [
+  2 | 	''''
+  3 |
+  4 | 	one
+  5 | 	'''
+  6 | 	'''',
+  7 | ]
+
+`;

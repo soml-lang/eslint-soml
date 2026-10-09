@@ -1,0 +1,295 @@
+exports[`invalid(1): ratios: [0.25, 0.5, 1] 1`] = `
+
+  1 | ratios: [0.25, 0.5, 1]
+
+`;
+
+exports[`invalid(1): ratios: [0.25, 0.5, 1] 2`] = `
+
+Message:
+> 1 | ratios: [0.25, 0.5, 1]
+    |                     ^ \`1\` is an int, but this array also has floats.
+
+Suggestion 1/1: Write it as a float: \`1.0\`.:
+  1 | ratios: [0.25, 0.5, 1.0]
+
+`;
+
+exports[`invalid(10): weights: [1, 2, 0.5, 1.5] 1`] = `
+
+  1 | weights: [1, 2, 0.5, 1.5]
+
+`;
+
+exports[`invalid(10): weights: [1, 2, 0.5, 1.5] 2`] = `
+
+Message:
+> 1 | weights: [1, 2, 0.5, 1.5]
+    |           ^ \`1\` is an int, but this array also has floats.
+
+Suggestion 1/1: Write it as a float: \`1.0\`.:
+  1 | weights: [1.0, 2, 0.5, 1.5]
+
+`;
+
+exports[`invalid(10): weights: [1, 2, 0.5, 1.5] 3`] = `
+
+Message:
+> 1 | weights: [1, 2, 0.5, 1.5]
+    |              ^ \`2\` is an int, but this array also has floats.
+
+Suggestion 1/1: Write it as a float: \`2.0\`.:
+  1 | weights: [1, 2.0, 0.5, 1.5]
+
+`;
+
+exports[`invalid(11): ports: [80, 443, 8080.0, 9090.0, 3000] 1`] = `
+
+  1 | ports: [80, 443, 8080.0, 9090.0, 3000]
+
+`;
+
+exports[`invalid(11): ports: [80, 443, 8080.0, 9090.0, 3000] 2`] = `
+
+Message:
+> 1 | ports: [80, 443, 8080.0, 9090.0, 3000]
+    |                  ^^^^^^ \`8080.0\` is a float, but most numbers in this array are ints.
+
+`;
+
+exports[`invalid(11): ports: [80, 443, 8080.0, 9090.0, 3000] 3`] = `
+
+Message:
+> 1 | ports: [80, 443, 8080.0, 9090.0, 3000]
+    |                          ^^^^^^ \`9090.0\` is a float, but most numbers in this array are ints.
+
+`;
+
+exports[`invalid(12): a: [1, 2, 0.5, 1.5] 1`] = `
+
+  1 | a: [1, 2, 0.5, 1.5]
+
+`;
+
+exports[`invalid(12): a: [1, 2, 0.5, 1.5] 2`] = `
+
+Message:
+> 1 | a: [1, 2, 0.5, 1.5]
+    |     ^ \`1\` is an int, but this array also has floats.
+
+Suggestion 1/1: Write it as a float: \`1.0\`.:
+  1 | a: [1.0, 2, 0.5, 1.5]
+
+`;
+
+exports[`invalid(12): a: [1, 2, 0.5, 1.5] 3`] = `
+
+Message:
+> 1 | a: [1, 2, 0.5, 1.5]
+    |        ^ \`2\` is an int, but this array also has floats.
+
+Suggestion 1/1: Write it as a float: \`2.0\`.:
+  1 | a: [1, 2.0, 0.5, 1.5]
+
+`;
+
+exports[`invalid(13): a: [1, 0.5] 1`] = `
+
+  1 | a: [1, 0.5]
+
+`;
+
+exports[`invalid(13): a: [1, 0.5] 2`] = `
+
+Message:
+> 1 | a: [1, 0.5]
+    |     ^ \`1\` is an int, but this array also has floats.
+
+Suggestion 1/1: Write it as a float: \`1.0\`.:
+  1 | a: [1.0, 0.5]
+
+`;
+
+exports[`invalid(14): a: [\n\t1.5, # ratio\n\t2\n] 1`] = `
+
+  1 | a: [
+  2 | 	1.5, # ratio
+  3 | 	2
+  4 | ]
+
+`;
+
+exports[`invalid(14): a: [\n\t1.5, # ratio\n\t2\n] 2`] = `
+
+Message:
+  1 | a: [
+  2 | 	1.5, # ratio
+> 3 | 	2
+    | 	^ \`2\` is an int, but this array also has floats.
+  4 | ]
+
+Suggestion 1/1: Write it as a float: \`2.0\`.:
+  1 | a: [
+  2 | 	1.5, # ratio
+  3 | 	2.0
+  4 | ]
+
+`;
+
+exports[`invalid(15): a: {b: [1.5, 2, 3.5]} 1`] = `
+
+  1 | a: {b: [1.5, 2, 3.5]}
+
+`;
+
+exports[`invalid(15): a: {b: [1.5, 2, 3.5]} 2`] = `
+
+Message:
+> 1 | a: {b: [1.5, 2, 3.5]}
+    |              ^ \`2\` is an int, but this array also has floats.
+
+Suggestion 1/1: Write it as a float: \`2.0\`.:
+  1 | a: {b: [1.5, 2.0, 3.5]}
+
+`;
+
+exports[`invalid(16): a: [0.5, 0.25, 1_000] 1`] = `
+
+  1 | a: [0.5, 0.25, 1_000]
+
+`;
+
+exports[`invalid(16): a: [0.5, 0.25, 1_000] 2`] = `
+
+Message:
+> 1 | a: [0.5, 0.25, 1_000]
+    |                ^^^^^ \`1_000\` is an int, but this array also has floats.
+
+Suggestion 1/1: Write it as a float: \`1_000.0\`.:
+  1 | a: [0.5, 0.25, 1_000.0]
+
+`;
+
+exports[`invalid(2): ratios: [0.5, 1, 1_000, -2] 1`] = `
+
+  1 | ratios: [0.5, 1, 1_000, -2]
+
+`;
+
+exports[`invalid(2): ratios: [0.5, 1, 1_000, -2] 2`] = `
+
+Message:
+> 1 | ratios: [0.5, 1, 1_000, -2]
+    |          ^^^ \`0.5\` is a float, but most numbers in this array are ints.
+
+`;
+
+exports[`invalid(3): ports: [80, 443, 8080.5] 1`] = `
+
+  1 | ports: [80, 443, 8080.5]
+
+`;
+
+exports[`invalid(3): ports: [80, 443, 8080.5] 2`] = `
+
+Message:
+> 1 | ports: [80, 443, 8080.5]
+    |                  ^^^^^^ \`8080.5\` is a float, but most numbers in this array are ints.
+
+`;
+
+exports[`invalid(4): limits: [10, infinity] 1`] = `
+
+  1 | limits: [10, infinity]
+
+`;
+
+exports[`invalid(4): limits: [10, infinity] 2`] = `
+
+Message:
+> 1 | limits: [10, infinity]
+    |          ^^ \`10\` is an int, but this array also has floats.
+
+Suggestion 1/1: Write it as a float: \`10.0\`.:
+  1 | limits: [10.0, infinity]
+
+`;
+
+exports[`invalid(5): a: [0.5, 0xFF] 1`] = `
+
+  1 | a: [0.5, 0xFF]
+
+`;
+
+exports[`invalid(5): a: [0.5, 0xFF] 2`] = `
+
+Message:
+> 1 | a: [0.5, 0xFF]
+    |          ^^^^ \`0xFF\` is an int, but this array also has floats.
+
+`;
+
+exports[`invalid(6): a: [1, 2.5, 'x', 3.5] 1`] = `
+
+  1 | a: [1, 2.5, 'x', 3.5]
+
+`;
+
+exports[`invalid(6): a: [1, 2.5, 'x', 3.5] 2`] = `
+
+Message:
+> 1 | a: [1, 2.5, 'x', 3.5]
+    |     ^ \`1\` is an int, but this array also has floats.
+
+Suggestion 1/1: Write it as a float: \`1.0\`.:
+  1 | a: [1.0, 2.5, 'x', 3.5]
+
+`;
+
+exports[`invalid(7): [1, 2.5] 1`] = `
+
+  1 | [1, 2.5]
+
+`;
+
+exports[`invalid(7): [1, 2.5] 2`] = `
+
+Message:
+> 1 | [1, 2.5]
+    |  ^ \`1\` is an int, but this array also has floats.
+
+Suggestion 1/1: Write it as a float: \`1.0\`.:
+  1 | [1.0, 2.5]
+
+`;
+
+exports[`invalid(8): a: [[0.5, 1]] 1`] = `
+
+  1 | a: [[0.5, 1]]
+
+`;
+
+exports[`invalid(8): a: [[0.5, 1]] 2`] = `
+
+Message:
+> 1 | a: [[0.5, 1]]
+    |           ^ \`1\` is an int, but this array also has floats.
+
+Suggestion 1/1: Write it as a float: \`1.0\`.:
+  1 | a: [[0.5, 1.0]]
+
+`;
+
+exports[`invalid(9): a: [0.5, 9007199254740993] 1`] = `
+
+  1 | a: [0.5, 9007199254740993]
+
+`;
+
+exports[`invalid(9): a: [0.5, 9007199254740993] 2`] = `
+
+Message:
+> 1 | a: [0.5, 9007199254740993]
+    |          ^^^^^^^^^^^^^^^^ \`9007199254740993\` is an int, but this array also has floats.
+
+`;
